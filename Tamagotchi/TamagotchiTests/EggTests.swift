@@ -39,4 +39,9 @@ class EggTests: XCTestCase {
         XCTAssertEqual(result, false)
     }
     
+    func testHelpDaEgg() {
+        egg.temp = 10
+        let result = egg.helpEgg(item: "Hat")
+        XCTAssertEqual(result, "Hat warmed up egg by 1 degree")
+    }
 }

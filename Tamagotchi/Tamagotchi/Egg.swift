@@ -25,4 +25,38 @@ class Egg {
     func isEggCracked() -> Bool {
         return cracked
     }
+    
+    func updateTemp(item: String) -> Int {
+        if item == "Hat" {
+            temp += 1
+            return 1
+        }
+        else if item == "Hot Water Bottle" {
+            temp += 2
+            return 2
+        }
+        else if item == "Fan" {
+            temp -= 1
+            return -1
+        }
+        else if item == "Cold Lemonade" {
+            temp -= 2
+            return -2
+        } else {
+            return temp
+        }
+    }
+    
+    func helpEgg(item: String) -> String {
+        let result = self.updateTemp(item: item)
+        if result > 0 {
+            return "\(item) warmed up egg by \(result) degree"
+        } else if result < 0 {
+            return "\(item) cooled egg by \(result) degree"
+        } else {
+            return ""
+        }
+    }
 }
+
+
