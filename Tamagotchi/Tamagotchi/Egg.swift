@@ -23,6 +23,6 @@ class Egg {
     }
     
     func isEggCracked() -> Bool {
-        return cracked == false
+        return cracked
     }
 }
