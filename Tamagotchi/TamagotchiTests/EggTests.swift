@@ -36,7 +36,7 @@ class EggTests: XCTestCase {
     
     func testEggCrackedStatusStartsAsFalse() {
         let result = egg.isEggCracked()
-        XCTAssertEqual(result, true)
+        XCTAssertEqual(result, false)
     }
     
 }
