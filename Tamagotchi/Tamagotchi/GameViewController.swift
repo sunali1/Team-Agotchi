@@ -16,6 +16,10 @@ class GameViewController: UIViewController {
     @IBOutlet weak var manualEggCrack: UIButton!
     @IBOutlet weak var userInputField: UITextField!
     @IBOutlet weak var userOutputField: UITextView!
+    @IBOutlet weak var temperatureDisplay: UITextView!
+    @IBOutlet weak var ageDisplay: UITextView!
+    @IBOutlet weak var sizeDisplay: UITextView!
+    @IBOutlet weak var crackedDisplay: UITextView!
     
     var egg = Egg()
     
@@ -34,13 +38,29 @@ class GameViewController: UIViewController {
         }
     }
     
+    @IBAction func textInputted(_ sender: Any) {
+        let helpedEgg = egg.helpEgg(item: userInputField.text!)
+        userOutputField.text = "\(helpedEgg)"
+        updateBasicStats()
+    }
+    
+    func updateBasicStats(){
+        temperatureDisplay.text = "\(egg.temp)"
+        ageDisplay.text = "\(egg.age)"
+        sizeDisplay.text = "\(egg.size)"
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        userInputField.resignFirstResponder()
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         userInputField.delegate = self;
-        
+        updateBasicStats()
         creatureDisplay.image = UIImage(named: "photoegg3")
         manualEggCrack.setTitle("What happens when you press this?", for: .normal)
         
@@ -52,7 +72,7 @@ class GameViewController: UIViewController {
 //            // Present the scene
 //                view.presentScene(scene)
 //            }
-//            
+//
 //            view.ignoresSiblingOrder = true
 //            view.showsFPS = true
 //            view.showsNodeCount = true
@@ -60,18 +80,6 @@ class GameViewController: UIViewController {
         
     }
     
-    
-    @IBAction func textInputted(_ sender: Any) {
-        let helpedEgg = egg.helpEgg(item: userInputField.text!)
-        userOutputField.text = "\(helpedEgg)"
-    }
-    
-    
-    
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        userInputField.resignFirstResponder()
-    }
 
     override var shouldAutorotate: Bool {
         return true
