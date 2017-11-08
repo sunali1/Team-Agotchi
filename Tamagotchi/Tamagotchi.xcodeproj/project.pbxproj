@@ -18,6 +18,7 @@
 		EE2B40A41FB1DBFA005C5775 /* TamagotchiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2B40A31FB1DBFA005C5775 /* TamagotchiUITests.swift */; };
 		EE2B40B21FB1DC42005C5775 /* EggTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2B40B11FB1DC42005C5775 /* EggTests.swift */; };
 		EE2B40B41FB1DDC2005C5775 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2B40B31FB1DDC2005C5775 /* Egg.swift */; };
+		FA8908441FB3461200C31387 /* basicStatsModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8908431FB3461200C31387 /* basicStatsModelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		EE2B40A51FB1DBFA005C5775 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE2B40B11FB1DC42005C5775 /* EggTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggTests.swift; sourceTree = "<group>"; };
 		EE2B40B31FB1DDC2005C5775 /* Egg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg.swift; sourceTree = "<group>"; };
+		FA8908431FB3461200C31387 /* basicStatsModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicStatsModelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				EE2B40831FB1DBFA005C5775 /* GameScene.swift */,
 				EE2B40851FB1DBFA005C5775 /* GameViewController.swift */,
 				EE2B40871FB1DBFA005C5775 /* Main.storyboard */,
+				FA8908431FB3461200C31387 /* basicStatsModelView.swift */,
 				EE2B408A1FB1DBFA005C5775 /* Assets.xcassets */,
 				EE2B408C1FB1DBFA005C5775 /* LaunchScreen.storyboard */,
 				EE2B408F1FB1DBFA005C5775 /* Info.plist */,
@@ -276,6 +279,7 @@
 			files = (
 				EE2B40841FB1DBFA005C5775 /* GameScene.swift in Sources */,
 				EE2B40861FB1DBFA005C5775 /* GameViewController.swift in Sources */,
+				FA8908441FB3461200C31387 /* basicStatsModelView.swift in Sources */,
 				EE2B407E1FB1DBFA005C5775 /* AppDelegate.swift in Sources */,
 				EE2B40B41FB1DDC2005C5775 /* Egg.swift in Sources */,
 			);
