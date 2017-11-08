@@ -44,6 +44,41 @@ class EggTests: XCTestCase {
         XCTAssertEqual(result, "Hat warmed up egg by 1 degree")
     }
     
+    func testHelpDaEggWithHat() {
+        let result = egg.helpEgg(item: "Hat")
+        XCTAssertEqual(result, "Hat warmed up egg by 1 degree")
+    }
+    
+    func testHelpDaEggWithFan() {
+        let result = egg.helpEgg(item: "Fan")
+        XCTAssertEqual(result, "Fan cooled egg by -1 degree")
+    }
+    
+    func testHelpDaEggWithColdLemonade() {
+        let result = egg.helpEgg(item: "Cold Lemonade")
+        XCTAssertEqual(result, "Cold Lemonade cooled egg by -2 degree")
+    }
+    
+    func testHelpDaEggWithHotWaterBottle() {
+        let result = egg.helpEgg(item: "Hot Water Bottle")
+        XCTAssertEqual(result, "Hot Water Bottle warmed up egg by 2 degree")
+    }
+    
+    func testCrackDaEgg() {
+        let result = egg.crackEgg()
+        XCTAssertEqual(result, true)
+    }
+    
+    func testDaEggHatches() {
+        let result = egg.hatchEgg(temp: 15, age: 7)
+        XCTAssertEqual(result, "The egg has cracked")
+    }
+    
+    func testDaEggDontHatch() {
+        let result = egg.hatchEgg(temp: 8, age: 3)
+        XCTAssertEqual(result, "Turn up the temperature and be patient")
+    }
+    
     func testCanIncreaseAge() {
         let _ = egg.increaseAge(day: "Next")
         XCTAssertTrue(egg.age == 1)

@@ -26,6 +26,11 @@ class Egg {
         return cracked
     }
     
+    func crackEgg() -> Bool {
+        cracked = true
+        return cracked
+    }
+ 
     //    Temporary methods for playing for interface; will be deleted
     func crackEggManual(){
         cracked = true
@@ -84,6 +89,18 @@ class Egg {
             return ""
         }
     }
+    
+    
+    func hatchEgg(temp: Int, age: Int) -> String {
+        if temp >= 15 && age >= 5 {
+            crackEgg()
+            return "The egg has cracked"
+        } else {
+            return "Turn up the temperature and be patient"
+        }
+    }
+   
+    
     
     func grow() {
         increaseAge(day: "Next")
