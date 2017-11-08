@@ -26,12 +26,10 @@ class Egg {
         return cracked
     }
     
-    
     //    Temporary methods for playing for interface; will be deleted
     func crackEggManual(){
         cracked = true
     }
-    
     func healEggManual(){
         cracked = false
     }
