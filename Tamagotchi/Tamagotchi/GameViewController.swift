@@ -24,6 +24,10 @@ class GameViewController: UIViewController {
     var egg = Egg()
     
     
+    @IBAction func increaseAge(_ sender: Any) {
+        egg.grow()
+        updateBasicStats()
+    }
     
     @IBAction func manualEggCrackAction(_ sender: Any) {
         if creatureDisplay.image == UIImage(named: "eggcrack") {
@@ -40,7 +44,7 @@ class GameViewController: UIViewController {
     
     @IBAction func textInputted(_ sender: Any) {
         let helpedEgg = egg.helpEgg(item: userInputField.text!)
-        userOutputField.text = "\(helpedEgg)"
+        userOutputField.text = "\(helpedEgg) and \(egg.die(temp: egg.temp, age: egg.age))"
         updateBasicStats()
     }
     
@@ -86,12 +90,12 @@ class GameViewController: UIViewController {
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                return .allButUpsideDown
+            } else {
+                return .all
+            }
         }
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
