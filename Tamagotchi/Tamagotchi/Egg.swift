@@ -58,6 +58,24 @@ class Egg {
         }
     }
     
+    func increaseAge(day: String) -> Int {
+        if day == "Next" {
+            age += 1
+            return 1
+        } else {
+            return age
+        }
+    }
+    
+    func updateSize(day: String) -> Int {
+        if day == "Next" {
+            size += 1
+            return 1
+        } else {
+            return size
+        }
+    }
+    
     func helpEgg(item: String) -> String {
         let result = self.updateTemp(item: item)
         if result > 0 {
@@ -66,6 +84,21 @@ class Egg {
             return "\(item) cooled egg by \(result) degree"
         } else {
             return ""
+        }
+    }
+    
+    func grow() {
+        increaseAge(day: "Next")
+        updateSize(day: "Next")
+    }
+    
+    func die(temp: Int, age: Int) -> String {
+        if temp < 10 && age > 3 {
+            return "Egg has caught hypothermia and died"
+    } else if temp > 30 && age > 3 {
+            return "Egg has overheated and died"
+        } else {
+         return ""
         }
     }
 }

@@ -40,8 +40,34 @@ class EggTests: XCTestCase {
     }
     
     func testHelpDaEgg() {
-        egg.temp = 10
         let result = egg.helpEgg(item: "Hat")
         XCTAssertEqual(result, "Hat warmed up egg by 1 degree")
+    }
+    
+    func testCanIncreaseAge() {
+        let _ = egg.increaseAge(day: "Next")
+        XCTAssertTrue(egg.age == 1)
+    }
+    
+    func testupdateSize() {
+        let _ = egg.updateSize(day: "Next")
+        XCTAssertTrue(egg.size == 1)
+    }
+    
+    func testEggCanGrowAndUpdateSize() {
+        let _ = egg.grow()
+        XCTAssertEqual(egg.size, 1)
+    }
+    
+    func testEggCanGrowAndIncreaseAge() {
+        let _ = egg.grow()
+        XCTAssertEqual(egg.age, 1)
+    }
+    
+    func testEggCanDie() {
+        let result1 = egg.die(temp: 5, age: 4)
+        XCTAssertEqual(result1, "Egg has caught hypothermia and died")
+        let result2 = egg.die(temp: 35, age: 4)
+        XCTAssertEqual(result2, "Egg has overheated and died")
     }
 }
