@@ -26,6 +26,17 @@ class Egg {
         return cracked
     }
     
+    
+    //    Temporary methods for playing for interface; will be deleted
+    func crackEggManual(){
+        cracked = true
+    }
+    
+    func healEggManual(){
+        cracked = false
+    }
+//    Temporary methods etc etc
+    
     func updateTemp(item: String) -> Int {
         if item == "Hat" {
             temp += 1
