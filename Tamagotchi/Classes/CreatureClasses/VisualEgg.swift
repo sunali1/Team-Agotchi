@@ -31,7 +31,7 @@ class VisualEgg: SKSpriteNode {
         self.physicsBody?.affectedByGravity = true;
         self.physicsBody?.isDynamic = true;
         self.physicsBody?.restitution = 0.5
-        self.physicsBody?.allowsRotation = false
+        self.physicsBody?.allowsRotation = false;
         
         self.physicsBody?.categoryBitMask = ColliderType.Egg;
         self.physicsBody?.collisionBitMask = ColliderType.World
@@ -40,8 +40,17 @@ class VisualEgg: SKSpriteNode {
     func jump() {
         self.physicsBody?.velocity = CGVector(dx:0, dy:50)
         self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 400))
-        
-        
+    }
+    
+    func crack(){
+        let goLeft = SKAction.rotate(toAngle: CGFloat(-Double.pi/6), duration: 0.5)
+        let goRight = SKAction.rotate(toAngle: CGFloat(Double.pi/6), duration: 0.5)
+        let sequence = SKAction.sequence([goLeft,goRight])
+        let wobble = SKAction.repeat(sequence, count: 4)
+        let returnToCenter = SKAction.rotate(toAngle:CGFloat(-Double.pi*2),duration:0.5)
+        self.run(wobble){
+            self.run(returnToCenter)
+        }
     }
     
     
