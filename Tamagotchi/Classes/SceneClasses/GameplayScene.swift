@@ -11,12 +11,16 @@ import SpriteKit
 class GameplayScene: SKScene {
     
     var eggTexture = SKTexture();
+    var creature = SKSpriteNode()
+    var temperatureBtn = SKSpriteNode();
     let eggSprite = VisualEgg();
     let lionSprite = VisualLion();
     var viewController: GameViewController!
     lazy var lion = self.viewController.gameManager.lion
     lazy var egg = self.viewController.gameManager.egg
     func initialize() {
+        createTemperatureBtn()
+        createCreature()
     }
     
     override func didMove(to view: SKView) {
@@ -28,7 +32,7 @@ class GameplayScene: SKScene {
         self.physicsBody = sceneBody
 
         addChild(eggSprite);
-        addChild(lionSprite);
+        
         
         
         print("2+2=5 is \(egg.cracked)")
@@ -56,17 +60,44 @@ class GameplayScene: SKScene {
                 print(egg.helpEgg(item: "Hat"))
                 print(egg.temp)
                 if egg.temp > 18 {
-                   eggSprite.crack()
+                    
+                    eggSprite.crack(innerFunction: { self.addChild(self.lionSprite)})
+                
                     egg.cracked = true
                     print(egg.cracked)
                 }
             }
+            if atPoint(location).name == "temperature" {
+                print("You touched temp")
+                incrementTemperature()
+                print(egg.temp)
+            }
         }
     }
     
+    func createCreature() {
+        let creature = SKSpriteNode(imageNamed: "Blue 1")
+        creature.name = "Trump";
+        creature.zPosition = 1
+        creature.anchorPoint = CGPoint(x: 0.5, y: 0.5);
+        creature.position = CGPoint(x: 0, y: 0);
+        creature.size = CGSize(width: 100, height: 100);
+        self.addChild(creature);
+    }
     
-
-    
-    
-    
+    func createTemperatureBtn() {
+        
+        let temperatureBtn = SKSpriteNode(imageNamed: "Pause Menu")
+        temperatureBtn.name = "temperature"
+        temperatureBtn.zPosition = 6;
+        temperatureBtn.position = CGPoint(x: 0, y: 450);
+        
+        //        temperatureBtn.text = "- 10°C +";
+        //        temperatureLabel.fontColor = SKColor colorWithRed:0.1
+        self.addChild(temperatureBtn);
+    }
+    func incrementTemperature() {
+        egg.temp = egg.temp + 1
+        
+    }
 }
