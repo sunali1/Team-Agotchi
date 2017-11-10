@@ -48,10 +48,7 @@ class GameplayScene: SKScene {
                 print(egg.helpEgg(item: "Hat"))
                 print(egg.temp)
                 eggSprite.crack()
-                
-    
             }
-            
         }
     }
     

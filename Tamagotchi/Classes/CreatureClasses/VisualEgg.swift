@@ -16,8 +16,11 @@ struct ColliderType {
 
 class VisualEgg: SKSpriteNode {
     
-    
     var eggAnimationAction = SKAction();
+    
+    var TextureAtlas = SKTextureAtlas()
+    var TextureArray = [SKTexture]()
+    
     
     func initialize(){
         self.name = "visualEggInstance"
@@ -35,6 +38,16 @@ class VisualEgg: SKSpriteNode {
         
         self.physicsBody?.categoryBitMask = ColliderType.Egg;
         self.physicsBody?.collisionBitMask = ColliderType.World
+        
+    }
+    
+    func crackingArray(){
+        
+        TextureAtlas = SKTextureAtlas(named: "Cracking")
+        for i in 0...TextureAtlas.textureNames.count{
+            var Name = "crack\(i).png"
+            TextureArray.append(SKTexture(imageNamed: Name))
+        }
     }
     
     func jump() {
@@ -42,16 +55,25 @@ class VisualEgg: SKSpriteNode {
         self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 400))
     }
     
-    func crack(){
+    func wobble(){
         let goLeft = SKAction.rotate(toAngle: CGFloat(-Double.pi/6), duration: 0.5)
         let goRight = SKAction.rotate(toAngle: CGFloat(Double.pi/6), duration: 0.5)
         let sequence = SKAction.sequence([goLeft,goRight])
         let wobble = SKAction.repeat(sequence, count: 4)
         let returnToCenter = SKAction.rotate(toAngle:CGFloat(-Double.pi*2),duration:0.5)
         self.run(wobble){
-            self.run(returnToCenter)
+            self.run(returnToCenter){
+                self.jump()
+            }
         }
     }
+    
+    func crack(){
+        crackingArray()
+        self.run(SKAction.animate(with: TextureArray, timePerFrame:1))
+    }
+    
+ 
     
     
     
