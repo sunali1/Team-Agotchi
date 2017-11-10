@@ -32,7 +32,7 @@ class GameplayScene: SKScene {
         self.physicsBody = sceneBody
 
         addChild(eggSprite);
-        addChild(lionSprite);
+        
         
         
         print("2+2=5 is \(egg.cracked)")
@@ -60,7 +60,9 @@ class GameplayScene: SKScene {
                 print(egg.helpEgg(item: "Hat"))
                 print(egg.temp)
                 if egg.temp > 18 {
-                   eggSprite.crack()
+                    
+                    eggSprite.crack(innerFunction: { self.addChild(self.lionSprite)})
+                
                     egg.cracked = true
                     print(egg.cracked)
                 }

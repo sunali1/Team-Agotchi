@@ -56,7 +56,8 @@ class VisualEgg: SKSpriteNode {
 
     }
     
-    func crack(){
+    func crack(innerFunction:@escaping()->Void){
+    
         crackingArray()
         let goLeft = SKAction.rotate(toAngle: CGFloat(-Double.pi/6), duration: 0.5)
         let goRight = SKAction.rotate(toAngle: CGFloat(Double.pi/6), duration: 0.5)
@@ -65,9 +66,14 @@ class VisualEgg: SKSpriteNode {
         let returnToCenter = SKAction.rotate(toAngle:CGFloat(-Double.pi*2),duration:0.5)
         self.run(wobble){
             self.run(returnToCenter){
-                self.run(SKAction.animate(with: self.TextureArray, timePerFrame:1))
+                self.run(SKAction.animate(with: self.TextureArray, timePerFrame:1)){
+                    self.removeFromParent()
+                    innerFunction()
+                    }
                 }
             }
+        
+        
     }
     
     
