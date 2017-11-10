@@ -13,14 +13,10 @@ import GameplayKit
 class GameViewController: UIViewController {
     
     let gameManager = GameManager()
-    
-    @IBOutlet weak var userInputField: UITextField!
-    @IBOutlet weak var userOutputField: UITextView!
-    @IBOutlet weak var temperatureDisplayField: UITextView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        userInputField.delegate = self;
+        
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameplayScene.sks'
@@ -61,10 +57,5 @@ class GameViewController: UIViewController {
     }
 }
 
-extension GameViewController : UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder();
-        return true
-    }
-}
+
 
