@@ -6,7 +6,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TamagotchiTests/EggTests.swift"
@@ -19,7 +19,7 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "variable initialization expression of TamagotchiTests.EggTests.egg : Tamagotchi.Egg"
@@ -34,7 +34,7 @@
                   offsetFromSymbolStart = "4">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "TamagotchiTests.EggTests.egg.getter : Tamagotchi.Egg"
@@ -49,7 +49,7 @@
                   offsetFromSymbolStart = "105">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "TamagotchiTests.EggTests.init(invocation: Swift.Optional&lt;__ObjC.NSInvocation&gt;) -&gt; TamagotchiTests.EggTests"
@@ -64,7 +64,7 @@
                   offsetFromSymbolStart = "18">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "TamagotchiTests.EggTests.init(selector: ObjectiveC.Selector) -&gt; TamagotchiTests.EggTests"
@@ -79,7 +79,7 @@
                   offsetFromSymbolStart = "18">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "TamagotchiTests.EggTests.init() -&gt; TamagotchiTests.EggTests"

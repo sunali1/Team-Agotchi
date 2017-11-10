@@ -14,9 +14,10 @@ class GameplayScene: SKScene {
     var creature = SKSpriteNode()
     var temperatureBtn = SKSpriteNode();
     let eggSprite = VisualEgg();
+    let lionSprite = VisualLion();
     var viewController: GameViewController!
+    lazy var lion = self.viewController.gameManager.lion
     lazy var egg = self.viewController.gameManager.egg
- 
     func initialize() {
         createTemperatureBtn()
         createCreature()
@@ -31,10 +32,13 @@ class GameplayScene: SKScene {
         self.physicsBody = sceneBody
 
         addChild(eggSprite);
+        addChild(lionSprite);
+        
         
         print("2+2=5 is \(egg.cracked)")
         
         eggSprite.initialize();
+        lionSprite.initialize();
 
         print(egg.cracked)
         initialize()
@@ -42,10 +46,14 @@ class GameplayScene: SKScene {
     
  
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-
         for touch in touches {
             
             let location = touch.location(in: self);
+            
+            if atPoint(location).name == "visualLionInstance"{
+                print("You touched a Lion")
+                lionSprite.jump()
+            }
             
             if atPoint(location).name == "visualEggInstance"{
                 print("You touched an egg")
