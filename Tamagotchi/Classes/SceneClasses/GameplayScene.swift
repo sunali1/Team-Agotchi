@@ -47,7 +47,11 @@ class GameplayScene: SKScene {
                 print("You touched an egg")
                 print(egg.helpEgg(item: "Hat"))
                 print(egg.temp)
-                eggSprite.crack()
+                if egg.temp > 18 {
+                   eggSprite.crack()
+                    egg.cracked = true
+                    print(egg.cracked)
+                }
             }
         }
     }
