@@ -2,7 +2,7 @@
 //  Egg.swift
 //  Tamagotchi
 //
-//  Created by James Hughes on 07/11/2017.
+//  Created by James Hughes, Benjamin on 07/11/2017.
 //  Copyright © 2017 Tammo Team. All rights reserved.
 //
 
@@ -13,13 +13,14 @@ class Egg {
     var size: Int
     var age: Int
     var temp: Int
-    var cracked: Bool
+    var cracked: Bool /* Why are these here, what do they do */
+
     
-    init() {
-        size = 0
-        age = 0
-        temp = 10
-        cracked = false
+    init(size: Int, age: Int, temp: Int, cracked: Bool) {
+        self.size = size;
+        self.age = age;
+        self.temp = temp;
+        self.cracked = cracked;
     }
     
     func isEggCracked() -> Bool {
@@ -95,18 +96,16 @@ class Egg {
     
     func hatchEgg(temp: Int, age: Int) -> String {
         if temp >= 15 && age >= 5 {
-            crackEgg()
+            _ = crackEgg()
             return "The egg has cracked"
         } else {
             return "Turn up the temperature and be patient"
         }
     }
    
-    
-    
     func grow() {
-        increaseAge(day: "Next")
-        updateSize(day: "Next")
+        _ = increaseAge(day: "Next")
+        _ = updateSize(day: "Next")
     }
     
     func die(temp: Int, age: Int) -> String {
