@@ -9,6 +9,6 @@
 import Foundation
 
 class GameManager {
-    let egg = Egg()
+    let egg = Egg(size: 0, age: 0, temp: 10, cracked: false)
     let lion = Lion()
 }
