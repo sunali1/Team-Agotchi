@@ -15,13 +15,11 @@ class GameplayScene: SKScene {
     let lionSprite = VisualLion();
     var viewController: GameViewController!
     lazy var lion = self.viewController.gameManager.lion
+    lazy var egg = self.viewController.gameManager.egg
     func initialize() {
     }
     
     override func didMove(to view: SKView) {
-        
-        let egg = self.viewController.gameManager.egg
-        let lion = self.viewController.gameManager.lion
         
         self.physicsWorld.gravity = CGVector(dx: 0, dy: -9.8)
         let sceneBody = SKPhysicsBody(edgeLoopFrom: self.frame)
@@ -44,10 +42,6 @@ class GameplayScene: SKScene {
     
  
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        let egg = self.viewController.gameManager.egg
-        let lion = self.viewController.gameManager.lion
-
         for touch in touches {
             
             let location = touch.location(in: self);
@@ -59,13 +53,18 @@ class GameplayScene: SKScene {
             
             if atPoint(location).name == "visualEggInstance"{
                 print("You touched an egg")
-                eggSprite.jump()
                 print(egg.helpEgg(item: "Hat"))
                 print(egg.temp)
+                if egg.temp > 18 {
+                   eggSprite.crack()
+                    egg.cracked = true
+                    print(egg.cracked)
+                }
             }
-            
         }
     }
+    
+    
 
     
     

@@ -21,9 +21,9 @@
 		EEC1E2681FB5C524005606E4 /* VisualLion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC1E2671FB5C524005606E4 /* VisualLion.swift */; };
 		EEC1E26B1FB5C8DD005606E4 /* lion.png in Resources */ = {isa = PBXBuildFile; fileRef = EEC1E26A1FB5C8DD005606E4 /* lion.png */; };
 		FA09AAF21FB5920B003C6C20 /* VisualEgg.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09AAF11FB5920B003C6C20 /* VisualEgg.swift */; };
-		FA09AAFC1FB59287003C6C20 /* 1175521-200.png in Resources */ = {isa = PBXBuildFile; fileRef = FA09AAF51FB59286003C6C20 /* 1175521-200.png */; };
+		FA09AAFC1FB59287003C6C20 /* crack2.png in Resources */ = {isa = PBXBuildFile; fileRef = FA09AAF51FB59286003C6C20 /* crack2.png */; };
 		FA09AAFD1FB59287003C6C20 /* 1276572-200.png in Resources */ = {isa = PBXBuildFile; fileRef = FA09AAF61FB59286003C6C20 /* 1276572-200.png */; };
-		FA09AAFE1FB59287003C6C20 /* 1175516-200.png in Resources */ = {isa = PBXBuildFile; fileRef = FA09AAF71FB59286003C6C20 /* 1175516-200.png */; };
+		FA09AAFE1FB59287003C6C20 /* crack1.png in Resources */ = {isa = PBXBuildFile; fileRef = FA09AAF71FB59286003C6C20 /* crack1.png */; };
 		FA09AAFF1FB59287003C6C20 /* 1175533-200.png in Resources */ = {isa = PBXBuildFile; fileRef = FA09AAF81FB59287003C6C20 /* 1175533-200.png */; };
 		FA09AB001FB59287003C6C20 /* 1261295-200.png in Resources */ = {isa = PBXBuildFile; fileRef = FA09AAF91FB59287003C6C20 /* 1261295-200.png */; };
 		FA09AB011FB59287003C6C20 /* 1175530-200.png in Resources */ = {isa = PBXBuildFile; fileRef = FA09AAFA1FB59287003C6C20 /* 1175530-200.png */; };
@@ -72,9 +72,9 @@
 		EEC1E2671FB5C524005606E4 /* VisualLion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualLion.swift; sourceTree = "<group>"; };
 		EEC1E26A1FB5C8DD005606E4 /* lion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lion.png; sourceTree = "<group>"; };
 		FA09AAF11FB5920B003C6C20 /* VisualEgg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEgg.swift; sourceTree = "<group>"; };
-		FA09AAF51FB59286003C6C20 /* 1175521-200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1175521-200.png"; sourceTree = "<group>"; };
+		FA09AAF51FB59286003C6C20 /* crack2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crack2.png; sourceTree = "<group>"; };
 		FA09AAF61FB59286003C6C20 /* 1276572-200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1276572-200.png"; sourceTree = "<group>"; };
-		FA09AAF71FB59286003C6C20 /* 1175516-200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1175516-200.png"; sourceTree = "<group>"; };
+		FA09AAF71FB59286003C6C20 /* crack1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crack1.png; sourceTree = "<group>"; };
 		FA09AAF81FB59287003C6C20 /* 1175533-200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1175533-200.png"; sourceTree = "<group>"; };
 		FA09AAF91FB59287003C6C20 /* 1261295-200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1261295-200.png"; sourceTree = "<group>"; };
 		FA09AAFA1FB59287003C6C20 /* 1175530-200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1175530-200.png"; sourceTree = "<group>"; };
@@ -145,6 +145,7 @@
 				FA09AB091FB594CD003C6C20 /* Main.storyboard */,
 				FA8908431FB3461200C31387 /* basicStatsModelView.swift */,
 				EE2B408A1FB1DBFA005C5775 /* Assets.xcassets */,
+				FA09AB161FB5CD2E003C6C20 /* Cracking.atlas */,
 				EE2B408C1FB1DBFA005C5775 /* LaunchScreen.storyboard */,
 				EE2B408F1FB1DBFA005C5775 /* Info.plist */,
 			);
@@ -201,13 +202,10 @@
 				EEC1E2691FB5C590005606E4 /* Lion */,
 				FA09AB111FB59612003C6C20 /* Background */,
 				FA09AAF41FB5926A003C6C20 /* Egg */,
-				FA09AAF71FB59286003C6C20 /* 1175516-200.png */,
-				FA09AAF51FB59286003C6C20 /* 1175521-200.png */,
 				FA09AAFA1FB59287003C6C20 /* 1175530-200.png */,
 				FA09AAF81FB59287003C6C20 /* 1175533-200.png */,
 				FA09AAFB1FB59287003C6C20 /* 1175536-200.png */,
 				FA09AAF91FB59287003C6C20 /* 1261295-200.png */,
-				FA09AAF61FB59286003C6C20 /* 1276572-200.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -215,6 +213,7 @@
 		FA09AAF41FB5926A003C6C20 /* Egg */ = {
 			isa = PBXGroup;
 			children = (
+				FA09AAF61FB59286003C6C20 /* 1276572-200.png */,
 			);
 			path = Egg;
 			sourceTree = "<group>";
@@ -252,6 +251,15 @@
 				FA09AB131FB599F7003C6C20 /* GameManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		FA09AB161FB5CD2E003C6C20 /* Cracking.atlas */ = {
+			isa = PBXGroup;
+			children = (
+				FA09AAF71FB59286003C6C20 /* crack1.png */,
+				FA09AAF51FB59286003C6C20 /* crack2.png */,
+			);
+			path = Cracking.atlas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,9 +377,9 @@
 				EEC1E2641FB5C11D005606E4 /* Forest.png in Resources */,
 				FA09AAFF1FB59287003C6C20 /* 1175533-200.png in Resources */,
 				FA09AB001FB59287003C6C20 /* 1261295-200.png in Resources */,
-				FA09AAFC1FB59287003C6C20 /* 1175521-200.png in Resources */,
+				FA09AAFC1FB59287003C6C20 /* crack2.png in Resources */,
 				FA09AB0A1FB594CE003C6C20 /* Main.storyboard in Resources */,
-				FA09AAFE1FB59287003C6C20 /* 1175516-200.png in Resources */,
+				FA09AAFE1FB59287003C6C20 /* crack1.png in Resources */,
 				FA09AB081FB5941B003C6C20 /* GameplayScene.sks in Resources */,
 				EEC1E26B1FB5C8DD005606E4 /* lion.png in Resources */,
 				EE2B40821FB1DBFA005C5775 /* Actions.sks in Resources */,
