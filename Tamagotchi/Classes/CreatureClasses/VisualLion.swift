@@ -23,7 +23,7 @@ class VisualLion: SKSpriteNode {
         self.name = "visualLionInstance"
         self.size = CGSize(width:200.0, height: 200.0)
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        self.position = CGPoint(x: 200, y: -280)
+        self.position = CGPoint(x: 0, y: -280)
         self.zPosition = 1;
         self.texture = SKTexture(imageNamed: "lion.png")
         
