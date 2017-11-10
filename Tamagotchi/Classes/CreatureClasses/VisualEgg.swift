@@ -55,7 +55,8 @@ class VisualEgg: SKSpriteNode {
         self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 400))
     }
     
-    func wobble(){
+    func crack(){
+        crackingArray()
         let goLeft = SKAction.rotate(toAngle: CGFloat(-Double.pi/6), duration: 0.5)
         let goRight = SKAction.rotate(toAngle: CGFloat(Double.pi/6), duration: 0.5)
         let sequence = SKAction.sequence([goLeft,goRight])
@@ -63,17 +64,10 @@ class VisualEgg: SKSpriteNode {
         let returnToCenter = SKAction.rotate(toAngle:CGFloat(-Double.pi*2),duration:0.5)
         self.run(wobble){
             self.run(returnToCenter){
-                self.jump()
+                self.run(SKAction.animate(with: self.TextureArray, timePerFrame:1))
+                }
             }
-        }
     }
-    
-    func crack(){
-        crackingArray()
-        self.run(SKAction.animate(with: TextureArray, timePerFrame:1))
-    }
-    
- 
     
     
     
