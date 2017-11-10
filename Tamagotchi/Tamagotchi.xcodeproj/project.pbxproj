@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43DBF2C11FB3BE2400E1A96D /* Nimble.framework.dSYM in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DBF2C01FB3BE2400E1A96D /* Nimble.framework.dSYM */; };
+		43DBF2C31FB3BE2600E1A96D /* Quick.framework.dSYM in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DBF2C21FB3BE2600E1A96D /* Quick.framework.dSYM */; };
 		EE2B407E1FB1DBFA005C5775 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2B407D1FB1DBFA005C5775 /* AppDelegate.swift */; };
 		EE2B40801FB1DBFA005C5775 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EE2B407F1FB1DBFA005C5775 /* GameScene.sks */; };
 		EE2B40821FB1DBFA005C5775 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = EE2B40811FB1DBFA005C5775 /* Actions.sks */; };
@@ -52,7 +54,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		43DBF2C41FB3BE7800E1A96D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43DBF2CB1FB3BF6700E1A96D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		43DBF2C01FB3BE2400E1A96D /* Nimble.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Nimble.framework.dSYM; path = Carthage/Build/iOS/Nimble.framework.dSYM; sourceTree = "<group>"; };
+		43DBF2C21FB3BE2600E1A96D /* Quick.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Quick.framework.dSYM; path = Carthage/Build/iOS/Quick.framework.dSYM; sourceTree = "<group>"; };
 		EE2B407A1FB1DBFA005C5775 /* Tamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE2B407D1FB1DBFA005C5775 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE2B407F1FB1DBFA005C5775 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -92,6 +117,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43DBF2C11FB3BE2400E1A96D /* Nimble.framework.dSYM in Frameworks */,
+				43DBF2C31FB3BE2600E1A96D /* Quick.framework.dSYM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +139,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43DBF2BF1FB3BE2400E1A96D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43DBF2C21FB3BE2600E1A96D /* Quick.framework.dSYM */,
+				43DBF2C01FB3BE2400E1A96D /* Nimble.framework.dSYM */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EE2B40711FB1DBFA005C5775 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +158,7 @@
 				EE2B40971FB1DBFA005C5775 /* TamagotchiTests */,
 				EE2B40A21FB1DBFA005C5775 /* TamagotchiUITests */,
 				EE2B407B1FB1DBFA005C5775 /* Products */,
+				43DBF2BF1FB3BE2400E1A96D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -272,6 +309,8 @@
 				EE2B40761FB1DBFA005C5775 /* Sources */,
 				EE2B40771FB1DBFA005C5775 /* Frameworks */,
 				EE2B40781FB1DBFA005C5775 /* Resources */,
+				43DBF2C41FB3BE7800E1A96D /* CopyFiles */,
+				43DBF2CB1FB3BF6700E1A96D /* CopyFiles */,
 			);
 			buildRules = (
 			);
