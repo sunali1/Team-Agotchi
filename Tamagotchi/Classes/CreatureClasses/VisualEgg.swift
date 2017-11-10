@@ -53,8 +53,7 @@ class VisualEgg: SKSpriteNode {
     func jump() {
         self.physicsBody?.velocity = CGVector(dx:0, dy:50)
         self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 400))
-<<<<<<< HEAD
-=======
+
     }
     
     func crack(){
@@ -69,7 +68,6 @@ class VisualEgg: SKSpriteNode {
                 self.run(SKAction.animate(with: self.TextureArray, timePerFrame:1))
                 }
             }
->>>>>>> master
     }
     
     
