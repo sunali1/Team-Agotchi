@@ -32,6 +32,7 @@ class Lion {
     func eat(meal: String) -> String {
        stomachContents.append(meal)
         print(stomachContents)
+        return meal
     }
     
     func hungerStatus() -> String {
@@ -45,7 +46,7 @@ class Lion {
     }
     
     func timeTracker(time: Int) -> Int {
-        
+        return time
     }
     
     func awakeStatus() -> String {
@@ -58,6 +59,8 @@ class Lion {
             // depends on the age on the lion.
             // perhaps use a hash, key day, value sleep or nil.
         }
+        
+        return "Placeholdertext"
     }
     
     func sleep() {
