@@ -13,7 +13,6 @@
 		EE2B407E1FB1DBFA005C5775 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2B407D1FB1DBFA005C5775 /* AppDelegate.swift */; };
 		EE2B40821FB1DBFA005C5775 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = EE2B40811FB1DBFA005C5775 /* Actions.sks */; };
 		EE2B40861FB1DBFA005C5775 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2B40851FB1DBFA005C5775 /* GameViewController.swift */; };
-		EE2B408B1FB1DBFA005C5775 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE2B408A1FB1DBFA005C5775 /* Assets.xcassets */; };
 		EE2B408E1FB1DBFA005C5775 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2B408C1FB1DBFA005C5775 /* LaunchScreen.storyboard */; };
 		EE2B40A41FB1DBFA005C5775 /* TamagotchiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2B40A31FB1DBFA005C5775 /* TamagotchiUITests.swift */; };
 		EE2B40B21FB1DC42005C5775 /* EggTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2B40B11FB1DC42005C5775 /* EggTests.swift */; };
@@ -21,6 +20,8 @@
 		EEC1E2661FB5C4EA005606E4 /* Lion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC1E2651FB5C4EA005606E4 /* Lion.swift */; };
 		EEC1E2681FB5C524005606E4 /* VisualLion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC1E2671FB5C524005606E4 /* VisualLion.swift */; };
 		EEC1E26B1FB5C8DD005606E4 /* lion.png in Resources */ = {isa = PBXBuildFile; fileRef = EEC1E26A1FB5C8DD005606E4 /* lion.png */; };
+		FA0174D61FB74D8A00A84D50 /* Hat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0174D51FB74D8A00A84D50 /* Hat.swift */; };
+		FA0174D81FB752CB00A84D50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0174D71FB752CB00A84D50 /* Assets.xcassets */; };
 		FA09AAF21FB5920B003C6C20 /* VisualEgg.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09AAF11FB5920B003C6C20 /* VisualEgg.swift */; };
 		FA09AAFC1FB59287003C6C20 /* crack2.png in Resources */ = {isa = PBXBuildFile; fileRef = FA09AAF51FB59286003C6C20 /* crack2.png */; };
 		FA09AAFD1FB59287003C6C20 /* 1276572-200.png in Resources */ = {isa = PBXBuildFile; fileRef = FA09AAF61FB59286003C6C20 /* 1276572-200.png */; };
@@ -82,7 +83,6 @@
 		EE2B407D1FB1DBFA005C5775 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE2B40811FB1DBFA005C5775 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		EE2B40851FB1DBFA005C5775 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		EE2B408A1FB1DBFA005C5775 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE2B408D1FB1DBFA005C5775 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE2B408F1FB1DBFA005C5775 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE2B40941FB1DBFA005C5775 /* TamagotchiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TamagotchiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +95,8 @@
 		EEC1E2651FB5C4EA005606E4 /* Lion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lion.swift; sourceTree = "<group>"; };
 		EEC1E2671FB5C524005606E4 /* VisualLion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualLion.swift; sourceTree = "<group>"; };
 		EEC1E26A1FB5C8DD005606E4 /* lion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lion.png; sourceTree = "<group>"; };
+		FA0174D51FB74D8A00A84D50 /* Hat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hat.swift; sourceTree = "<group>"; };
+		FA0174D71FB752CB00A84D50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA09AAF11FB5920B003C6C20 /* VisualEgg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEgg.swift; sourceTree = "<group>"; };
 		FA09AAF51FB59286003C6C20 /* crack2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crack2.png; sourceTree = "<group>"; };
 		FA09AAF61FB59286003C6C20 /* 1276572-200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1276572-200.png"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		EE2B40711FB1DBFA005C5775 = {
 			isa = PBXGroup;
 			children = (
+				FA0174D71FB752CB00A84D50 /* Assets.xcassets */,
 				FA09AAF31FB59264003C6C20 /* Assets */,
 				FA09AAF01FB591EA003C6C20 /* Scenes */,
 				FA09AAEF1FB591CA003C6C20 /* Classes */,
@@ -175,7 +178,6 @@
 				EE2B40851FB1DBFA005C5775 /* GameViewController.swift */,
 				FA09AB091FB594CD003C6C20 /* Main.storyboard */,
 				FA8908431FB3461200C31387 /* basicStatsModelView.swift */,
-				EE2B408A1FB1DBFA005C5775 /* Assets.xcassets */,
 				FA09AB161FB5CD2E003C6C20 /* Cracking.atlas */,
 				EE2B408C1FB1DBFA005C5775 /* LaunchScreen.storyboard */,
 				EE2B408F1FB1DBFA005C5775 /* Info.plist */,
@@ -209,9 +211,18 @@
 			path = Lion;
 			sourceTree = "<group>";
 		};
+		FA0174D41FB74D7400A84D50 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				FA0174D51FB74D8A00A84D50 /* Hat.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 		FA09AAEF1FB591CA003C6C20 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FA0174D41FB74D7400A84D50 /* Items */,
 				FA09AB151FB59A00003C6C20 /* Manager */,
 				FA09AB061FB593D1003C6C20 /* CreatureClasses */,
 				FA09AB051FB593A9003C6C20 /* SceneClasses */,
@@ -298,7 +309,6 @@
 		FA3938EA1FB5FA9D00F30E31 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -415,7 +425,6 @@
 			files = (
 				FA09AB021FB59287003C6C20 /* 1175536-200.png in Resources */,
 				53F5B78E1FB5F57F00556CD5 /* Blue 1.png in Resources */,
-				EE2B408B1FB1DBFA005C5775 /* Assets.xcassets in Resources */,
 				53F5B78F1FB5F57F00556CD5 /* Pause Menu.png in Resources */,
 				EE2B408E1FB1DBFA005C5775 /* LaunchScreen.storyboard in Resources */,
 				FA09AAFF1FB59287003C6C20 /* 1175533-200.png in Resources */,
@@ -428,6 +437,7 @@
 				EEC1E26B1FB5C8DD005606E4 /* lion.png in Resources */,
 				EE2B40821FB1DBFA005C5775 /* Actions.sks in Resources */,
 				FA09AAFD1FB59287003C6C20 /* 1276572-200.png in Resources */,
+				FA0174D81FB752CB00A84D50 /* Assets.xcassets in Resources */,
 				FA09AB011FB59287003C6C20 /* 1175530-200.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE2B40861FB1DBFA005C5775 /* GameViewController.swift in Sources */,
+				FA0174D61FB74D8A00A84D50 /* Hat.swift in Sources */,
 				EEC1E2681FB5C524005606E4 /* VisualLion.swift in Sources */,
 				FA8908441FB3461200C31387 /* basicStatsModelView.swift in Sources */,
 				FA09AAF21FB5920B003C6C20 /* VisualEgg.swift in Sources */,
