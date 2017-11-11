@@ -11,18 +11,21 @@ import SpriteKit
 class GameplayScene: SKScene {
     
     var eggTexture = SKTexture();
-    var creature = SKSpriteNode()
+    
+    var canMove = false;
+    var moveLeft = false;
+    var center = CGFloat();
     var temperatureBtn = SKSpriteNode();
     let eggSprite = VisualEgg();
     let hatSprite = Hat();  
-    let lionSprite = VisualLion();
+    var lionSprite = VisualLion();
     var viewController: GameViewController!
 //    lazy var lion = self.viewController.gameManager.lion
     lazy var egg = self.viewController.gameManager.egg
     
     func initialize() {
         createTemperatureBtn()
-        createCreature()
+        
     }
     
     override func didMove(to view: SKView) {
@@ -42,13 +45,25 @@ class GameplayScene: SKScene {
 
         print(egg.cracked)
         initialize()
+        
+        //addChild(lionSprite)
+        center = CGFloat((self.scene?.size.width)!) / CGFloat((self.scene?.size.height)!)
     }
-    
+    override func update(_ currentTime: TimeInterval){
+        manageLionSprite();
+    }
  
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             
             let location = touch.location(in: self);
+            
+            if location.x > center{
+                moveLeft = false;
+            } else {
+                moveLeft = true;
+            }
+            canMove = true;
             
             if atPoint(location).name == "visualLionInstance"{
                 print("You touched a Lion")
@@ -98,6 +113,7 @@ class GameplayScene: SKScene {
                 hatSprite.position = (touch.location(in:self))
             }
         }
+        canMove = false;
     }
     
     
@@ -113,14 +129,10 @@ class GameplayScene: SKScene {
         print(egg.cracked)
     }
     
-    func createCreature() {
-        let creature = SKSpriteNode(imageNamed: "Blue 1")
-        creature.name = "Trump";
-        creature.zPosition = 1
-        creature.anchorPoint = CGPoint(x: 0.5, y: 0.5);
-        creature.position = CGPoint(x: 0, y: 0);
-        creature.size = CGSize(width: 100, height: 100);
-        self.addChild(creature);
+    func manageLionSprite() {
+        if canMove{
+            lionSprite.moveVisualLion(moveLeft: moveLeft);
+        }
     }
     
     func createTemperatureBtn() {
