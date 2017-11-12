@@ -71,6 +71,7 @@ class Lion {
     }
     
     func sleep() {
+
         // if time creature has been awake for 4 'hours', it needs to sleep, and this makes it sleep.
         // will sleep for a set time.
     }
