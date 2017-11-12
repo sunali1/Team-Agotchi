@@ -10,6 +10,7 @@
 		53F5B78A1FB5F0A000556CD5 /* Forest BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 53F5B7891FB5F0A000556CD5 /* Forest BG.png */; };
 		53F5B78E1FB5F57F00556CD5 /* Blue 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 53F5B78C1FB5F57F00556CD5 /* Blue 1.png */; };
 		53F5B78F1FB5F57F00556CD5 /* Pause Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 53F5B78D1FB5F57F00556CD5 /* Pause Menu.png */; };
+		E8B304B01FB86E3F00F879F5 /* LionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B304AF1FB86E3F00F879F5 /* LionTests.swift */; };
 		EE2B407E1FB1DBFA005C5775 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2B407D1FB1DBFA005C5775 /* AppDelegate.swift */; };
 		EE2B40821FB1DBFA005C5775 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = EE2B40811FB1DBFA005C5775 /* Actions.sks */; };
 		EE2B40861FB1DBFA005C5775 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2B40851FB1DBFA005C5775 /* GameViewController.swift */; };
@@ -83,6 +84,7 @@
 		53F5B7891FB5F0A000556CD5 /* Forest BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Forest BG.png"; sourceTree = "<group>"; };
 		53F5B78C1FB5F57F00556CD5 /* Blue 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blue 1.png"; sourceTree = "<group>"; };
 		53F5B78D1FB5F57F00556CD5 /* Pause Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pause Menu.png"; sourceTree = "<group>"; };
+		E8B304AF1FB86E3F00F879F5 /* LionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LionTests.swift; sourceTree = "<group>"; };
 		EE2B407A1FB1DBFA005C5775 /* Tamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE2B407D1FB1DBFA005C5775 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE2B40811FB1DBFA005C5775 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				EE2B409A1FB1DBFA005C5775 /* Info.plist */,
 				EE2B40B11FB1DC42005C5775 /* EggTests.swift */,
+				E8B304AF1FB86E3F00F879F5 /* LionTests.swift */,
 			);
 			path = TamagotchiTests;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE2B40B21FB1DC42005C5775 /* EggTests.swift in Sources */,
+				E8B304B01FB86E3F00F879F5 /* LionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

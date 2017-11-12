@@ -28,6 +28,10 @@ class Lion {
     }
     
     
+    func lionStartsHungry() -> Bool {
+        return true
+    }
+    
     func eat(meal: String) -> String {
        stomachContents.append(meal)
         print(stomachContents)
