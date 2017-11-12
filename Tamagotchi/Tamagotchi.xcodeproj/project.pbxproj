@@ -21,6 +21,8 @@
 		EEC1E2661FB5C4EA005606E4 /* Lion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC1E2651FB5C4EA005606E4 /* Lion.swift */; };
 		EEC1E2681FB5C524005606E4 /* VisualLion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC1E2671FB5C524005606E4 /* VisualLion.swift */; };
 		EEC1E26B1FB5C8DD005606E4 /* lion.png in Resources */ = {isa = PBXBuildFile; fileRef = EEC1E26A1FB5C8DD005606E4 /* lion.png */; };
+		EEDB22C01FB8A8AE00B27F81 /* sleep.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22BF1FB8A8AE00B27F81 /* sleep.png */; };
+		EEDB22C21FB8AA0500B27F81 /* awake.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22C11FB8AA0400B27F81 /* awake.png */; };
 		FA0174D61FB74D8A00A84D50 /* Hat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0174D51FB74D8A00A84D50 /* Hat.swift */; };
 		FA0174D81FB752CB00A84D50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0174D71FB752CB00A84D50 /* Assets.xcassets */; };
 		FA09AAF21FB5920B003C6C20 /* VisualEgg.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09AAF11FB5920B003C6C20 /* VisualEgg.swift */; };
@@ -101,6 +103,8 @@
 		EEC1E2651FB5C4EA005606E4 /* Lion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lion.swift; sourceTree = "<group>"; };
 		EEC1E2671FB5C524005606E4 /* VisualLion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualLion.swift; sourceTree = "<group>"; };
 		EEC1E26A1FB5C8DD005606E4 /* lion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lion.png; sourceTree = "<group>"; };
+		EEDB22BF1FB8A8AE00B27F81 /* sleep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sleep.png; sourceTree = "<group>"; };
+		EEDB22C11FB8AA0400B27F81 /* awake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awake.png; sourceTree = "<group>"; };
 		FA0174D51FB74D8A00A84D50 /* Hat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hat.swift; sourceTree = "<group>"; };
 		FA0174D71FB752CB00A84D50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA09AAF11FB5920B003C6C20 /* VisualEgg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEgg.swift; sourceTree = "<group>"; };
@@ -252,6 +256,8 @@
 		FA09AAF31FB59264003C6C20 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				EEDB22BF1FB8A8AE00B27F81 /* sleep.png */,
+				EEDB22C11FB8AA0400B27F81 /* awake.png */,
 				FAB9489D1FB88BF60059D28D /* Sounds */,
 				FAB9489B1FB88BDC0059D28D /* Girl */,
 				FAB948991FB88BCB0059D28D /* Santa */,
@@ -443,8 +449,10 @@
 				53F5B78F1FB5F57F00556CD5 /* Pause Menu.png in Resources */,
 				EE2B408E1FB1DBFA005C5775 /* LaunchScreen.storyboard in Resources */,
 				FA09AAFF1FB59287003C6C20 /* 1175533-200.png in Resources */,
+				EEDB22C21FB8AA0500B27F81 /* awake.png in Resources */,
 				FA09AB001FB59287003C6C20 /* 1261295-200.png in Resources */,
 				FA09AAFC1FB59287003C6C20 /* crack2.png in Resources */,
+				EEDB22C01FB8A8AE00B27F81 /* sleep.png in Resources */,
 				FA09AB0A1FB594CE003C6C20 /* Main.storyboard in Resources */,
 				FA09AAFE1FB59287003C6C20 /* crack1.png in Resources */,
 				FA09AB081FB5941B003C6C20 /* GameplayScene.sks in Resources */,

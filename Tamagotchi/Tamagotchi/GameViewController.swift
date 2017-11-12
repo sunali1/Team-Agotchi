@@ -13,16 +13,27 @@ import GameplayKit
 class GameViewController: UIViewController {
     
     let gameManager = GameManager()
-    var ageTracker = Timer()
-    var age = 6
     
+    @IBOutlet weak var ageLabel: UILabel!
+    
+    var age = 6
+    var ageTracker = Timer()
+    
+    @IBAction func wake(_ sender: UIButton) {
+        ageTracker = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)    //runs updateAge function once every 60 seconds. So one minute in time equals 1 day in age
+    }
+    
+    @IBAction func sleep(_ sender: UIButton) {
+        ageTracker.invalidate()
+    }
     
     @objc func runAgeTracker() {
-        ageTracker = Timer.scheduledTimer(timeInterval: 60, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)    //runs updateAge function once every 60 seconds. So one minute in time equals 1 day in age
+        
     }
 
     @objc func updateAge() {
         age += 1
+        ageLabel.text = String(age)
     }
     
     override func viewDidLoad() {
