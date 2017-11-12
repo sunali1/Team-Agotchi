@@ -11,16 +11,21 @@ import SpriteKit
 class GameplayScene: SKScene {
     
     var eggTexture = SKTexture();
-    var creature = SKSpriteNode()
+    
+    var canMove = false;
+    var moveLeft = false;
+    var center = CGFloat();
     var temperatureBtn = SKSpriteNode();
     let eggSprite = VisualEgg();
-    let lionSprite = VisualLion();
+    let hatSprite = Hat();  
+    var lionSprite = VisualLion();
     var viewController: GameViewController!
-    lazy var lion = self.viewController.gameManager.lion
+//    lazy var lion = self.viewController.gameManager.lion
     lazy var egg = self.viewController.gameManager.egg
+    
     func initialize() {
         createTemperatureBtn()
-        createCreature()
+        
     }
     
     override func didMove(to view: SKView) {
@@ -32,23 +37,33 @@ class GameplayScene: SKScene {
         self.physicsBody = sceneBody
 
         addChild(eggSprite);
-        
-        
+        addChild(hatSprite);
+        eggSprite.initialize();
+        hatSprite.initialize();
         
         print("2+2=5 is \(egg.cracked)")
-        
-        eggSprite.initialize();
-        lionSprite.initialize();
 
         print(egg.cracked)
         initialize()
+        
+        //addChild(lionSprite)
+        center = CGFloat((self.scene?.size.width)!) / CGFloat((self.scene?.size.height)!)
     }
-    
+    override func update(_ currentTime: TimeInterval){
+        manageLionSprite();
+    }
  
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             
             let location = touch.location(in: self);
+            
+            if location.x > center{
+                moveLeft = false;
+            } else {
+                moveLeft = true;
+            }
+            canMove = true;
             
             if atPoint(location).name == "visualLionInstance"{
                 print("You touched a Lion")
@@ -60,11 +75,9 @@ class GameplayScene: SKScene {
                 print(egg.helpEgg(item: "Hat"))
                 print(egg.temp)
                 if egg.temp > 18 {
-                    
-                    eggSprite.crack(innerFunction: { self.addChild(self.lionSprite)})
-                
-                    egg.cracked = true
-                    print(egg.cracked)
+                    crackEgg()
+                    hatchLion()
+                    print(self.viewController.gameManager.lion.temp)
                 }
             }
             if atPoint(location).name == "temperature" {
@@ -72,17 +85,54 @@ class GameplayScene: SKScene {
                 incrementTemperature()
                 print(egg.temp)
             }
+            
+            if atPoint(location).name == "Hat"{
+                print("You touched the hat")
+                let location = touch.location(in: self)
+                if hatSprite.contains(location) {
+                    hatSprite.position = location
+                }
+            }
         }
     }
     
-    func createCreature() {
-        let creature = SKSpriteNode(imageNamed: "Blue 1")
-        creature.name = "Trump";
-        creature.zPosition = 1
-        creature.anchorPoint = CGPoint(x: 0.5, y: 0.5);
-        creature.position = CGPoint(x: 0, y: 0);
-        creature.size = CGSize(width: 100, height: 100);
-        self.addChild(creature);
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            let location = touch.location(in: self);
+            if atPoint(location).name == "Hat"{
+                let touch = touches.first
+                hatSprite.position = (touch?.location(in:self))!
+            }
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+         for touch in touches {
+             let location = touch.location(in: self);
+            if atPoint(location).name == "Hat"{
+                hatSprite.position = (touch.location(in:self))
+            }
+        }
+        canMove = false;
+    }
+    
+    
+    func hatchLion(){
+        self.viewController.gameManager.lion = Lion(size: 10, age: 6, temp: 15, hungry: true, bursting: false)
+    }
+
+    func crackEgg(){
+        eggSprite.crack(innerFunction: { self.addChild(self.lionSprite)
+            self.lionSprite.initialize();
+        })
+        egg.cracked = true
+        print(egg.cracked)
+    }
+    
+    func manageLionSprite() {
+        if canMove{
+            lionSprite.moveVisualLion(moveLeft: moveLeft);
+        }
     }
     
     func createTemperatureBtn() {

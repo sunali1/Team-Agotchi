@@ -13,7 +13,18 @@ import GameplayKit
 class GameViewController: UIViewController {
     
     let gameManager = GameManager()
+    var ageTracker = Timer()
+    var age = 6
+    
+    
+    @objc func runAgeTracker() {
+        ageTracker = Timer.scheduledTimer(timeInterval: 60, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)    //runs updateAge function once every 60 seconds. So one minute in time equals 1 day in age
+    }
 
+    @objc func updateAge() {
+        age += 1
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
