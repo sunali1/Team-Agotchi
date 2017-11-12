@@ -10,7 +10,7 @@ import XCTest
 @testable import Tamagotchi
 
 class EggTests: XCTestCase {
-    let egg = Egg()
+    let egg = Egg(size: 10, age: 0, temp: 15, cracked: false)
     
     override func setUp() {
         super.setUp()

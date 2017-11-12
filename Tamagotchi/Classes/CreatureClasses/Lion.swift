@@ -17,7 +17,6 @@ class Lion {
     var bursting: Bool
     var stomachContents: [String] = []
     var awake: Bool
-    let now = NSDate()
     
     init(size: Int, age: Int, temp: Int, hungry: Bool, bursting: Bool) {
         self.size = size;
@@ -43,6 +42,10 @@ class Lion {
         } else {
             return ""
         }
+    }
+    
+    func updateAge() {
+        age += 1
     }
     
     func timeTracker(time: Int) -> Int {
