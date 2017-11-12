@@ -35,6 +35,10 @@
 		FA09AB0A1FB594CE003C6C20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA09AB091FB594CD003C6C20 /* Main.storyboard */; };
 		FA09AB141FB599F7003C6C20 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09AB131FB599F7003C6C20 /* GameManager.swift */; };
 		FA8908441FB3461200C31387 /* basicStatsModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8908431FB3461200C31387 /* basicStatsModelView.swift */; };
+		FAB948971FB88B930059D28D /* Dog in Resources */ = {isa = PBXBuildFile; fileRef = FAB948961FB88B930059D28D /* Dog */; };
+		FAB9489A1FB88BCC0059D28D /* Santa in Resources */ = {isa = PBXBuildFile; fileRef = FAB948991FB88BCB0059D28D /* Santa */; };
+		FAB9489C1FB88BDC0059D28D /* Girl in Resources */ = {isa = PBXBuildFile; fileRef = FAB9489B1FB88BDC0059D28D /* Girl */; };
+		FAB9489E1FB88BF60059D28D /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = FAB9489D1FB88BF60059D28D /* Sounds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +114,10 @@
 		FA09AB091FB594CD003C6C20 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FA09AB131FB599F7003C6C20 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		FA8908431FB3461200C31387 /* basicStatsModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicStatsModelView.swift; sourceTree = "<group>"; };
+		FAB948961FB88B930059D28D /* Dog */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Dog; sourceTree = "<group>"; };
+		FAB948991FB88BCB0059D28D /* Santa */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Santa; sourceTree = "<group>"; };
+		FAB9489B1FB88BDC0059D28D /* Girl */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Girl; sourceTree = "<group>"; };
+		FAB9489D1FB88BF60059D28D /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +249,10 @@
 		FA09AAF31FB59264003C6C20 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				FAB9489D1FB88BF60059D28D /* Sounds */,
+				FAB9489B1FB88BDC0059D28D /* Girl */,
+				FAB948991FB88BCB0059D28D /* Santa */,
+				FAB948961FB88B930059D28D /* Dog */,
 				EEC1E2691FB5C590005606E4 /* Lion */,
 				FA09AB111FB59612003C6C20 /* Background */,
 				FA09AAF41FB5926A003C6C20 /* Egg */,
@@ -433,9 +445,13 @@
 				FA09AB0A1FB594CE003C6C20 /* Main.storyboard in Resources */,
 				FA09AAFE1FB59287003C6C20 /* crack1.png in Resources */,
 				FA09AB081FB5941B003C6C20 /* GameplayScene.sks in Resources */,
+				FAB9489E1FB88BF60059D28D /* Sounds in Resources */,
 				53F5B78A1FB5F0A000556CD5 /* Forest BG.png in Resources */,
 				EEC1E26B1FB5C8DD005606E4 /* lion.png in Resources */,
+				FAB9489A1FB88BCC0059D28D /* Santa in Resources */,
+				FAB9489C1FB88BDC0059D28D /* Girl in Resources */,
 				EE2B40821FB1DBFA005C5775 /* Actions.sks in Resources */,
+				FAB948971FB88B930059D28D /* Dog in Resources */,
 				FA09AAFD1FB59287003C6C20 /* 1276572-200.png in Resources */,
 				FA0174D81FB752CB00A84D50 /* Assets.xcassets in Resources */,
 				FA09AB011FB59287003C6C20 /* 1175530-200.png in Resources */,
