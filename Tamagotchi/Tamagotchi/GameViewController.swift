@@ -17,9 +17,10 @@ class GameViewController: UIViewController {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var thermometer: UIImageView!
-    
     @IBOutlet weak var meals: UILabel!
-    
+    @IBOutlet weak var IceCreamOne: UIImageView!
+    @IBOutlet weak var IceCreamTwo: UIImageView!
+    @IBOutlet weak var IceCreamThree: UIImageView!
     
     var age = 6
     var mealsCount = 0
@@ -48,7 +49,16 @@ class GameViewController: UIViewController {
         ageActivated = false
     }
     
-
+    @IBAction func poo(_ sender: Any) {
+        mealsCount = 0
+        gameManager.lion.pooNow()
+        meals.text = String(mealsCount)
+        IceCreamOne.image = UIImage(named: "icecreamfour.png")
+        IceCreamTwo.image = UIImage(named: "icecreamfour.png")
+        IceCreamThree.image = UIImage(named: "icecreamfour.png")
+        
+    }
+    
     @IBAction func updatemeal(_ sender: Any) {
         if mealsCount == 3 {
             return print("I'm full!")
@@ -56,6 +66,17 @@ class GameViewController: UIViewController {
         gameManager.lion.eat(meal: "kiwi")
         mealsCount += 1
         meals.text = String(mealsCount)
+        if mealsCount == 1 {
+            IceCreamOne.image = UIImage(named: "icecreamone.png")
+        } else if mealsCount == 2 {
+            IceCreamOne.image = UIImage(named: "icecreamone.png")
+            IceCreamTwo.image = UIImage(named: "icecreamtwo.png")
+        } else {
+            IceCreamOne.image = UIImage(named: "icecreamone.png")
+            IceCreamTwo.image = UIImage(named: "icecreamtwo.png")
+            IceCreamThree.image = UIImage(named: "icecreamthree.png")
+        }
+        
     }
 
     @objc func updateAge() {
@@ -116,6 +137,12 @@ class GameViewController: UIViewController {
     func hideEggUI(){
         self.tempLabel.isHidden = true
         self.thermometer.isHidden = true
+    }
+    
+    func hideFoodUI() {
+        self.IceCreamOne.isHidden = true
+        self.IceCreamOne.isHidden = true
+        self.IceCreamOne.isHidden = true 
     }
     
     func resizeRetextureEggToHatEgg(){

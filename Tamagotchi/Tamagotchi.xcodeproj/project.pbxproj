@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43382B601FB9F5F0000EE75F /* icecreamfour.png in Resources */ = {isa = PBXBuildFile; fileRef = 43382B5C1FB9F5ED000EE75F /* icecreamfour.png */; };
+		43382B611FB9F5F0000EE75F /* icecreamthree.png in Resources */ = {isa = PBXBuildFile; fileRef = 43382B5D1FB9F5ED000EE75F /* icecreamthree.png */; };
+		43382B621FB9F5F0000EE75F /* icecreamtwo.png in Resources */ = {isa = PBXBuildFile; fileRef = 43382B5E1FB9F5EE000EE75F /* icecreamtwo.png */; };
+		43382B631FB9F5F0000EE75F /* icecreamone.png in Resources */ = {isa = PBXBuildFile; fileRef = 43382B5F1FB9F5EF000EE75F /* icecreamone.png */; };
 		53F5B78A1FB5F0A000556CD5 /* Forest BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 53F5B7891FB5F0A000556CD5 /* Forest BG.png */; };
 		53F5B78E1FB5F57F00556CD5 /* Blue 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 53F5B78C1FB5F57F00556CD5 /* Blue 1.png */; };
 		53F5B78F1FB5F57F00556CD5 /* Pause Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 53F5B78D1FB5F57F00556CD5 /* Pause Menu.png */; };
@@ -89,6 +93,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		43382B5C1FB9F5ED000EE75F /* icecreamfour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icecreamfour.png; sourceTree = "<group>"; };
+		43382B5D1FB9F5ED000EE75F /* icecreamthree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icecreamthree.png; sourceTree = "<group>"; };
+		43382B5E1FB9F5EE000EE75F /* icecreamtwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icecreamtwo.png; sourceTree = "<group>"; };
+		43382B5F1FB9F5EF000EE75F /* icecreamone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icecreamone.png; sourceTree = "<group>"; };
 		53F5B7891FB5F0A000556CD5 /* Forest BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Forest BG.png"; sourceTree = "<group>"; };
 		53F5B78C1FB5F57F00556CD5 /* Blue 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blue 1.png"; sourceTree = "<group>"; };
 		53F5B78D1FB5F57F00556CD5 /* Pause Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pause Menu.png"; sourceTree = "<group>"; };
@@ -233,6 +241,10 @@
 		EEC1E2691FB5C590005606E4 /* Lion */ = {
 			isa = PBXGroup;
 			children = (
+				43382B5C1FB9F5ED000EE75F /* icecreamfour.png */,
+				43382B5F1FB9F5EF000EE75F /* icecreamone.png */,
+				43382B5D1FB9F5ED000EE75F /* icecreamthree.png */,
+				43382B5E1FB9F5EE000EE75F /* icecreamtwo.png */,
 				EEC1E26A1FB5C8DD005606E4 /* lion.png */,
 			);
 			path = Lion;
@@ -480,6 +492,7 @@
 				53F5B78A1FB5F0A000556CD5 /* Forest BG.png in Resources */,
 				EEC1E26B1FB5C8DD005606E4 /* lion.png in Resources */,
 				FAB9489A1FB88BCC0059D28D /* Santa in Resources */,
+				43382B621FB9F5F0000EE75F /* icecreamtwo.png in Resources */,
 				FAB9489C1FB88BDC0059D28D /* Girl in Resources */,
 				EE2B40821FB1DBFA005C5775 /* Actions.sks in Resources */,
 				EEDB22D61FB8FD1200B27F81 /* poop.png in Resources */,
@@ -489,7 +502,10 @@
 				FA0174D81FB752CB00A84D50 /* Assets.xcassets in Resources */,
 				EEDB22DA1FB9012000B27F81 /* toy.png in Resources */,
 				FA09AB011FB59287003C6C20 /* 1175530-200.png in Resources */,
+				43382B611FB9F5F0000EE75F /* icecreamthree.png in Resources */,
+				43382B631FB9F5F0000EE75F /* icecreamone.png in Resources */,
 				EEDB22DC1FB9C4EC00B27F81 /* hat.png in Resources */,
+				43382B601FB9F5F0000EE75F /* icecreamfour.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
