@@ -16,10 +16,10 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     var center = CGFloat();
     let eggSprite = VisualEgg();
     var lionSprite = VisualLion();
-    var cat = Cat();
     var pooArray: [VisualPoo] = []
     var viewController: GameViewController!
     lazy var egg = self.viewController.gameManager.egg
+    lazy var cat = self.viewController.gameManager.cat
     
 
     func initialize() {

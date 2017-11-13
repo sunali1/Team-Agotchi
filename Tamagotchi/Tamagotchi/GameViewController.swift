@@ -64,7 +64,11 @@ class GameViewController: UIViewController {
 
     }
 
-
+    @IBAction func play(_ sender: Any) {
+        gameManager.cat.flipCat()
+        print("I should be flipping!")
+    }
+    
     @IBAction func updatemeal(_ sender: Any) {
         if countStomachContents() >= 3 {
             self.poopVisual.isHidden = false
