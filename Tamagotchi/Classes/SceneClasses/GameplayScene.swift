@@ -8,16 +8,14 @@
 
 import SpriteKit
 
-class GameplayScene: SKScene {
+class GameplayScene: SKScene, SKPhysicsContactDelegate {
     
     var eggTexture = SKTexture();
-    
     var canMove = false;
     var moveLeft = false;
     var center = CGFloat();
     var temperatureBtn = SKSpriteNode();
     let eggSprite = VisualEgg();
-    let hatSprite = Hat();  
     var lionSprite = VisualLion();
     var viewController: GameViewController!
 //    lazy var lion = self.viewController.gameManager.lion
@@ -30,6 +28,8 @@ class GameplayScene: SKScene {
     
     override func didMove(to view: SKView) {
         
+        physicsWorld.contactDelegate = self
+        
         self.physicsWorld.gravity = CGVector(dx: 0, dy: -9.8)
         let sceneBody = SKPhysicsBody(edgeLoopFrom: self.frame)
         sceneBody.friction = 0;
@@ -37,9 +37,7 @@ class GameplayScene: SKScene {
         self.physicsBody = sceneBody
 
         addChild(eggSprite);
-        addChild(hatSprite);
         eggSprite.initialize();
-        hatSprite.initialize();
         
         print("2+2=5 is \(egg.cracked)")
 
@@ -86,35 +84,18 @@ class GameplayScene: SKScene {
                 print(egg.temp)
             }
             
-            if atPoint(location).name == "Hat"{
-                print("You touched the hat")
-                let location = touch.location(in: self)
-                if hatSprite.contains(location) {
-                    hatSprite.position = location
-                }
-            }
         }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
-            let location = touch.location(in: self);
-            if atPoint(location).name == "Hat"{
-                let touch = touches.first
-                hatSprite.position = (touch?.location(in:self))!
-            }
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-         for touch in touches {
-             let location = touch.location(in: self);
-            if atPoint(location).name == "Hat"{
-                hatSprite.position = (touch.location(in:self))
-            }
-        }
         canMove = false;
     }
+
     
     
     func hatchLion(){
@@ -122,11 +103,15 @@ class GameplayScene: SKScene {
     }
 
     func crackEgg(){
+        if egg.cracked == true {
+            return print("Egg already cracked")
+        }
         eggSprite.crack(innerFunction: { self.addChild(self.lionSprite)
             self.lionSprite.initialize();
         })
         egg.cracked = true
         print(egg.cracked)
+        self.viewController.hideEggUI()
     }
     
     func manageLionSprite() {

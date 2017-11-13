@@ -22,13 +22,12 @@ class Hat: SKSpriteNode {
         self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size);
         self.physicsBody?.affectedByGravity = true;
         self.physicsBody?.isDynamic = true;
-        self.physicsBody?.restitution = 0.5
+        self.physicsBody?.restitution = 0
         self.physicsBody?.allowsRotation = false;
         
-        self.physicsBody?.categoryBitMask = ColliderType.Egg;
+        self.physicsBody?.categoryBitMask = ColliderType.Hat;
         self.physicsBody?.collisionBitMask = ColliderType.Egg;
-        self.physicsBody?.collisionBitMask = ColliderType.World;
-        
+        self.physicsBody?.contactTestBitMask = ColliderType.Egg;
     }
-
+    
 }
