@@ -21,17 +21,15 @@ class GameViewController: UIViewController {
     @IBOutlet weak var meals: UILabel!
     
     
-    var age = 6
+    var age = 0
     var mealsCount = 0
     var ageActivated = true
     var ageTracker = Timer()
     var scene = GameplayScene(fileNamed: "GameplayScene")
     
     @IBAction func touchHatButton(_ sender: Any) {
-        //Reach into GameScene
-        // Tell GameScene's Visual Egg to change its texture to eggWithHat
-        gameManager.egg.helpEgg(item: "Hat")
-        tempLabel.text = "\(gameManager.egg.temp)°C"
+        gameManager.egg.wearingHat = true
+        updateTempLabel()
         resizeRetextureEggToHatEgg()
     }
     @IBAction func wake(_ sender: UIButton) {
@@ -61,6 +59,10 @@ class GameViewController: UIViewController {
     @objc func updateAge() {
         age += 1
         ageLabel.text = String(age)
+        if gameManager.egg.wearingHat == true {
+            gameManager.egg.temp += 1
+        }
+        updateTempLabel()
     }
     
     
@@ -68,7 +70,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tempLabel.text = "\(gameManager.egg.temp)°C"
+        updateTempLabel()
         
         ageTracker = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)
         
@@ -122,6 +124,10 @@ class GameViewController: UIViewController {
         scene?.eggSprite.texture = SKTexture(imageNamed: "eggWithHat.png")
         scene?.eggSprite.size = CGSize(width:200.0, height: 300.0)
         scene?.eggSprite.physicsBody = SKPhysicsBody(texture: (scene?.eggSprite.texture)!, size: (scene?.eggSprite.size)!);
+    }
+    
+    func updateTempLabel(){
+        tempLabel.text = "\(gameManager.egg.temp)°C"
     }
 
 }

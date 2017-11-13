@@ -68,6 +68,7 @@ class VisualEgg: SKSpriteNode {
         let returnToCenter = SKAction.rotate(toAngle:CGFloat(-Double.pi*2),duration:0.5)
         self.run(wobble){
             self.run(returnToCenter){
+                self.size = CGSize(width:200.0, height: 200.0)
                 self.run(SKAction.animate(with: self.TextureArray, timePerFrame:1)){
                     self.removeFromParent()
                     innerFunction()
