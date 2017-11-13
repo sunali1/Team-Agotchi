@@ -136,7 +136,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zha-gZ-Xv2">
-                                <rect key="frame" x="16" y="263" width="280" height="68"/>
+                                <rect key="frame" x="16" y="263" width="115" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.95294117649999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="50"/>
@@ -189,6 +189,7 @@
                         <outlet property="IceCreamThree" destination="uZ2-kW-724" id="UGP-aY-3cv"/>
                         <outlet property="IceCreamTwo" destination="4b6-fI-Rfd" id="bJU-g4-e0K"/>
                         <outlet property="ageLabel" destination="KJV-Rr-RL9" id="RhS-23-Ta8"/>
+                        <outlet property="feedVisual" destination="Xc8-PG-7Ye" id="alA-xX-Sma"/>
                         <outlet property="foodLabel" destination="WuB-3M-y7r" id="auA-gL-R1Z"/>
                         <outlet property="meals" destination="zha-gZ-Xv2" id="K2r-tI-RNZ"/>
                         <outlet property="poopVisual" destination="8ow-6M-42Z" id="AQd-Fb-nDJ"/>
