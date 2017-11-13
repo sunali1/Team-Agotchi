@@ -29,7 +29,6 @@ class Cat: SKSpriteNode {
         animateCatAction = SKAction.animate(with: self.catAnimation, timePerFrame: 0.08, resize: true, restore: false)
         print("The array has \(catAnimation[0]) elements")
     }
-    
     func animateCat(moveLeft: Bool) {
         
         if moveLeft {
@@ -45,7 +44,7 @@ class Cat: SKSpriteNode {
     func stopCatAnimation() {
         self.removeAction(forKey: "AnimateCat")
     }
-    
+  
     func moveCat(moveLeft: Bool) {
         if moveLeft {
             self.position.x -= 7;

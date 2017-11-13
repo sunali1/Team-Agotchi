@@ -11,6 +11,7 @@ import SpriteKit
 
 class VisualPoo: SKSpriteNode {
     
+
     func initialize(name: String, position: CGPoint ){
         self.name = name
         self.size = CGSize(width:100.0, height: 100.0)
