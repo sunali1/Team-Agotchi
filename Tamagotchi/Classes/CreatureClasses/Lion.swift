@@ -29,7 +29,8 @@ class Lion {
     
     
     func lionStartsHungry() -> Bool {
-        return true
+        hungry = true
+        return hungry
     }
     
     func eat(meal: String) -> String {
@@ -38,13 +39,22 @@ class Lion {
         return meal
     }
     
-    func hungerStatus() -> String {
+    func hungerStatus() -> Bool {
         if stomachContents.count <= 1 {
-            return "I am hungry!"
-        } else if stomachContents.count == 3 {
-            return "I am full!"
+            hungry = true
+            return hungry
         } else {
-            return ""
+            hungry = false
+            return hungry
+        }
+    }
+    
+    
+    func pooProduced() -> Bool {
+        if stomachContents.count == 3 {
+            return true
+        } else {
+            return false
         }
     }
     
