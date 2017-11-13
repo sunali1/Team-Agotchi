@@ -43,7 +43,6 @@
 		FA09AB081FB5941B003C6C20 /* GameplayScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FA09AB071FB5941B003C6C20 /* GameplayScene.sks */; };
 		FA09AB0A1FB594CE003C6C20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA09AB091FB594CD003C6C20 /* Main.storyboard */; };
 		FA09AB141FB599F7003C6C20 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09AB131FB599F7003C6C20 /* GameManager.swift */; };
-		FA776BB21FB9CFE300BF05E8 /* eggWithHat.png in Resources */ = {isa = PBXBuildFile; fileRef = FA776BB11FB9CFE300BF05E8 /* eggWithHat.png */; };
 		FA8908441FB3461200C31387 /* basicStatsModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8908431FB3461200C31387 /* basicStatsModelView.swift */; };
 		FAB948971FB88B930059D28D /* Dog in Resources */ = {isa = PBXBuildFile; fileRef = FAB948961FB88B930059D28D /* Dog */; };
 		FAB9489A1FB88BCC0059D28D /* Santa in Resources */ = {isa = PBXBuildFile; fileRef = FAB948991FB88BCB0059D28D /* Santa */; };
@@ -132,7 +131,6 @@
 		FA09AB071FB5941B003C6C20 /* GameplayScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameplayScene.sks; sourceTree = "<group>"; };
 		FA09AB091FB594CD003C6C20 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FA09AB131FB599F7003C6C20 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
-		FA776BB11FB9CFE300BF05E8 /* eggWithHat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eggWithHat.png; sourceTree = "<group>"; };
 		FA8908431FB3461200C31387 /* basicStatsModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicStatsModelView.swift; sourceTree = "<group>"; };
 		FAB948961FB88B930059D28D /* Dog */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Dog; sourceTree = "<group>"; };
 		FAB948991FB88BCB0059D28D /* Santa */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Santa; sourceTree = "<group>"; };
@@ -298,7 +296,6 @@
 			children = (
 				53F5B78C1FB5F57F00556CD5 /* Blue 1.png */,
 				53F5B78D1FB5F57F00556CD5 /* Pause Menu.png */,
-				FA776BB11FB9CFE300BF05E8 /* eggWithHat.png */,
 				FA09AAF61FB59286003C6C20 /* 1276572-200.png */,
 			);
 			path = Egg;
@@ -488,7 +485,6 @@
 				EEDB22D61FB8FD1200B27F81 /* poop.png in Resources */,
 				FAB948971FB88B930059D28D /* Dog in Resources */,
 				EEDB22C81FB8D36900B27F81 /* awake2.png in Resources */,
-				FA776BB21FB9CFE300BF05E8 /* eggWithHat.png in Resources */,
 				FA09AAFD1FB59287003C6C20 /* 1276572-200.png in Resources */,
 				FA0174D81FB752CB00A84D50 /* Assets.xcassets in Resources */,
 				EEDB22DA1FB9012000B27F81 /* toy.png in Resources */,
