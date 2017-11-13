@@ -124,6 +124,7 @@
                                 </connections>
                             </button>
 
+
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKb-DP-DC4">
                                 <rect key="frame" x="75" y="153" width="76" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -181,6 +182,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
 
+
                             <button opaque="NO" clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ow-6M-42Z">
                                 <rect key="frame" x="290" y="136" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -226,6 +228,7 @@
         <image name="food.png" width="933" height="935"/>
         <image name="hat.png" width="459" height="436"/>
         <image name="icecreamfour.png" width="100" height="100"/>
+
         <image name="poop" width="278" height="349"/>
         <image name="sleep.png" width="225" height="225"/>
         <image name="temperature.png" width="224" height="609"/>

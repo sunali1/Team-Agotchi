@@ -17,7 +17,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var thermometer: UIImageView!
-    @IBOutlet weak var meals: UILabel!
     @IBOutlet weak var IceCreamOne: UIImageView!
     @IBOutlet weak var IceCreamTwo: UIImageView!
     @IBOutlet weak var IceCreamThree: UIImageView!
@@ -64,8 +63,10 @@ class GameViewController: UIViewController {
 
     }
 
+
     @IBAction func updatemeal(_ sender: Any) {
-        if mealsCount == 3 {
+        if countStomachContents() >= 3 {
+            self.poopVisual.isHidden = false
             return print("I'm full!")
             self.poopVisual.isHidden = false
         }
@@ -82,6 +83,8 @@ class GameViewController: UIViewController {
             IceCreamTwo.image = UIImage(named: "icecreamtwo.png")
             IceCreamThree.image = UIImage(named: "icecreamthree.png")
         }
+
+        meals.text = String("\(countStomachContents())")
 
     }
 
@@ -159,6 +162,14 @@ class GameViewController: UIViewController {
         scene?.eggSprite.texture = SKTexture(imageNamed: "eggWithHat.png")
         scene?.eggSprite.size = CGSize(width:200.0, height: 300.0)
         scene?.eggSprite.physicsBody = SKPhysicsBody(texture: (scene?.eggSprite.texture)!, size: (scene?.eggSprite.size)!);
+    }
+    
+    func updateTempLabel(){
+        tempLabel.text = "\(gameManager.egg.temp)°C"
+    }
+    
+    func countStomachContents() -> Int {
+       return gameManager.lion.stomachContents.count
     }
 
     func updateTempLabel(){

@@ -11,11 +11,12 @@ import SpriteKit
 
 class VisualPoo: SKSpriteNode {
     
-    func initialize(){
-        self.name = "Poo"
+
+    func initialize(name: String, position: CGPoint ){
+        self.name = name
         self.size = CGSize(width:100.0, height: 100.0)
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        self.position = CGPoint(x: 100, y: -380)
+        self.position = position
         self.zPosition = 4;
         self.texture = SKTexture(imageNamed: "poop.png")
         

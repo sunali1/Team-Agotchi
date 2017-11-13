@@ -15,7 +15,7 @@ class Cat: SKSpriteNode {
     
     func initializeCatandAnimations(){
         self.name = "cat"
-        self.size = CGSize(width:150.0, height: 150.0)
+        self.size = CGSize(width:542.0, height: 474.0)
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.position = CGPoint(x: 0, y: -280)
         self.zPosition = 1;
@@ -44,6 +44,7 @@ class Cat: SKSpriteNode {
     func stopCatAnimation() {
         self.removeAction(forKey: "AnimateCat")
     }
+  
     func moveCat(moveLeft: Bool) {
         if moveLeft {
             self.position.x -= 7;
