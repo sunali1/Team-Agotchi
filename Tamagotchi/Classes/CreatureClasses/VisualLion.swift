@@ -41,12 +41,5 @@ class VisualLion: SKSpriteNode {
         self.physicsBody?.velocity = CGVector(dx:0, dy:50)
         self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 400))
     }
-    func moveVisualLion(moveLeft: Bool) {
-        if moveLeft {
-            self.position.x -= 7;
-        } else {
-            self.position.x += 7;
-        }
-    }
 }
 
