@@ -23,7 +23,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var feedVisual: UIButton!
     
     var age = 0
-    var mealsCount = 0
     var ageActivated = true
     var ageTracker = Timer()
     var scene = GameplayScene(fileNamed: "GameplayScene")
@@ -43,7 +42,6 @@ class GameViewController: UIViewController {
         ageActivated = true
     }
     
-    
     @IBAction func sleep(_ sender: UIButton) {
         ageTracker.invalidate()
         ageActivated = false
@@ -55,13 +53,12 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func updatemeal(_ sender: Any) {
-        if mealsCount == 3 {
-            return print("I'm full!")
+        if countStomachContents() >= 3 {
             self.poopVisual.isHidden = false
+            return print("I'm full!")
         }
         gameManager.lion.eat(meal: "kiwi")
-        mealsCount += 1
-        meals.text = String(mealsCount)
+        meals.text = String("\(countStomachContents())")
     }
 
     @objc func updateAge() {
@@ -136,6 +133,10 @@ class GameViewController: UIViewController {
     
     func updateTempLabel(){
         tempLabel.text = "\(gameManager.egg.temp)°C"
+    }
+    
+    func countStomachContents() -> Int {
+       return gameManager.lion.stomachContents.count
     }
 
 }

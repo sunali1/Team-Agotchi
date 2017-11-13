@@ -30,13 +30,10 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         sceneBody.friction = 0;
         self.physicsBody?.categoryBitMask = ColliderType.World;
         self.physicsBody = sceneBody
-
         addChild(eggSprite);
-        addChild(cat)
         eggSprite.initialize()
         print("2+2=5 is \(egg.cracked)")
         print(egg.cracked)
-        cat.initializeCatandAnimations()
         center = CGFloat((self.scene?.size.width)!) / CGFloat((self.scene?.size.height)!)
     }
     override func update(_ currentTime: TimeInterval){
@@ -90,13 +87,12 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         if egg.cracked == true {
             return print("Egg already cracked")
         }
-        eggSprite.crack(innerFunction: { self.addChild(self.lionSprite)
-            self.lionSprite.initialize();
+        eggSprite.crack(innerFunction: { self.addChild(self.cat)
+            self.cat.initializeCatandAnimations();
         })
         egg.cracked = true
         print(egg.cracked)
         self.viewController.hideEggUI()
-        self.viewController.poopVisual.isHidden = false
         self.viewController.feedVisual.isHidden = false
     }
     func manageCat() {
@@ -109,6 +105,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         if self.viewController.gameManager.lion.pooNow() {
             addChild(pooSprite)
             pooSprite.initialize()
+            self.viewController.meals.text = "\(self.viewController.gameManager.lion.stomachContents.count)"
         }
     }
 
