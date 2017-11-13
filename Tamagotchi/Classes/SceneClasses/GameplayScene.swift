@@ -23,6 +23,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     
     func initialize() {
         createTemperatureBtn()
+        self.viewController.hideFoodUI()
         
     }
     
@@ -99,6 +100,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     
     
     func hatchLion(){
+        self.viewController.showFoodUI()
         self.viewController.gameManager.lion = Lion(size: 10, age: 6, temp: 15, hungry: true, bursting: false)
     }
 

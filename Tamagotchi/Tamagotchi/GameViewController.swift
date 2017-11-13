@@ -18,6 +18,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var thermometer: UIImageView!
     @IBOutlet weak var meals: UILabel!
+    @IBOutlet weak var foodLabel: UILabel!
     @IBOutlet weak var IceCreamOne: UIImageView!
     @IBOutlet weak var IceCreamTwo: UIImageView!
     @IBOutlet weak var IceCreamThree: UIImageView!
@@ -139,10 +140,18 @@ class GameViewController: UIViewController {
         self.thermometer.isHidden = true
     }
     
+    func showFoodUI() {
+        self.IceCreamOne.isHidden = false
+        self.IceCreamTwo.isHidden = false
+        self.IceCreamThree.isHidden = false
+        self.foodLabel.isHidden = false
+    }
+    
     func hideFoodUI() {
         self.IceCreamOne.isHidden = true
-        self.IceCreamOne.isHidden = true
-        self.IceCreamOne.isHidden = true 
+        self.IceCreamTwo.isHidden = true
+        self.IceCreamThree.isHidden = true
+        self.foodLabel.isHidden = true
     }
     
     func resizeRetextureEggToHatEgg(){
