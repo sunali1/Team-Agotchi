@@ -33,9 +33,13 @@ class Lion {
         return hungry
     }
     
+    
     func eat(meal: String) -> String {
-       stomachContents.append(meal)
-        print(stomachContents)
+        if stomachContents.count <= 2 {
+            stomachContents.append(meal)
+        } else {
+            return "Stomach Full"
+        }
         return meal
     }
     

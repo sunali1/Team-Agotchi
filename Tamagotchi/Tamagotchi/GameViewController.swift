@@ -18,7 +18,11 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var tempLabel: UILabel!
     
+    @IBOutlet weak var meals: UILabel!
+    
+    
     var age = 6
+    var mealsCount = 0
     var ageActivated = true
     var ageTracker = Timer()
     
@@ -39,11 +43,23 @@ class GameViewController: UIViewController {
         ageTracker.invalidate()
         ageActivated = false
     }
+    
 
+    @IBAction func updatemeal(_ sender: Any) {
+        if mealsCount == 3 {
+            return print("I'm full!")
+        }
+        gameManager.lion.eat(meal: "kiwi")
+        mealsCount += 1
+        meals.text = String(mealsCount)
+    }
+    
     @objc func updateAge() {
         age += 1
         ageLabel.text = String(age)
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
