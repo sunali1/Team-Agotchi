@@ -18,12 +18,17 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var tempLabel: UILabel!
     
-    
     var age = 6
+    var ageActivated = true
     var ageTracker = Timer()
     
     @IBAction func wake(_ sender: UIButton) {
+        
+        if ageActivated == true{
+            return print("Age already active")
+        }
         ageTracker = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)    //runs updateAge function once every 1 seconds. So one minute in time equals 1 day in age
+        ageActivated = true
     }
     
     @IBAction func feed(_ sender: Any) {
@@ -32,6 +37,7 @@ class GameViewController: UIViewController {
     
     @IBAction func sleep(_ sender: UIButton) {
         ageTracker.invalidate()
+        ageActivated = false
     }
 
     @objc func updateAge() {
@@ -41,6 +47,9 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ageTracker = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)
+        
         
         
         if let view = self.view as! SKView? {
