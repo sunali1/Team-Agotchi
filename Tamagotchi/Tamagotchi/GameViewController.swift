@@ -25,6 +25,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var touchHatVisual: UIButton!
     @IBOutlet weak var poopVisual: UIButton!
     @IBOutlet weak var feedVisual: UIButton!
+    
 
     var age = 0
     var ageActivated = true
@@ -102,6 +103,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         self.poopVisual.isHidden = true
         self.feedVisual.isHidden = true
+        hideFoodUI()
         updateTempLabel()
 
         ageTracker = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)
