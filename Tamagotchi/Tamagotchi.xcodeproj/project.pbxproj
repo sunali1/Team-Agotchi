@@ -28,6 +28,7 @@
 		EEDB22D41FB8F42700B27F81 /* temperature.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22D31FB8F42700B27F81 /* temperature.png */; };
 		EEDB22D61FB8FD1200B27F81 /* poop.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22D51FB8FD1100B27F81 /* poop.png */; };
 		EEDB22DA1FB9012000B27F81 /* toy.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22D91FB9012000B27F81 /* toy.png */; };
+		EEDB22DC1FB9C4EC00B27F81 /* hat.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22DB1FB9C4EC00B27F81 /* hat.png */; };
 		FA0174D61FB74D8A00A84D50 /* Hat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0174D51FB74D8A00A84D50 /* Hat.swift */; };
 		FA0174D81FB752CB00A84D50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0174D71FB752CB00A84D50 /* Assets.xcassets */; };
 		FA09AAF21FB5920B003C6C20 /* VisualEgg.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09AAF11FB5920B003C6C20 /* VisualEgg.swift */; };
@@ -115,6 +116,7 @@
 		EEDB22D31FB8F42700B27F81 /* temperature.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temperature.png; sourceTree = "<group>"; };
 		EEDB22D51FB8FD1100B27F81 /* poop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poop.png; sourceTree = "<group>"; };
 		EEDB22D91FB9012000B27F81 /* toy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toy.png; sourceTree = "<group>"; };
+		EEDB22DB1FB9C4EC00B27F81 /* hat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hat.png; sourceTree = "<group>"; };
 		FA0174D51FB74D8A00A84D50 /* Hat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hat.swift; sourceTree = "<group>"; };
 		FA0174D71FB752CB00A84D50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA09AAF11FB5920B003C6C20 /* VisualEgg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEgg.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				EEDB22D31FB8F42700B27F81 /* temperature.png */,
 				EEDB22D51FB8FD1100B27F81 /* poop.png */,
 				EEDB22D91FB9012000B27F81 /* toy.png */,
+				EEDB22DB1FB9C4EC00B27F81 /* hat.png */,
 				FAB9489D1FB88BF60059D28D /* Sounds */,
 				FAB9489B1FB88BDC0059D28D /* Girl */,
 				FAB948991FB88BCB0059D28D /* Santa */,
@@ -486,6 +489,7 @@
 				FA0174D81FB752CB00A84D50 /* Assets.xcassets in Resources */,
 				EEDB22DA1FB9012000B27F81 /* toy.png in Resources */,
 				FA09AB011FB59287003C6C20 /* 1175530-200.png in Resources */,
+				EEDB22DC1FB9C4EC00B27F81 /* hat.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
