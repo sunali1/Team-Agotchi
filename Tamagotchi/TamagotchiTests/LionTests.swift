@@ -34,23 +34,29 @@ class LionTests: XCTestCase {
         XCTAssertTrue(lion.temp == 15)
     }
     
+    func testLionUpdateAge() {
+        lion.age = 1
+        lion.updateAge()
+        XCTAssertEqual(lion.age, 2)
+    }
+    
     func testLionHungerStatusStartsHungry() {
         let result = lion.lionStartsHungry()
         XCTAssertEqual(result, true)
     }
     
-//    func testLionIsNotHungry() {
-////        let _ = lion.eat(meal: "biltong");
-////        let _ = lion.eat(meal: "chicken");
-////        let _ = lion.eat(meal: "fish");
-//        let result = lion.hungerStatus()
-//        XCTAssertEqual(result, false )
-//    }
+    func testLionIsNotHungry() {
+        let _ = lion.eat(meal: "biltong");
+        let _ = lion.eat(meal: "chicken");
+        let _ = lion.eat(meal: "fish");
+        let result = lion.hungerStatus()
+        XCTAssertEqual(result, false)
+    }
     
     func testIfLionPoos() {
         let _ = lion.stomachContents = (["biltong", "chicken", "fish"])
-        let result = lion.pooProduced()
-        XCTAssertTrue(result, "true")
+        lion.pooNow()
+        XCTAssertEqual(lion.stomachContents , [])
     }
     
     func testLionMealsAreStored() {
@@ -59,7 +65,6 @@ class LionTests: XCTestCase {
         let _ = lion.eat(meal: "fish");
         XCTAssertEqual(lion.stomachContents, (["biltong", "chicken", "fish"]))
     }
-    
     
     func testLionCanEat() {
         let result = lion.eat(meal: "biltong")

@@ -49,14 +49,14 @@ class Lion {
         }
     }
     
-    
-    func pooProduced() -> Bool {
+    func pooNow() {
         if stomachContents.count == 3 {
-            return true
-        } else {
-            return false
+        stomachContents.removeAll()
         }
     }
+    
+
+
     
     func updateAge() {
         age += 1
