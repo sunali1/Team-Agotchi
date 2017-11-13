@@ -16,8 +16,8 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     var center = CGFloat();
     let eggSprite = VisualEgg();
     var lionSprite = VisualLion();
-    var pooSprite = VisualPoo();
     var cat = Cat();
+    var pooArray: [VisualPoo] = []
     var viewController: GameViewController!
     lazy var egg = self.viewController.gameManager.egg
     
@@ -103,8 +103,11 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     
     func pooQuery() {
         if self.viewController.gameManager.lion.pooNow() {
+            let pooSprite = VisualPoo()
+            pooArray.append(pooSprite)
             addChild(pooSprite)
-            pooSprite.initialize()
+            pooSprite.initialize(name:"Robin Collins", position: cat.position)
+            print(pooArray)
             self.viewController.meals.text = "\(self.viewController.gameManager.lion.stomachContents.count)"
         }
     }
