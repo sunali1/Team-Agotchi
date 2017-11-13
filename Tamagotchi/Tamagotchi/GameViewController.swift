@@ -52,9 +52,8 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func poo(_ sender: Any) {
-        mealsCount = 0
         gameManager.lion.pooNow()
-        meals.text = String(mealsCount)
+        meals.text = "\(countStomachContents())"
         IceCreamOne.image = UIImage(named: "icecreamfour.png")
         IceCreamTwo.image = UIImage(named: "icecreamfour.png")
         IceCreamThree.image = UIImage(named: "icecreamfour.png")
@@ -71,11 +70,10 @@ class GameViewController: UIViewController {
             self.poopVisual.isHidden = false
         }
         gameManager.lion.eat(meal: "kiwi")
-        mealsCount += 1
-        meals.text = String(mealsCount)
-        if mealsCount == 1 {
+
+        if countStomachContents() == 1 {
             IceCreamOne.image = UIImage(named: "icecreamone.png")
-        } else if mealsCount == 2 {
+        } else if countStomachContents() == 2 {
             IceCreamOne.image = UIImage(named: "icecreamone.png")
             IceCreamTwo.image = UIImage(named: "icecreamtwo.png")
         } else {
@@ -119,8 +117,8 @@ class GameViewController: UIViewController {
                 view.presentScene(scene)
 
             view.ignoresSiblingOrder = true
-            view.showsFPS = false
-            view.showsNodeCount = false
+            view.showsFPS = true
+            view.showsNodeCount = true
         }
 
 
@@ -170,10 +168,6 @@ class GameViewController: UIViewController {
     
     func countStomachContents() -> Int {
        return gameManager.lion.stomachContents.count
-    }
-
-    func updateTempLabel(){
-        tempLabel.text = "\(gameManager.egg.temp)°C"
     }
 
 }

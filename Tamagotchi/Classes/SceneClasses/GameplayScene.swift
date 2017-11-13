@@ -102,14 +102,12 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func pooQuery() {
-        if self.viewController.gameManager.lion.pooNow() {
-            let pooSprite = VisualPoo()
-            pooArray.append(pooSprite)
-            addChild(pooSprite)
-            pooSprite.initialize(name:"Robin Collins", position: cat.position)
-            print(pooArray)
-            self.viewController.meals.text = "\(self.viewController.gameManager.lion.stomachContents.count)"
-        }
+        let pooSprite = VisualPoo()
+        pooArray.append(pooSprite)
+        addChild(pooSprite)
+        pooSprite.initialize(name:"Robin Collins", position: cat.position)
+        print(pooArray)
+        self.viewController.meals.text = "\(self.viewController.gameManager.lion.stomachContents.count)"
     }
 
 }
