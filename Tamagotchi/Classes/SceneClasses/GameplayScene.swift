@@ -17,6 +17,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     var temperatureBtn = SKSpriteNode();
     let eggSprite = VisualEgg();
     var lionSprite = VisualLion();
+    var cat = Cat();
     var viewController: GameViewController!
 //    lazy var lion = self.viewController.gameManager.lion
     lazy var egg = self.viewController.gameManager.egg
@@ -36,18 +37,21 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         self.physicsBody = sceneBody
 
         addChild(eggSprite);
+        addChild(hatSprite);
+        addChild(cat)
         eggSprite.initialize();
+        hatSprite.initialize();
+
         
         print("2+2=5 is \(egg.cracked)")
 
         print(egg.cracked)
         initialize()
-        
-        //addChild(lionSprite)
+        cat.initializeCatandAnimations()
         center = CGFloat((self.scene?.size.width)!) / CGFloat((self.scene?.size.height)!)
     }
     override func update(_ currentTime: TimeInterval){
-        manageLionSprite();
+        manageCat();
     }
  
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -57,15 +61,17 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
             
             if location.x > center{
                 moveLeft = false;
+                cat.animateCat(moveLeft: moveLeft)
             } else {
                 moveLeft = true;
+                cat.animateCat(moveLeft: moveLeft)
             }
             canMove = true;
             
-            if atPoint(location).name == "visualLionInstance"{
-                print("You touched a Lion")
-                lionSprite.jump()
-            }
+//            if atPoint(location).name == "visualLionInstance"{
+//                print("You touched a Lion")
+//                lionSprite.jump()
+//            }
             
             if atPoint(location).name == "visualEggInstance"{
                 print("You touched an egg")
@@ -93,6 +99,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         canMove = false;
+        cat.stopCatAnimation()
     }
 
     
@@ -112,12 +119,17 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         print(egg.cracked)
         self.viewController.hideEggUI()
     }
-    
-    func manageLionSprite() {
+    func manageCat() {
         if canMove{
-            lionSprite.moveVisualLion(moveLeft: moveLeft);
+        cat.moveCat(moveLeft: moveLeft)
         }
     }
+    
+//    func manageLionSprite() {
+//        if canMove{
+//            lionSprite.moveVisualLion(moveLeft: moveLeft);
+//        }
+//    }
     
     func createTemperatureBtn() {
         
