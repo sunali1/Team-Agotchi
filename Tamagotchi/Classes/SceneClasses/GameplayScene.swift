@@ -23,7 +23,6 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     
     func initialize() {
         createTemperatureBtn()
-        
     }
     
     override func didMove(to view: SKView) {
