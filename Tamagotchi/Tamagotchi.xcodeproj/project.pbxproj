@@ -37,9 +37,9 @@
 		EEDB22C81FB8D36900B27F81 /* awake2.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22C71FB8D36900B27F81 /* awake2.png */; };
 		EEDB22CE1FB8EBEB00B27F81 /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22CD1FB8EBEB00B27F81 /* food.png */; };
 		EEDB22D41FB8F42700B27F81 /* temperature.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22D31FB8F42700B27F81 /* temperature.png */; };
-		EEDB22D61FB8FD1200B27F81 /* poop.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22D51FB8FD1100B27F81 /* poop.png */; };
 		EEDB22DA1FB9012000B27F81 /* toy.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22D91FB9012000B27F81 /* toy.png */; };
 		EEDB22DC1FB9C4EC00B27F81 /* hat.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22DB1FB9C4EC00B27F81 /* hat.png */; };
+		EEDB22DE1FB9F33F00B27F81 /* Poo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDB22DD1FB9F33F00B27F81 /* Poo.swift */; };
 		FA0174D61FB74D8A00A84D50 /* Hat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0174D51FB74D8A00A84D50 /* Hat.swift */; };
 		FA0174D81FB752CB00A84D50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0174D71FB752CB00A84D50 /* Assets.xcassets */; };
 		FA09AAF21FB5920B003C6C20 /* VisualEgg.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09AAF11FB5920B003C6C20 /* VisualEgg.swift */; };
@@ -136,9 +136,9 @@
 		EEDB22C71FB8D36900B27F81 /* awake2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awake2.png; sourceTree = "<group>"; };
 		EEDB22CD1FB8EBEB00B27F81 /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
 		EEDB22D31FB8F42700B27F81 /* temperature.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temperature.png; sourceTree = "<group>"; };
-		EEDB22D51FB8FD1100B27F81 /* poop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poop.png; sourceTree = "<group>"; };
 		EEDB22D91FB9012000B27F81 /* toy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toy.png; sourceTree = "<group>"; };
 		EEDB22DB1FB9C4EC00B27F81 /* hat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hat.png; sourceTree = "<group>"; };
+		EEDB22DD1FB9F33F00B27F81 /* Poo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poo.swift; sourceTree = "<group>"; };
 		FA0174D51FB74D8A00A84D50 /* Hat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hat.swift; sourceTree = "<group>"; };
 		FA0174D71FB752CB00A84D50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA09AAF11FB5920B003C6C20 /* VisualEgg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEgg.swift; sourceTree = "<group>"; };
@@ -282,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				FA0174D51FB74D8A00A84D50 /* Hat.swift */,
+				EEDB22DD1FB9F33F00B27F81 /* Poo.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -314,7 +315,6 @@
 				EEDB22C71FB8D36900B27F81 /* awake2.png */,
 				EEDB22CD1FB8EBEB00B27F81 /* food.png */,
 				EEDB22D31FB8F42700B27F81 /* temperature.png */,
-				EEDB22D51FB8FD1100B27F81 /* poop.png */,
 				EEDB22D91FB9012000B27F81 /* toy.png */,
 				EEDB22DB1FB9C4EC00B27F81 /* hat.png */,
 				FAB9489D1FB88BF60059D28D /* Sounds */,
@@ -573,6 +573,7 @@
 				FA8908441FB3461200C31387 /* basicStatsModelView.swift in Sources */,
 				FA09AAF21FB5920B003C6C20 /* VisualEgg.swift in Sources */,
 				FA09AB141FB599F7003C6C20 /* GameManager.swift in Sources */,
+				EEDB22DE1FB9F33F00B27F81 /* Poo.swift in Sources */,
 				EE2B407E1FB1DBFA005C5775 /* AppDelegate.swift in Sources */,
 				FA09AB041FB593A1003C6C20 /* GameplayScene.swift in Sources */,
 				EE2B40B41FB1DDC2005C5775 /* Egg.swift in Sources */,

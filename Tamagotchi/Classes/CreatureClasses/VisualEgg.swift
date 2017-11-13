@@ -13,6 +13,7 @@ struct ColliderType {
     static let Egg: UInt32 = 1;
     static let World: UInt32 = 2;
     static let Hat: UInt32 = 3;
+    static let Poo: UInt32 = 4;
 }
 
 class VisualEgg: SKSpriteNode {

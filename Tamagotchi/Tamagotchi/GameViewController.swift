@@ -17,9 +17,10 @@ class GameViewController: UIViewController {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var thermometer: UIImageView!
-    
+    @IBOutlet weak var touchHatVisual: UIButton!
     @IBOutlet weak var meals: UILabel!
-    
+    @IBOutlet weak var poopVisual: UIButton!
+    @IBOutlet weak var feedVisual: UIButton!
     
     var age = 0
     var mealsCount = 0
@@ -31,6 +32,7 @@ class GameViewController: UIViewController {
         gameManager.egg.wearingHat = true
         updateTempLabel()
         resizeRetextureEggToHatEgg()
+        self.touchHatVisual.isHidden = true
     }
     @IBAction func wake(_ sender: UIButton) {
         
@@ -41,15 +43,21 @@ class GameViewController: UIViewController {
         ageActivated = true
     }
     
+    
     @IBAction func sleep(_ sender: UIButton) {
         ageTracker.invalidate()
         ageActivated = false
     }
     
-
+    @IBAction func poop(_ sender: Any) {
+        scene?.pooQuery()
+        self.poopVisual.isHidden = true
+    }
+    
     @IBAction func updatemeal(_ sender: Any) {
         if mealsCount == 3 {
             return print("I'm full!")
+            self.poopVisual.isHidden = false
         }
         gameManager.lion.eat(meal: "kiwi")
         mealsCount += 1
@@ -69,7 +77,8 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.poopVisual.isHidden = true
+        self.feedVisual.isHidden = true
         updateTempLabel()
         
         ageTracker = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)
@@ -84,11 +93,10 @@ class GameViewController: UIViewController {
             scene?.viewController = self
                 // Present the scene
                 view.presentScene(scene)
-//            }
             
             view.ignoresSiblingOrder = true
-            view.showsFPS = true
-            view.showsNodeCount = true
+            view.showsFPS = false
+            view.showsNodeCount = false
         }
         
         
