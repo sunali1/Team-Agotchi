@@ -32,16 +32,10 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         self.physicsBody = sceneBody
 
         addChild(eggSprite);
-        addChild(hatSprite);
         addChild(cat)
-        eggSprite.initialize();
-        hatSprite.initialize();
-
-        
+        eggSprite.initialize()
         print("2+2=5 is \(egg.cracked)")
-
         print(egg.cracked)
-        initialize()
         cat.initializeCatandAnimations()
         center = CGFloat((self.scene?.size.width)!) / CGFloat((self.scene?.size.height)!)
     }
@@ -63,11 +57,6 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
             }
             canMove = true;
             
-//            if atPoint(location).name == "visualLionInstance"{
-//                print("You touched a Lion")
-//                lionSprite.jump()
-//            }
-            
             if atPoint(location).name == "visualEggInstance"{
                 print("You touched an egg")
                 print(egg.helpEgg(item: "Hat"))
@@ -81,10 +70,10 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-        }
-    }
+//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        for touch in touches {
+//        }
+//    }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         canMove = false;
@@ -121,19 +110,6 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
             addChild(pooSprite)
             pooSprite.initialize()
         }
-    
-    func createTemperatureBtn() {
-        
-//        let temperatureBtn = SKSpriteNode(imageNamed: "Pause Menu")
-        temperatureBtn.name = "temperature"
-        temperatureBtn.zPosition = 6;
-        temperatureBtn.position = CGPoint(x: 0, y: 450);
-        
-        //        temperatureBtn.text = "- 10°C +";
-        //        temperatureLabel.fontColor = SKColor colorWithRed:0.1
-        self.addChild(temperatureBtn);
     }
-    func incrementTemperature() {
-        egg.temp = egg.temp + 1
-    }
+
 }
