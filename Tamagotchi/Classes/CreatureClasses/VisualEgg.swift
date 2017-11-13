@@ -12,6 +12,7 @@ import SpriteKit
 struct ColliderType {
     static let Egg: UInt32 = 1;
     static let World: UInt32 = 2;
+    static let Hat: UInt32 = 3;
 }
 
 class VisualEgg: SKSpriteNode {
@@ -35,9 +36,9 @@ class VisualEgg: SKSpriteNode {
         self.physicsBody?.isDynamic = true;
         self.physicsBody?.restitution = 0.5
         self.physicsBody?.allowsRotation = false;
-        
         self.physicsBody?.categoryBitMask = ColliderType.Egg;
-        self.physicsBody?.collisionBitMask = ColliderType.World
+        self.physicsBody?.collisionBitMask = ColliderType.Hat;
+        self.physicsBody?.contactTestBitMask = ColliderType.Egg;
         
     }
     

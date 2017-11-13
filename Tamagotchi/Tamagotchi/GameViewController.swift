@@ -15,13 +15,17 @@ class GameViewController: UIViewController {
     let gameManager = GameManager()
     
     @IBOutlet weak var ageLabel: UILabel!
-    
     @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var thermometer: UIImageView!
     
     var age = 6
     var ageActivated = true
     var ageTracker = Timer()
     
+    @IBAction func touchHatButton(_ sender: Any) {
+        gameManager.egg.helpEgg(item: "Hat")
+        tempLabel.text = "\(gameManager.egg.temp)°C"
+    }
     @IBAction func wake(_ sender: UIButton) {
         
         if ageActivated == true{
@@ -29,10 +33,6 @@ class GameViewController: UIViewController {
         }
         ageTracker = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)    //runs updateAge function once every 1 seconds. So one minute in time equals 1 day in age
         ageActivated = true
-    }
-    
-    @IBAction func feed(_ sender: Any) {
-        
     }
     
     @IBAction func sleep(_ sender: UIButton) {
@@ -47,6 +47,8 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tempLabel.text = "\(gameManager.egg.temp)°C"
         
         ageTracker = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)
         
@@ -89,6 +91,12 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    func hideEggUI(){
+        self.tempLabel.isHidden = true
+        self.thermometer.isHidden = true
+    }
+
 }
 
 
