@@ -59,14 +59,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuB-3M-y7r">
-                                <rect key="frame" x="16" y="352" width="114" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2x-n4-9Or">
                                 <rect key="frame" x="290" y="20" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -166,17 +158,25 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icecreamfour.png" translatesAutoresizingMaskIntoConstraints="NO" id="i7C-7q-Owl">
-                                <rect key="frame" x="5" y="381" width="55" height="57"/>
+                                <rect key="frame" x="7" y="163" width="55" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icecreamfour.png" translatesAutoresizingMaskIntoConstraints="NO" id="4b6-fI-Rfd">
-                                <rect key="frame" x="46" y="381" width="57" height="57"/>
+                                <rect key="frame" x="46" y="163" width="57" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icecreamfour.png" translatesAutoresizingMaskIntoConstraints="NO" id="uZ2-kW-724">
-                                <rect key="frame" x="90" y="381" width="55" height="57"/>
+                                <rect key="frame" x="86" y="163" width="55" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuB-3M-y7r">
+                                <rect key="frame" x="17" y="132" width="114" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
@@ -189,7 +189,7 @@
                         <outlet property="IceCreamThree" destination="uZ2-kW-724" id="UGP-aY-3cv"/>
                         <outlet property="IceCreamTwo" destination="4b6-fI-Rfd" id="bJU-g4-e0K"/>
                         <outlet property="ageLabel" destination="KJV-Rr-RL9" id="RhS-23-Ta8"/>
-                        <outlet property="feedVisual" destination="Xc8-PG-7Ye" id="Icw-Zv-KpQ"/>
+                        <outlet property="foodLabel" destination="WuB-3M-y7r" id="auA-gL-R1Z"/>
                         <outlet property="meals" destination="zha-gZ-Xv2" id="K2r-tI-RNZ"/>
                         <outlet property="poopVisual" destination="8ow-6M-42Z" id="AQd-Fb-nDJ"/>
                         <outlet property="tempLabel" destination="kKb-DP-DC4" id="EuP-IF-3wA"/>

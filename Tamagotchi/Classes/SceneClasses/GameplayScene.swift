@@ -21,6 +21,11 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     var viewController: GameViewController!
     lazy var egg = self.viewController.gameManager.egg
     
+
+    func initialize() {
+        self.viewController.hideFoodUI() 
+    }
+
     override func didMove(to view: SKView) {
         
         physicsWorld.contactDelegate = self
@@ -80,6 +85,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     
     
     func hatchLion(){
+        self.viewController.showFoodUI()
         self.viewController.gameManager.lion = Lion(size: 10, age: 6, temp: 15, hungry: true, bursting: false)
     }
 
