@@ -17,6 +17,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     let eggSprite = VisualEgg();
     var lionSprite = VisualLion();
     var pooSprite = VisualPoo();
+    var cat = Cat();
     var viewController: GameViewController!
     lazy var egg = self.viewController.gameManager.egg
     
@@ -31,17 +32,21 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         self.physicsBody = sceneBody
 
         addChild(eggSprite);
+        addChild(hatSprite);
+        addChild(cat)
         eggSprite.initialize();
+        hatSprite.initialize();
+
         
         print("2+2=5 is \(egg.cracked)")
 
         print(egg.cracked)
-        
-        //addChild(lionSprite)
+        initialize()
+        cat.initializeCatandAnimations()
         center = CGFloat((self.scene?.size.width)!) / CGFloat((self.scene?.size.height)!)
     }
     override func update(_ currentTime: TimeInterval){
-        manageLionSprite();
+        manageCat();
     }
  
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -51,15 +56,17 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
             
             if location.x > center{
                 moveLeft = false;
+                cat.animateCat(moveLeft: moveLeft)
             } else {
                 moveLeft = true;
+                cat.animateCat(moveLeft: moveLeft)
             }
             canMove = true;
             
-            if atPoint(location).name == "visualLionInstance"{
-                print("You touched a Lion")
-                lionSprite.jump()
-            }
+//            if atPoint(location).name == "visualLionInstance"{
+//                print("You touched a Lion")
+//                lionSprite.jump()
+//            }
             
             if atPoint(location).name == "visualEggInstance"{
                 print("You touched an egg")
@@ -81,6 +88,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         canMove = false;
+        cat.stopCatAnimation()
     }
 
     
@@ -102,10 +110,9 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         self.viewController.poopVisual.isHidden = false
         self.viewController.feedVisual.isHidden = false
     }
-    
-    func manageLionSprite() {
+    func manageCat() {
         if canMove{
-            lionSprite.moveVisualLion(moveLeft: moveLeft);
+        cat.moveCat(moveLeft: moveLeft)
         }
     }
     
@@ -114,6 +121,19 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
             addChild(pooSprite)
             pooSprite.initialize()
         }
+    
+    func createTemperatureBtn() {
         
+//        let temperatureBtn = SKSpriteNode(imageNamed: "Pause Menu")
+        temperatureBtn.name = "temperature"
+        temperatureBtn.zPosition = 6;
+        temperatureBtn.position = CGPoint(x: 0, y: 450);
+        
+        //        temperatureBtn.text = "- 10°C +";
+        //        temperatureLabel.fontColor = SKColor colorWithRed:0.1
+        self.addChild(temperatureBtn);
+    }
+    func incrementTemperature() {
+        egg.temp = egg.temp + 1
     }
 }
