@@ -137,7 +137,7 @@ class GameplayScene: SKScene {
     
     func createTemperatureBtn() {
         
-        let temperatureBtn = SKSpriteNode(imageNamed: "Pause Menu")
+//        let temperatureBtn = SKSpriteNode(imageNamed: "Pause Menu")
         temperatureBtn.name = "temperature"
         temperatureBtn.zPosition = 6;
         temperatureBtn.position = CGPoint(x: 0, y: 450);

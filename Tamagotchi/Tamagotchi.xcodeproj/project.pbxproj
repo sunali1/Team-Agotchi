@@ -23,6 +23,11 @@
 		EEC1E26B1FB5C8DD005606E4 /* lion.png in Resources */ = {isa = PBXBuildFile; fileRef = EEC1E26A1FB5C8DD005606E4 /* lion.png */; };
 		EEDB22C01FB8A8AE00B27F81 /* sleep.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22BF1FB8A8AE00B27F81 /* sleep.png */; };
 		EEDB22C21FB8AA0500B27F81 /* awake.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22C11FB8AA0400B27F81 /* awake.png */; };
+		EEDB22C81FB8D36900B27F81 /* awake2.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22C71FB8D36900B27F81 /* awake2.png */; };
+		EEDB22CE1FB8EBEB00B27F81 /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22CD1FB8EBEB00B27F81 /* food.png */; };
+		EEDB22D41FB8F42700B27F81 /* temperature.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22D31FB8F42700B27F81 /* temperature.png */; };
+		EEDB22D61FB8FD1200B27F81 /* poop.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22D51FB8FD1100B27F81 /* poop.png */; };
+		EEDB22DA1FB9012000B27F81 /* toy.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22D91FB9012000B27F81 /* toy.png */; };
 		FA0174D61FB74D8A00A84D50 /* Hat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0174D51FB74D8A00A84D50 /* Hat.swift */; };
 		FA0174D81FB752CB00A84D50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0174D71FB752CB00A84D50 /* Assets.xcassets */; };
 		FA09AAF21FB5920B003C6C20 /* VisualEgg.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09AAF11FB5920B003C6C20 /* VisualEgg.swift */; };
@@ -105,6 +110,11 @@
 		EEC1E26A1FB5C8DD005606E4 /* lion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lion.png; sourceTree = "<group>"; };
 		EEDB22BF1FB8A8AE00B27F81 /* sleep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sleep.png; sourceTree = "<group>"; };
 		EEDB22C11FB8AA0400B27F81 /* awake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awake.png; sourceTree = "<group>"; };
+		EEDB22C71FB8D36900B27F81 /* awake2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awake2.png; sourceTree = "<group>"; };
+		EEDB22CD1FB8EBEB00B27F81 /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
+		EEDB22D31FB8F42700B27F81 /* temperature.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temperature.png; sourceTree = "<group>"; };
+		EEDB22D51FB8FD1100B27F81 /* poop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poop.png; sourceTree = "<group>"; };
+		EEDB22D91FB9012000B27F81 /* toy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toy.png; sourceTree = "<group>"; };
 		FA0174D51FB74D8A00A84D50 /* Hat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hat.swift; sourceTree = "<group>"; };
 		FA0174D71FB752CB00A84D50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA09AAF11FB5920B003C6C20 /* VisualEgg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEgg.swift; sourceTree = "<group>"; };
@@ -258,6 +268,11 @@
 			children = (
 				EEDB22BF1FB8A8AE00B27F81 /* sleep.png */,
 				EEDB22C11FB8AA0400B27F81 /* awake.png */,
+				EEDB22C71FB8D36900B27F81 /* awake2.png */,
+				EEDB22CD1FB8EBEB00B27F81 /* food.png */,
+				EEDB22D31FB8F42700B27F81 /* temperature.png */,
+				EEDB22D51FB8FD1100B27F81 /* poop.png */,
+				EEDB22D91FB9012000B27F81 /* toy.png */,
 				FAB9489D1FB88BF60059D28D /* Sounds */,
 				FAB9489B1FB88BDC0059D28D /* Girl */,
 				FAB948991FB88BCB0059D28D /* Santa */,
@@ -453,8 +468,10 @@
 				FA09AB001FB59287003C6C20 /* 1261295-200.png in Resources */,
 				FA09AAFC1FB59287003C6C20 /* crack2.png in Resources */,
 				EEDB22C01FB8A8AE00B27F81 /* sleep.png in Resources */,
+				EEDB22D41FB8F42700B27F81 /* temperature.png in Resources */,
 				FA09AB0A1FB594CE003C6C20 /* Main.storyboard in Resources */,
 				FA09AAFE1FB59287003C6C20 /* crack1.png in Resources */,
+				EEDB22CE1FB8EBEB00B27F81 /* food.png in Resources */,
 				FA09AB081FB5941B003C6C20 /* GameplayScene.sks in Resources */,
 				FAB9489E1FB88BF60059D28D /* Sounds in Resources */,
 				53F5B78A1FB5F0A000556CD5 /* Forest BG.png in Resources */,
@@ -462,9 +479,12 @@
 				FAB9489A1FB88BCC0059D28D /* Santa in Resources */,
 				FAB9489C1FB88BDC0059D28D /* Girl in Resources */,
 				EE2B40821FB1DBFA005C5775 /* Actions.sks in Resources */,
+				EEDB22D61FB8FD1200B27F81 /* poop.png in Resources */,
 				FAB948971FB88B930059D28D /* Dog in Resources */,
+				EEDB22C81FB8D36900B27F81 /* awake2.png in Resources */,
 				FA09AAFD1FB59287003C6C20 /* 1276572-200.png in Resources */,
 				FA0174D81FB752CB00A84D50 /* Assets.xcassets in Resources */,
+				EEDB22DA1FB9012000B27F81 /* toy.png in Resources */,
 				FA09AB011FB59287003C6C20 /* 1175530-200.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
