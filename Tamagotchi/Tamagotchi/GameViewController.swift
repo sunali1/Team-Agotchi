@@ -53,7 +53,7 @@ class GameViewController: UIViewController {
         mealsCount += 1
         meals.text = String(mealsCount)
     }
-    
+
     @objc func updateAge() {
         age += 1
         ageLabel.text = String(age)
