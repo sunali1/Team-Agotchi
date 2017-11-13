@@ -136,7 +136,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zha-gZ-Xv2">
-                                <rect key="frame" x="16" y="263" width="114" height="68"/>
+                                <rect key="frame" x="16" y="263" width="280" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.95294117649999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="50"/>
@@ -191,8 +191,10 @@
                         <outlet property="ageLabel" destination="KJV-Rr-RL9" id="RhS-23-Ta8"/>
                         <outlet property="foodLabel" destination="WuB-3M-y7r" id="auA-gL-R1Z"/>
                         <outlet property="meals" destination="zha-gZ-Xv2" id="K2r-tI-RNZ"/>
+                        <outlet property="poopVisual" destination="8ow-6M-42Z" id="AQd-Fb-nDJ"/>
                         <outlet property="tempLabel" destination="kKb-DP-DC4" id="EuP-IF-3wA"/>
                         <outlet property="thermometer" destination="nRN-Cc-bDd" id="I8h-Tz-t6w"/>
+                        <outlet property="touchHatVisual" destination="jA2-cY-tTS" id="N4M-oK-TfN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -205,7 +207,7 @@
         <image name="food.png" width="933" height="935"/>
         <image name="hat.png" width="459" height="436"/>
         <image name="icecreamfour.png" width="100" height="100"/>
-        <image name="poop.png" width="278" height="349"/>
+        <image name="poop.png" width="16" height="16"/>
         <image name="sleep.png" width="225" height="225"/>
         <image name="temperature.png" width="224" height="609"/>
         <image name="toy.png" width="572" height="465"/>

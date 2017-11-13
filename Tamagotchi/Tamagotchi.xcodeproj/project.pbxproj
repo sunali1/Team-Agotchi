@@ -7,10 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		43382B601FB9F5F0000EE75F /* icecreamfour.png in Resources */ = {isa = PBXBuildFile; fileRef = 43382B5C1FB9F5ED000EE75F /* icecreamfour.png */; };
 		43382B611FB9F5F0000EE75F /* icecreamthree.png in Resources */ = {isa = PBXBuildFile; fileRef = 43382B5D1FB9F5ED000EE75F /* icecreamthree.png */; };
 		43382B621FB9F5F0000EE75F /* icecreamtwo.png in Resources */ = {isa = PBXBuildFile; fileRef = 43382B5E1FB9F5EE000EE75F /* icecreamtwo.png */; };
 		43382B631FB9F5F0000EE75F /* icecreamone.png in Resources */ = {isa = PBXBuildFile; fileRef = 43382B5F1FB9F5EF000EE75F /* icecreamone.png */; };
+		5390B14E1FB9B6B700280769 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5390B14D1FB9B6B700280769 /* Cat.swift */; };
+		5390B15A1FB9BCE100280769 /* Cat 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5390B1501FB9BCE000280769 /* Cat 1.png */; };
+		5390B15B1FB9BCE100280769 /* Cat 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 5390B1511FB9BCE000280769 /* Cat 8.png */; };
+		5390B15C1FB9BCE100280769 /* Cat 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 5390B1521FB9BCE000280769 /* Cat 6.png */; };
+		5390B15D1FB9BCE100280769 /* Cat 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5390B1531FB9BCE000280769 /* Cat 3.png */; };
+		5390B15E1FB9BCE100280769 /* Cat 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5390B1541FB9BCE000280769 /* Cat 2.png */; };
+		5390B15F1FB9BCE100280769 /* Cat 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 5390B1551FB9BCE000280769 /* Cat 9.png */; };
+		5390B1601FB9BCE100280769 /* Cat 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 5390B1561FB9BCE000280769 /* Cat 10.png */; };
+		5390B1611FB9BCE100280769 /* Cat 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5390B1571FB9BCE000280769 /* Cat 4.png */; };
+		5390B1621FB9BCE100280769 /* Cat 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 5390B1581FB9BCE000280769 /* Cat 5.png */; };
+		5390B1631FB9BCE100280769 /* Cat 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 5390B1591FB9BCE000280769 /* Cat 7.png */; };
+
 		53F5B78A1FB5F0A000556CD5 /* Forest BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 53F5B7891FB5F0A000556CD5 /* Forest BG.png */; };
 		53F5B78E1FB5F57F00556CD5 /* Blue 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 53F5B78C1FB5F57F00556CD5 /* Blue 1.png */; };
 		53F5B78F1FB5F57F00556CD5 /* Pause Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 53F5B78D1FB5F57F00556CD5 /* Pause Menu.png */; };
@@ -30,9 +43,9 @@
 		EEDB22C81FB8D36900B27F81 /* awake2.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22C71FB8D36900B27F81 /* awake2.png */; };
 		EEDB22CE1FB8EBEB00B27F81 /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22CD1FB8EBEB00B27F81 /* food.png */; };
 		EEDB22D41FB8F42700B27F81 /* temperature.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22D31FB8F42700B27F81 /* temperature.png */; };
-		EEDB22D61FB8FD1200B27F81 /* poop.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22D51FB8FD1100B27F81 /* poop.png */; };
 		EEDB22DA1FB9012000B27F81 /* toy.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22D91FB9012000B27F81 /* toy.png */; };
 		EEDB22DC1FB9C4EC00B27F81 /* hat.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22DB1FB9C4EC00B27F81 /* hat.png */; };
+		EEDB22DE1FB9F33F00B27F81 /* Poo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDB22DD1FB9F33F00B27F81 /* Poo.swift */; };
 		FA0174D61FB74D8A00A84D50 /* Hat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0174D51FB74D8A00A84D50 /* Hat.swift */; };
 		FA0174D81FB752CB00A84D50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0174D71FB752CB00A84D50 /* Assets.xcassets */; };
 		FA09AAF21FB5920B003C6C20 /* VisualEgg.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09AAF11FB5920B003C6C20 /* VisualEgg.swift */; };
@@ -93,10 +106,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+
 		43382B5C1FB9F5ED000EE75F /* icecreamfour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icecreamfour.png; sourceTree = "<group>"; };
 		43382B5D1FB9F5ED000EE75F /* icecreamthree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icecreamthree.png; sourceTree = "<group>"; };
 		43382B5E1FB9F5EE000EE75F /* icecreamtwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icecreamtwo.png; sourceTree = "<group>"; };
 		43382B5F1FB9F5EF000EE75F /* icecreamone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icecreamone.png; sourceTree = "<group>"; };
+
+		5390B14D1FB9B6B700280769 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
+		5390B1501FB9BCE000280769 /* Cat 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cat 1.png"; sourceTree = "<group>"; };
+		5390B1511FB9BCE000280769 /* Cat 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cat 8.png"; sourceTree = "<group>"; };
+		5390B1521FB9BCE000280769 /* Cat 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cat 6.png"; sourceTree = "<group>"; };
+		5390B1531FB9BCE000280769 /* Cat 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cat 3.png"; sourceTree = "<group>"; };
+		5390B1541FB9BCE000280769 /* Cat 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cat 2.png"; sourceTree = "<group>"; };
+		5390B1551FB9BCE000280769 /* Cat 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cat 9.png"; sourceTree = "<group>"; };
+		5390B1561FB9BCE000280769 /* Cat 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cat 10.png"; sourceTree = "<group>"; };
+		5390B1571FB9BCE000280769 /* Cat 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cat 4.png"; sourceTree = "<group>"; };
+		5390B1581FB9BCE000280769 /* Cat 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cat 5.png"; sourceTree = "<group>"; };
+		5390B1591FB9BCE000280769 /* Cat 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cat 7.png"; sourceTree = "<group>"; };
+
 		53F5B7891FB5F0A000556CD5 /* Forest BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Forest BG.png"; sourceTree = "<group>"; };
 		53F5B78C1FB5F57F00556CD5 /* Blue 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Blue 1.png"; sourceTree = "<group>"; };
 		53F5B78D1FB5F57F00556CD5 /* Pause Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pause Menu.png"; sourceTree = "<group>"; };
@@ -122,9 +149,9 @@
 		EEDB22C71FB8D36900B27F81 /* awake2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awake2.png; sourceTree = "<group>"; };
 		EEDB22CD1FB8EBEB00B27F81 /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
 		EEDB22D31FB8F42700B27F81 /* temperature.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temperature.png; sourceTree = "<group>"; };
-		EEDB22D51FB8FD1100B27F81 /* poop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poop.png; sourceTree = "<group>"; };
 		EEDB22D91FB9012000B27F81 /* toy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toy.png; sourceTree = "<group>"; };
 		EEDB22DB1FB9C4EC00B27F81 /* hat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hat.png; sourceTree = "<group>"; };
+		EEDB22DD1FB9F33F00B27F81 /* Poo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poo.swift; sourceTree = "<group>"; };
 		FA0174D51FB74D8A00A84D50 /* Hat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hat.swift; sourceTree = "<group>"; };
 		FA0174D71FB752CB00A84D50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA09AAF11FB5920B003C6C20 /* VisualEgg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEgg.swift; sourceTree = "<group>"; };
@@ -176,6 +203,24 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5390B14F1FB9BCAA00280769 /* Cat */ = {
+			isa = PBXGroup;
+			children = (
+				5390B1501FB9BCE000280769 /* Cat 1.png */,
+				5390B1541FB9BCE000280769 /* Cat 2.png */,
+				5390B1531FB9BCE000280769 /* Cat 3.png */,
+				5390B1571FB9BCE000280769 /* Cat 4.png */,
+				5390B1581FB9BCE000280769 /* Cat 5.png */,
+				5390B1521FB9BCE000280769 /* Cat 6.png */,
+				5390B1591FB9BCE000280769 /* Cat 7.png */,
+				5390B1511FB9BCE000280769 /* Cat 8.png */,
+				5390B1551FB9BCE000280769 /* Cat 9.png */,
+				5390B1561FB9BCE000280769 /* Cat 10.png */,
+			);
+			name = Cat;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		EE2B40711FB1DBFA005C5775 = {
@@ -254,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				FA0174D51FB74D8A00A84D50 /* Hat.swift */,
+				EEDB22DD1FB9F33F00B27F81 /* Poo.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -280,12 +326,12 @@
 		FA09AAF31FB59264003C6C20 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				5390B14F1FB9BCAA00280769 /* Cat */,
 				EEDB22BF1FB8A8AE00B27F81 /* sleep.png */,
 				EEDB22C11FB8AA0400B27F81 /* awake.png */,
 				EEDB22C71FB8D36900B27F81 /* awake2.png */,
 				EEDB22CD1FB8EBEB00B27F81 /* food.png */,
 				EEDB22D31FB8F42700B27F81 /* temperature.png */,
-				EEDB22D51FB8FD1100B27F81 /* poop.png */,
 				EEDB22D91FB9012000B27F81 /* toy.png */,
 				EEDB22DB1FB9C4EC00B27F81 /* hat.png */,
 				FAB9489D1FB88BF60059D28D /* Sounds */,
@@ -328,6 +374,7 @@
 				EE2B40B31FB1DDC2005C5775 /* Egg.swift */,
 				EEC1E2651FB5C4EA005606E4 /* Lion.swift */,
 				EEC1E2671FB5C524005606E4 /* VisualLion.swift */,
+				5390B14D1FB9B6B700280769 /* Cat.swift */,
 			);
 			path = CreatureClasses;
 			sourceTree = "<group>";
@@ -475,30 +522,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA09AB021FB59287003C6C20 /* 1175536-200.png in Resources */,
+				5390B15B1FB9BCE100280769 /* Cat 8.png in Resources */,
 				53F5B78E1FB5F57F00556CD5 /* Blue 1.png in Resources */,
 				53F5B78F1FB5F57F00556CD5 /* Pause Menu.png in Resources */,
+				5390B1601FB9BCE100280769 /* Cat 10.png in Resources */,
+				5390B1621FB9BCE100280769 /* Cat 5.png in Resources */,
 				EE2B408E1FB1DBFA005C5775 /* LaunchScreen.storyboard in Resources */,
+				5390B15F1FB9BCE100280769 /* Cat 9.png in Resources */,
 				FA09AAFF1FB59287003C6C20 /* 1175533-200.png in Resources */,
+				5390B15E1FB9BCE100280769 /* Cat 2.png in Resources */,
 				EEDB22C21FB8AA0500B27F81 /* awake.png in Resources */,
 				FA09AB001FB59287003C6C20 /* 1261295-200.png in Resources */,
 				FA09AAFC1FB59287003C6C20 /* crack2.png in Resources */,
 				EEDB22C01FB8A8AE00B27F81 /* sleep.png in Resources */,
+				5390B15D1FB9BCE100280769 /* Cat 3.png in Resources */,
 				EEDB22D41FB8F42700B27F81 /* temperature.png in Resources */,
 				FA09AB0A1FB594CE003C6C20 /* Main.storyboard in Resources */,
 				FA09AAFE1FB59287003C6C20 /* crack1.png in Resources */,
 				EEDB22CE1FB8EBEB00B27F81 /* food.png in Resources */,
 				FA09AB081FB5941B003C6C20 /* GameplayScene.sks in Resources */,
+				5390B1611FB9BCE100280769 /* Cat 4.png in Resources */,
 				FAB9489E1FB88BF60059D28D /* Sounds in Resources */,
 				53F5B78A1FB5F0A000556CD5 /* Forest BG.png in Resources */,
 				EEC1E26B1FB5C8DD005606E4 /* lion.png in Resources */,
 				FAB9489A1FB88BCC0059D28D /* Santa in Resources */,
 				43382B621FB9F5F0000EE75F /* icecreamtwo.png in Resources */,
 				FAB9489C1FB88BDC0059D28D /* Girl in Resources */,
+				5390B15C1FB9BCE100280769 /* Cat 6.png in Resources */,
 				EE2B40821FB1DBFA005C5775 /* Actions.sks in Resources */,
 				EEDB22D61FB8FD1200B27F81 /* poop.png in Resources */,
+				5390B15A1FB9BCE100280769 /* Cat 1.png in Resources */,
 				FAB948971FB88B930059D28D /* Dog in Resources */,
 				EEDB22C81FB8D36900B27F81 /* awake2.png in Resources */,
 				FA09AAFD1FB59287003C6C20 /* 1276572-200.png in Resources */,
+				5390B1631FB9BCE100280769 /* Cat 7.png in Resources */,
 				FA0174D81FB752CB00A84D50 /* Assets.xcassets in Resources */,
 				EEDB22DA1FB9012000B27F81 /* toy.png in Resources */,
 				FA09AB011FB59287003C6C20 /* 1175530-200.png in Resources */,
@@ -533,9 +590,11 @@
 				EE2B40861FB1DBFA005C5775 /* GameViewController.swift in Sources */,
 				FA0174D61FB74D8A00A84D50 /* Hat.swift in Sources */,
 				EEC1E2681FB5C524005606E4 /* VisualLion.swift in Sources */,
+				5390B14E1FB9B6B700280769 /* Cat.swift in Sources */,
 				FA8908441FB3461200C31387 /* basicStatsModelView.swift in Sources */,
 				FA09AAF21FB5920B003C6C20 /* VisualEgg.swift in Sources */,
 				FA09AB141FB599F7003C6C20 /* GameManager.swift in Sources */,
+				EEDB22DE1FB9F33F00B27F81 /* Poo.swift in Sources */,
 				EE2B407E1FB1DBFA005C5775 /* AppDelegate.swift in Sources */,
 				FA09AB041FB593A1003C6C20 /* GameplayScene.swift in Sources */,
 				EE2B40B41FB1DDC2005C5775 /* Egg.swift in Sources */,
