@@ -14,16 +14,11 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     var canMove = false;
     var moveLeft = false;
     var center = CGFloat();
-    var temperatureBtn = SKSpriteNode();
     let eggSprite = VisualEgg();
     var lionSprite = VisualLion();
+    var pooSprite = VisualPoo();
     var viewController: GameViewController!
-//    lazy var lion = self.viewController.gameManager.lion
     lazy var egg = self.viewController.gameManager.egg
-    
-    func initialize() {
-        createTemperatureBtn()
-    }
     
     override func didMove(to view: SKView) {
         
@@ -41,7 +36,6 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         print("2+2=5 is \(egg.cracked)")
 
         print(egg.cracked)
-        initialize()
         
         //addChild(lionSprite)
         center = CGFloat((self.scene?.size.width)!) / CGFloat((self.scene?.size.height)!)
@@ -77,12 +71,6 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
                     print(self.viewController.gameManager.lion.temp)
                 }
             }
-            if atPoint(location).name == "temperature" {
-                print("You touched temp")
-                incrementTemperature()
-                print(egg.temp)
-            }
-            
         }
     }
     
@@ -111,6 +99,8 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         egg.cracked = true
         print(egg.cracked)
         self.viewController.hideEggUI()
+        self.viewController.poopVisual.isHidden = false
+        self.viewController.feedVisual.isHidden = false
     }
     
     func manageLionSprite() {
@@ -119,19 +109,11 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    func createTemperatureBtn() {
-        
-//        let temperatureBtn = SKSpriteNode(imageNamed: "Pause Menu")
-        temperatureBtn.name = "temperature"
-        temperatureBtn.zPosition = 6;
-        temperatureBtn.position = CGPoint(x: 0, y: 450);
-        
-        //        temperatureBtn.text = "- 10°C +";
-        //        temperatureLabel.fontColor = SKColor colorWithRed:0.1
-        self.addChild(temperatureBtn);
-    }
-    func incrementTemperature() {
-        egg.temp = egg.temp + 1
+    func pooQuery() {
+        if self.viewController.gameManager.lion.pooNow() {
+            addChild(pooSprite)
+            pooSprite.initialize()
+        }
         
     }
 }

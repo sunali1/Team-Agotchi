@@ -100,17 +100,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ow-6M-42Z">
-                                <rect key="frame" x="290" y="136" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" backgroundImage="poop.png"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKb-DP-DC4">
                                 <rect key="frame" x="75" y="153" width="76" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -154,6 +143,20 @@
                                     <action selector="touchHatButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="tZr-4M-Rln"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ow-6M-42Z">
+                                <rect key="frame" x="290" y="136" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="poop"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="poop:" destination="BV1-FR-VrT" eventType="touchUpInside" id="kzg-dI-CQ1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
@@ -163,9 +166,12 @@
                     </view>
                     <connections>
                         <outlet property="ageLabel" destination="KJV-Rr-RL9" id="RhS-23-Ta8"/>
+                        <outlet property="feedVisual" destination="Xc8-PG-7Ye" id="Icw-Zv-KpQ"/>
                         <outlet property="meals" destination="zha-gZ-Xv2" id="K2r-tI-RNZ"/>
+                        <outlet property="poopVisual" destination="8ow-6M-42Z" id="AQd-Fb-nDJ"/>
                         <outlet property="tempLabel" destination="kKb-DP-DC4" id="EuP-IF-3wA"/>
                         <outlet property="thermometer" destination="nRN-Cc-bDd" id="I8h-Tz-t6w"/>
+                        <outlet property="touchHatVisual" destination="jA2-cY-tTS" id="N4M-oK-TfN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -177,7 +183,7 @@
         <image name="awake2.png" width="423" height="443"/>
         <image name="food.png" width="933" height="935"/>
         <image name="hat.png" width="459" height="436"/>
-        <image name="poop.png" width="278" height="349"/>
+        <image name="poop" width="278" height="349"/>
         <image name="sleep.png" width="225" height="225"/>
         <image name="temperature.png" width="224" height="609"/>
         <image name="toy.png" width="572" height="465"/>
