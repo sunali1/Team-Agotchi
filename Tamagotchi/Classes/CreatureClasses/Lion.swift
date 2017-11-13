@@ -29,24 +29,38 @@ class Lion {
     
     
     func lionStartsHungry() -> Bool {
-        return true
+        hungry = true
+        return hungry
     }
     
+    
     func eat(meal: String) -> String {
-       stomachContents.append(meal)
-        print(stomachContents)
+        if stomachContents.count <= 2 {
+            stomachContents.append(meal)
+        } else {
+            return "Stomach Full"
+        }
         return meal
     }
     
-    func hungerStatus() -> String {
+    func hungerStatus() -> Bool {
         if stomachContents.count <= 1 {
-            return "I am hungry!"
-        } else if stomachContents.count == 3 {
-            return "I am full!"
+            hungry = true
+            return hungry
         } else {
-            return ""
+            hungry = false
+            return hungry
         }
     }
+    
+    func pooNow() {
+        if stomachContents.count == 3 {
+        stomachContents.removeAll()
+        }
+    }
+    
+
+
     
     func updateAge() {
         age += 1

@@ -12,6 +12,7 @@ import SpriteKit
 struct ColliderType {
     static let Egg: UInt32 = 1;
     static let World: UInt32 = 2;
+    static let Hat: UInt32 = 3;
 }
 
 class VisualEgg: SKSpriteNode {
@@ -25,6 +26,7 @@ class VisualEgg: SKSpriteNode {
     func initialize(){
         self.name = "visualEggInstance"
         self.size = CGSize(width:200.0, height: 200.0)
+         self.setScale(1)
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.position = CGPoint(x: 0, y: -280)
         self.zPosition = 1;
@@ -35,9 +37,9 @@ class VisualEgg: SKSpriteNode {
         self.physicsBody?.isDynamic = true;
         self.physicsBody?.restitution = 0.5
         self.physicsBody?.allowsRotation = false;
-        
         self.physicsBody?.categoryBitMask = ColliderType.Egg;
-        self.physicsBody?.collisionBitMask = ColliderType.World
+        self.physicsBody?.collisionBitMask = ColliderType.Hat;
+        self.physicsBody?.contactTestBitMask = ColliderType.Egg;
         
     }
     
@@ -66,6 +68,7 @@ class VisualEgg: SKSpriteNode {
         let returnToCenter = SKAction.rotate(toAngle:CGFloat(-Double.pi*2),duration:0.5)
         self.run(wobble){
             self.run(returnToCenter){
+                self.size = CGSize(width:200.0, height: 200.0)
                 self.run(SKAction.animate(with: self.TextureArray, timePerFrame:1)){
                     self.removeFromParent()
                     innerFunction()

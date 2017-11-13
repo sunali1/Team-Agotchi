@@ -34,7 +34,8 @@ class VisualLion: SKSpriteNode {
         self.physicsBody?.allowsRotation = false
         
         self.physicsBody?.categoryBitMask = lionColliderType.Lion;
-        self.physicsBody?.collisionBitMask = ColliderType.World
+        self.physicsBody?.collisionBitMask = lionColliderType.Lion;
+        
     }
     
     func jump() {

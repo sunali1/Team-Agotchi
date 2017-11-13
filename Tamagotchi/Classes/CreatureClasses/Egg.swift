@@ -14,6 +14,7 @@ class Egg {
     var age: Int
     var temp: Int
     var cracked: Bool /* Why are these here, what do they do */
+    var wearingHat = false
 
     
     init(size: Int, age: Int, temp: Int, cracked: Bool) {
@@ -116,5 +117,7 @@ class Egg {
         }
     }
 }
+
+
 
 
