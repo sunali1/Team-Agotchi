@@ -35,14 +35,28 @@ class LionTests: XCTestCase {
     }
     
     func testLionHungerStatusStartsHungry() {
-//        let result = lion.lionStartsHungry()
-        XCTAssertTrue(lion.hungry == true)
+        let result = lion.lionStartsHungry()
+        XCTAssertEqual(result, true)
+    }
+    
+//    func testLionIsNotHungry() {
+////        let _ = lion.eat(meal: "biltong");
+////        let _ = lion.eat(meal: "chicken");
+////        let _ = lion.eat(meal: "fish");
+//        let result = lion.hungerStatus()
+//        XCTAssertEqual(result, false )
+//    }
+    
+    func testIfLionPoos() {
+        let _ = lion.stomachContents = (["biltong", "chicken", "fish"])
+        let result = lion.pooProduced()
+        XCTAssertTrue(result, "true")
     }
     
     func testLionMealsAreStored() {
         let _ = lion.eat(meal: "biltong");
         let _ = lion.eat(meal: "chicken");
-        let _ = lion.eat(meal: "fish")
+        let _ = lion.eat(meal: "fish");
         XCTAssertEqual(lion.stomachContents, (["biltong", "chicken", "fish"]))
     }
     
