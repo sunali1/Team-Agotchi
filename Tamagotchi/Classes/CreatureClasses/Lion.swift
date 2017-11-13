@@ -53,9 +53,12 @@ class Lion {
         }
     }
     
-    func pooNow() {
+    func pooNow() -> Bool {
         if stomachContents.count == 3 {
         stomachContents.removeAll()
+            return true
+        } else {
+            return false
         }
     }
     

@@ -13,6 +13,7 @@ struct ColliderType {
     static let Egg: UInt32 = 1;
     static let World: UInt32 = 2;
     static let Hat: UInt32 = 3;
+    static let Poo: UInt32 = 4;
 }
 
 class VisualEgg: SKSpriteNode {
@@ -68,6 +69,7 @@ class VisualEgg: SKSpriteNode {
         let returnToCenter = SKAction.rotate(toAngle:CGFloat(-Double.pi*2),duration:0.5)
         self.run(wobble){
             self.run(returnToCenter){
+                self.size = CGSize(width:200.0, height: 200.0)
                 self.run(SKAction.animate(with: self.TextureArray, timePerFrame:1)){
                     self.removeFromParent()
                     innerFunction()
