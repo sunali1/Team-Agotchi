@@ -11,10 +11,14 @@ import SpriteKit
 class Cat: SKSpriteNode {
     var walkAtlas = SKTextureAtlas();
     var sickAtlas = SKTextureAtlas();
+    var deadAtlas = SKTextureAtlas();
     var catAnimation = [SKTexture]();
-    var animateCatAction = SKAction();
     var sickAnimation = [SKTexture]();
+    var deadAnimation = [SKTexture]();
+    var animateCatAction = SKAction();
     var animateSickAction = SKAction();
+    var animateDeadAction = SKAction();
+    
     
     func initializeCatandAnimations(){
         self.name = "cat"
@@ -26,6 +30,7 @@ class Cat: SKSpriteNode {
         
         sickAtlas = SKTextureAtlas(named: "Sick.atlas")
         walkAtlas = SKTextureAtlas(named: "Walk.atlas")
+        deadAtlas = SKTextureAtlas(named: "Dood.atlas")
         
         for i in 1...walkAtlas.textureNames.count {
             let name = "Cat \(i)";
@@ -37,11 +42,19 @@ class Cat: SKSpriteNode {
             sickAnimation.append(SKTexture(imageNamed: name));
         }
         
+        for i in 1...deadAtlas.textureNames.count {
+            let name = "Dead \(i)";
+            deadAnimation.append(SKTexture(imageNamed: name));
+        }
+        
         animateSickAction = SKAction.animate(with: self.sickAnimation, timePerFrame: 0.08, resize: true, restore: false)
         print("The array has \(sickAnimation.count) elements")
         
         animateCatAction = SKAction.animate(with: self.catAnimation, timePerFrame: 0.08, resize: true, restore: false)
         print("The array has \(catAnimation[0]) elements")
+        
+        animateDeadAction = SKAction.animate(with: self.deadAnimation, timePerFrame: 0.08, resize: true, restore: false)
+        print("The array has \(deadAnimation.count) elements")
 
     }
 
@@ -64,6 +77,14 @@ class Cat: SKSpriteNode {
         print("animateSickCat")
     }
     
+    func animateDeadCat() {
+        stopCatAnimation()
+        stopSickCatAnimation()
+        self.run(animateDeadAction, withKey: "AnimateDeadCat")
+//self.texture = sickAtlas.textureNamed("Hurt 3")
+        print("animateDeadCat")
+    }
+    
     func stopCatAnimation() {
         self.removeAction(forKey: "AnimateCat")
     }
@@ -71,6 +92,11 @@ class Cat: SKSpriteNode {
     func stopSickCatAnimation() {
         self.removeAction(forKey: "AnimateSickCat")
         self.texture = SKTexture(imageNamed: "Cat 1")
+    }
+    
+    func stopDeadCatAnimation() {
+        self.removeAction(forKey: "AnimateDeadCat")
+        self.texture = SKTexture(imageNamed: "Dead 10")
     }
   
     func flipCat() {

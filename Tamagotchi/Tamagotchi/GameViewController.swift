@@ -124,6 +124,12 @@ class GameViewController: UIViewController {
             hungryDays = 0
         }
         
+        if hungryDays > 10 {
+            scene?.catSprite.animateDeadCat()
+            ageTracker.invalidate()
+            ageActivated = false
+        }
+        
         updateTempLabel()
         if let pooCounter = scene?.pooCounter {
             if pooCounter > 0 {
