@@ -19,6 +19,7 @@ class Lion {
     var awake: Bool
     var happy: Int
     var born: Bool
+    var alive: Bool
     
     init(size: Int, age: Int, temp: Int, hungry: Bool, bursting: Bool) {
         self.size = size;
@@ -29,6 +30,7 @@ class Lion {
         self.awake = true;
         self.happy = 1
         self.born = false
+        self.alive = true
     }
     
     

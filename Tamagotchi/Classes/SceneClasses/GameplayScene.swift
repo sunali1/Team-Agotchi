@@ -46,50 +46,54 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
 
  
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            let location = touch.location(in: self);
-            let touchedNode = self.atPoint(location)
-            
-            if location.x > center{
-               
-                catSprite.animateCat(moveLeft: false)
-                catSprite.position.x += 7
-            } else {
-                catSprite.animateCat(moveLeft: true)
-                catSprite.position.x -= 7
-            }
-//            canMove = true;
-            
-            if atPoint(location).name == "visualEggInstance"{
-                print("You touched an egg")
-                print(egg.helpEgg(item: "Hat"))
-                print(egg.temp)
-                if egg.temp > 18 {
-                    crackEgg()
-                    hatchLion()
-                    print(self.viewController.gameManager.lion.temp)
+        if viewController.gameManager.lion.alive == true{
+            for touch in touches {
+                let location = touch.location(in: self);
+                let touchedNode = self.atPoint(location)
+                
+                if location.x > center{
+                   
+                    catSprite.animateCat(moveLeft: false)
+                    catSprite.position.x += 7
+                } else {
+                    catSprite.animateCat(moveLeft: true)
+                    catSprite.position.x -= 7
                 }
-            }
-            
-            if touchedNode.name == "MrPoopy"{
-                print("You touched a poo")
-                self.pooArray.first(where:{$0 == touchedNode})?.fadeOut()
-                self.pooCounter -= 1
-                if pooCounter == 0 {
-                    self.viewController.thoughtBubbleText.isHidden = true
-                    self.viewController.thoughtBubble.isHidden = true
+    //            canMove = true;
+                
+                if atPoint(location).name == "visualEggInstance"{
+                    print("You touched an egg")
+                    print(egg.helpEgg(item: "Hat"))
+                    print(egg.temp)
+                    if egg.temp > 18 {
+                        crackEgg()
+                        hatchLion()
+                        print(self.viewController.gameManager.lion.temp)
+                    }
+                }
+                
+                if touchedNode.name == "MrPoopy"{
+                    print("You touched a poo")
+                    self.pooArray.first(where:{$0 == touchedNode})?.fadeOut()
+                    self.pooCounter -= 1
+                    if pooCounter == 0 {
+                        self.viewController.thoughtBubbleText.isHidden = true
+                        self.viewController.thoughtBubble.isHidden = true
+                    }
                 }
             }
         }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            let location = touch.location(in: self);
-            if location.x > center{
-                catSprite.position.x += 7
-            } else {
-                catSprite.position.x -= 7
+        if viewController.gameManager.lion.alive == true{
+            for touch in touches {
+                let location = touch.location(in: self);
+                if location.x > center{
+                    catSprite.position.x += 7
+                } else {
+                    catSprite.position.x -= 7
+                }
             }
         }
     }
