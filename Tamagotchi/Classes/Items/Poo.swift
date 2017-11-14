@@ -34,7 +34,7 @@ class VisualPoo: SKSpriteNode {
     func fadeOut(){
         let fadeOut = SKAction.fadeOut(withDuration: 3)
         let lower = SKAction.scale(by: CGFloat(0.1), duration: 3)
-        let higher = SKAction.scale(by: CGFloat(3), duration: 3)
+        let higher = SKAction.scale(by: CGFloat(10), duration: 3)
         let fadeIn = SKAction.fadeIn(withDuration: 3)
         self.run(fadeOut)
         self.run(lower){
