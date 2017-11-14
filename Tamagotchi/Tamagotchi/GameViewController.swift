@@ -149,6 +149,7 @@ class GameViewController: UIViewController {
             scene?.catSprite.animateDeadCat()
             ageTracker.invalidate()
             ageActivated = false
+            gameManager.lion.alive = false
         }
         
         updateTempLabel()
@@ -201,6 +202,7 @@ class GameViewController: UIViewController {
         self.feedVisual.isHidden = true
         self.thoughtBubble.isHidden = true
         self.thoughtBubbleText.isHidden = true
+        self.thoughtBubbleText.textAlignment = .center;
         foodUIHide(bool: true)
         updateTempLabel()
 
