@@ -18,6 +18,7 @@ class Lion {
     var stomachContents: [String] = []
     var awake: Bool
     var happy: Int
+    var born: Bool
     
     init(size: Int, age: Int, temp: Int, hungry: Bool, bursting: Bool) {
         self.size = size;
@@ -26,7 +27,8 @@ class Lion {
         self.hungry = true;
         self.bursting = false;
         self.awake = true;
-        self.happy = 20
+        self.happy = 1
+        self.born = false
     }
     
     
@@ -35,6 +37,7 @@ class Lion {
         return hungry
     }
     
+   
     
     func eat(meal: String) -> String {
         if stomachContents.count <= 2 {

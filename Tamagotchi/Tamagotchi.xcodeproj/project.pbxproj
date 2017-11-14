@@ -55,7 +55,6 @@
 		EEDB22DC1FB9C4EC00B27F81 /* hat.png in Resources */ = {isa = PBXBuildFile; fileRef = EEDB22DB1FB9C4EC00B27F81 /* hat.png */; };
 		EEDB22DE1FB9F33F00B27F81 /* Poo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDB22DD1FB9F33F00B27F81 /* Poo.swift */; };
 		FA0174D61FB74D8A00A84D50 /* Hat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0174D51FB74D8A00A84D50 /* Hat.swift */; };
-		FA0174D81FB752CB00A84D50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0174D71FB752CB00A84D50 /* Assets.xcassets */; };
 		FA09AAF21FB5920B003C6C20 /* VisualEgg.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09AAF11FB5920B003C6C20 /* VisualEgg.swift */; };
 		FA09AAFC1FB59287003C6C20 /* crack2.png in Resources */ = {isa = PBXBuildFile; fileRef = FA09AAF51FB59286003C6C20 /* crack2.png */; };
 		FA09AAFD1FB59287003C6C20 /* 1276572-200.png in Resources */ = {isa = PBXBuildFile; fileRef = FA09AAF61FB59286003C6C20 /* 1276572-200.png */; };
@@ -69,6 +68,7 @@
 		FA09AB0A1FB594CE003C6C20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA09AB091FB594CD003C6C20 /* Main.storyboard */; };
 		FA09AB141FB599F7003C6C20 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09AB131FB599F7003C6C20 /* GameManager.swift */; };
 		FA8908441FB3461200C31387 /* basicStatsModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8908431FB3461200C31387 /* basicStatsModelView.swift */; };
+		FA99AA0B1FBB14DB00D93956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA99AA0A1FBB14DB00D93956 /* Assets.xcassets */; };
 		FAB948971FB88B930059D28D /* Dog in Resources */ = {isa = PBXBuildFile; fileRef = FAB948961FB88B930059D28D /* Dog */; };
 		FAB9489A1FB88BCC0059D28D /* Santa in Resources */ = {isa = PBXBuildFile; fileRef = FAB948991FB88BCB0059D28D /* Santa */; };
 		FAB9489C1FB88BDC0059D28D /* Girl in Resources */ = {isa = PBXBuildFile; fileRef = FAB9489B1FB88BDC0059D28D /* Girl */; };
@@ -168,7 +168,6 @@
 		EEDB22DB1FB9C4EC00B27F81 /* hat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hat.png; sourceTree = "<group>"; };
 		EEDB22DD1FB9F33F00B27F81 /* Poo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poo.swift; sourceTree = "<group>"; };
 		FA0174D51FB74D8A00A84D50 /* Hat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hat.swift; sourceTree = "<group>"; };
-		FA0174D71FB752CB00A84D50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA09AAF11FB5920B003C6C20 /* VisualEgg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEgg.swift; sourceTree = "<group>"; };
 		FA09AAF51FB59286003C6C20 /* crack2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crack2.png; sourceTree = "<group>"; };
 		FA09AAF61FB59286003C6C20 /* 1276572-200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1276572-200.png"; sourceTree = "<group>"; };
@@ -182,6 +181,7 @@
 		FA09AB091FB594CD003C6C20 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FA09AB131FB599F7003C6C20 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		FA8908431FB3461200C31387 /* basicStatsModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicStatsModelView.swift; sourceTree = "<group>"; };
+		FA99AA0A1FBB14DB00D93956 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAB948961FB88B930059D28D /* Dog */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Dog; sourceTree = "<group>"; };
 		FAB948991FB88BCB0059D28D /* Santa */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Santa; sourceTree = "<group>"; };
 		FAB9489B1FB88BDC0059D28D /* Girl */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Girl; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 		EE2B40711FB1DBFA005C5775 = {
 			isa = PBXGroup;
 			children = (
-				FA0174D71FB752CB00A84D50 /* Assets.xcassets */,
+				FA99AA0A1FBB14DB00D93956 /* Assets.xcassets */,
 				FA09AAF31FB59264003C6C20 /* Assets */,
 				FA09AAF01FB591EA003C6C20 /* Scenes */,
 				FA09AAEF1FB591CA003C6C20 /* Classes */,
@@ -577,6 +577,7 @@
 				53F5B78A1FB5F0A000556CD5 /* Forest BG.png in Resources */,
 				EEC1E26B1FB5C8DD005606E4 /* lion.png in Resources */,
 				FAB9489A1FB88BCC0059D28D /* Santa in Resources */,
+				FA99AA0B1FBB14DB00D93956 /* Assets.xcassets in Resources */,
 				43382B621FB9F5F0000EE75F /* icecreamtwo.png in Resources */,
 				FAB9489C1FB88BDC0059D28D /* Girl in Resources */,
 				5390B15C1FB9BCE100280769 /* Cat 6.png in Resources */,
@@ -792,6 +793,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2BHUYQ7398;
 				INFOPLIST_FILE = Tamagotchi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TammoTeam.Tamagotchi;
@@ -806,6 +808,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2BHUYQ7398;
 				INFOPLIST_FILE = Tamagotchi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TammoTeam.Tamagotchi;

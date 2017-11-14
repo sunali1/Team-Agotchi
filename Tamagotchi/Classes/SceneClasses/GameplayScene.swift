@@ -18,6 +18,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     var lionSprite = VisualLion();
     let catSprite = Cat()
     var pooArray: [VisualPoo] = []
+    var pooCounter = 0;
     var viewController: GameViewController!
     lazy var egg = self.viewController.gameManager.egg
 //    lazy var cat = self.viewController.gameManager.cat
@@ -47,6 +48,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self);
+            let touchedNode = self.atPoint(location)
             
             if location.x > center{
                
@@ -66,6 +68,16 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
                     crackEgg()
                     hatchLion()
                     print(self.viewController.gameManager.lion.temp)
+                }
+            }
+            
+            if touchedNode.name == "MrPoopy"{
+                print("You touched a poo")
+                self.pooArray.first(where:{$0 == touchedNode})?.fadeOut()
+                self.pooCounter -= 1
+                if pooCounter == 0 {
+                    self.viewController.thoughtBubbleText.isHidden = true
+                    self.viewController.thoughtBubble.isHidden = true
                 }
             }
         }
@@ -100,7 +112,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         eggSprite.crack(innerFunction: { self.addChild(self.catSprite)
             self.catSprite.initializeCatandAnimations();
             self.viewController.showFoodUI()
-            
+            self.viewController.gameManager.lion.born = true
         })
         egg.cracked = true
         print(egg.cracked)
@@ -112,9 +124,10 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         let pooSprite = VisualPoo()
         pooArray.append(pooSprite)
         addChild(pooSprite)
+        pooCounter += 1
         pooSprite.initialize(name:"MrPoopy", position: CGPoint(x:catSprite.position.x, y: catSprite.position.y-200))
         print(pooArray)
-        self.viewController.meals.text = "\(self.viewController.gameManager.lion.stomachContents.count)"
+//        self.viewController.meals.text = "\(self.viewController.gameManager.lion.stomachContents.count)"
     }
 
 }

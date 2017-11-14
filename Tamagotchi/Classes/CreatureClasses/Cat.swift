@@ -77,5 +77,4 @@ class Cat: SKSpriteNode {
         let flip = SKAction.rotate(toAngle:CGFloat(-Double.pi*2),duration:0.5)
         self.run(flip)
     }
-    
 }
