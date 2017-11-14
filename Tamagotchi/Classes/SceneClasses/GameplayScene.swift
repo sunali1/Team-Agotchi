@@ -112,6 +112,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         eggSprite.crack(innerFunction: { self.addChild(self.catSprite)
             self.catSprite.initializeCatandAnimations();
             self.viewController.showFoodUI()
+            self.viewController.gameManager.lion.born = true
         })
         egg.cracked = true
         print(egg.cracked)

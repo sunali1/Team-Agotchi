@@ -121,12 +121,29 @@ class GameViewController: UIViewController {
             clearIceCreamArray()
             scene?.pooQuery() //creates the visual Poo on the screen and increments array and counter of poo
             self.poopVisual.isHidden = true //hides the poo button
-            self.thoughtBubble.isHidden = false
-            self.thoughtBubbleText.isHidden = false
+            
+            let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                self.thoughtBubble.isHidden = false
+                self.thoughtBubbleText.isHidden = false
+                self.thoughtBubbleText.text = "stick your finger in my poo!"
+            }
+           
         }
         
-        if countStomachContents() <= 1 {
-            
+        if countStomachContents() <= 1 && gameManager.lion.born == true && scene?.pooCounter == 0 {
+            let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                self.thoughtBubbleText.text = "I'm fookin 'ungry m8"
+                self.thoughtBubble.isHidden = false
+                self.thoughtBubbleText.isHidden = false
+            }
+        }
+        
+        if countStomachContents() >= 2 && gameManager.lion.born == true && scene?.pooCounter == 0 {
+                self.thoughtBubbleText.text = "I'm NOT fookin 'ungry m8"
+                self.thoughtBubble.isHidden = true
+                self.thoughtBubbleText.isHidden = true
         }
     }
 
