@@ -106,6 +106,13 @@ class GameViewController: UIViewController {
             gameManager.egg.temp += 1
         }
         updateTempLabel()
+        if let pooCounter = scene?.pooCounter {
+            if pooCounter > 0 {
+                gameManager.lion.happy -= 1
+                happiness.text = String("\(countHappiness())")
+                
+            }
+        }
     }
 
 
