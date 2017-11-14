@@ -75,6 +75,10 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
                 print("You touched a poo")
                 self.pooArray.first(where:{$0 == touchedNode})?.fadeOut()
                 self.pooCounter -= 1
+                if pooCounter == 0 {
+                    self.viewController.thoughtBubbleText.isHidden = true
+                    self.viewController.thoughtBubble.isHidden = true
+                }
             }
         }
     }
