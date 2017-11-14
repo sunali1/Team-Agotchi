@@ -129,6 +129,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         addChild(pooSprite)
         pooCounter += 1
         pooSprite.initialize(name:"MrPoopy", position: CGPoint(x:catSprite.position.x, y: catSprite.position.y-200))
+        run(crackSound)
         print(pooArray)
 //        self.viewController.meals.text = "\(self.viewController.gameManager.lion.stomachContents.count)"
     }
