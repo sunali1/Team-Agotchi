@@ -115,6 +115,11 @@ class GameViewController: UIViewController {
             hungryDays += 1
         }
         
+        if gameManager.egg.temp >= 18 {
+            scene?.crackEgg()
+            scene?.hatchLion()
+        }
+        
         if hungryDays > 4 {
             scene?.catSprite.animateSickCat()
         }
