@@ -33,6 +33,7 @@ class GameViewController: UIViewController {
 
     var age = 0
     var hungryDays = 0
+    var playDays = 0
     var ageActivated = true
     var ageTracker = Timer()
     var foodTracker = Timer()
@@ -71,13 +72,14 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func play(_ sender: Any) {
-        happiness.text = String("\(countHappiness())")
         scene?.catSprite.flipCat()
         print("I should be flipping!")
         if gameManager.lion.happy <= 2 {
             gameManager.lion.happy += 1
             print (gameManager.lion.happy)
+            happiness.text = String("\(countHappiness())")
         }
+        playDays = 0
     }
 
     
@@ -107,6 +109,19 @@ class GameViewController: UIViewController {
         age += 1
         ageLabel.text = String(age)
         
+        
+        if gameManager.lion.born == true {
+            playDays += 1
+        }
+        
+        if playDays >= 2 {
+            print(gameManager.lion.happy)
+            print(playDays)
+            gameManager.lion.happy -= 1
+            happiness.text = String("\(countHappiness())")
+        }
+        
+        
         if gameManager.egg.wearingHat == true {
             gameManager.egg.temp += 1
         }
@@ -118,6 +133,7 @@ class GameViewController: UIViewController {
         if gameManager.egg.temp >= 18 && gameManager.lion.born == false {
             scene?.crackEgg()
             scene?.hatchLion()
+             happiness.text = String("\(countHappiness())")
         }
         
         if hungryDays > 4 {
