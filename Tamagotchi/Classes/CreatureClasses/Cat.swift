@@ -18,6 +18,7 @@ class Cat: SKSpriteNode {
     var animateCatAction = SKAction();
     var animateSickAction = SKAction();
     var animateDeadAction = SKAction();
+    let deadSound = SKAction.playSoundFileNamed("Dead.mp3", waitForCompletion: false)
     
     
     func initializeCatandAnimations(){
@@ -81,6 +82,7 @@ class Cat: SKSpriteNode {
         stopCatAnimation()
         stopSickCatAnimation()
         self.run(animateDeadAction, withKey: "AnimateDeadCat")
+        run(deadSound)
 //self.texture = sickAtlas.textureNamed("Hurt 3")
         print("animateDeadCat")
     }
