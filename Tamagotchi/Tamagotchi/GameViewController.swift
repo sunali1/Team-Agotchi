@@ -17,7 +17,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var thermometer: UIImageView!
-    @IBOutlet weak var meals: UILabel!
+
     @IBOutlet weak var foodLabel: UILabel!
     @IBOutlet weak var IceCreamOne: UIImageView!
     @IBOutlet weak var IceCreamTwo: UIImageView!
@@ -26,6 +26,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var poopVisual: UIButton!
     @IBOutlet weak var feedVisual: UIButton!
     
+    @IBOutlet weak var thoughtBubbleText: UITextView!
+    @IBOutlet weak var thoughtBubble: UIImageView!
     @IBOutlet weak var happiness: UILabel!
     
 
@@ -56,13 +58,13 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func poo(_ sender: Any) {
-        gameManager.lion.pooNow()
-        meals.text = "\(countStomachContents())"
+        gameManager.lion.pooNow() //empty stomach contents of lion class logic
+//        meals.text = "\(countStomachContents())" // print out the empty stomach contents
         IceCreamOne.image = UIImage(named: "icecreamfour.png")
         IceCreamTwo.image = UIImage(named: "icecreamfour.png")
         IceCreamThree.image = UIImage(named: "icecreamfour.png")
-        scene?.pooQuery()
-        self.poopVisual.isHidden = true
+        scene?.pooQuery() //creates the visual Poo on the screen and increments array and counter of poo
+        self.poopVisual.isHidden = true //hides the poo button
 
     }
 
@@ -95,7 +97,7 @@ class GameViewController: UIViewController {
             IceCreamThree.image = UIImage(named: "icecreamthree.png")
         }
 
-        meals.text = String("\(countStomachContents())")
+//        meals.text = String("\(countStomachContents())")
 
     }
 
@@ -110,8 +112,21 @@ class GameViewController: UIViewController {
             if pooCounter > 0 {
                 gameManager.lion.happy -= 1
                 happiness.text = String("\(countHappiness())")
-                
             }
+        }
+        
+        if countStomachContents() == 3 {
+            gameManager.lion.pooNow() //empty stomach contents of lion class logic
+//            meals.text = "\(countStomachContents())" // print out the empty stomach contents
+            clearIceCreamArray()
+            scene?.pooQuery() //creates the visual Poo on the screen and increments array and counter of poo
+            self.poopVisual.isHidden = true //hides the poo button
+            self.thoughtBubble.isHidden = false
+            self.thoughtBubbleText.isHidden = false
+        }
+        
+        if countStomachContents() <= 1 {
+            
         }
     }
 
@@ -121,6 +136,8 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         self.poopVisual.isHidden = true
         self.feedVisual.isHidden = true
+        self.thoughtBubble.isHidden = true
+        self.thoughtBubbleText.isHidden = true
         hideFoodUI()
         updateTempLabel()
 
@@ -190,6 +207,12 @@ class GameViewController: UIViewController {
         scene?.eggSprite.texture = SKTexture(imageNamed: "eggWithHat.png")
         scene?.eggSprite.size = CGSize(width:200.0, height: 300.0)
         scene?.eggSprite.physicsBody = SKPhysicsBody(texture: (scene?.eggSprite.texture)!, size: (scene?.eggSprite.size)!);
+    }
+    
+    func clearIceCreamArray(){
+        IceCreamOne.image = UIImage(named: "icecreamfour.png")
+        IceCreamTwo.image = UIImage(named: "icecreamfour.png")
+        IceCreamThree.image = UIImage(named: "icecreamfour.png")
     }
     
     func updateTempLabel(){

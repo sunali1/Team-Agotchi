@@ -122,7 +122,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         pooCounter += 1
         pooSprite.initialize(name:"MrPoopy", position: CGPoint(x:catSprite.position.x, y: catSprite.position.y-200))
         print(pooArray)
-        self.viewController.meals.text = "\(self.viewController.gameManager.lion.stomachContents.count)"
+//        self.viewController.meals.text = "\(self.viewController.gameManager.lion.stomachContents.count)"
     }
 
 }
