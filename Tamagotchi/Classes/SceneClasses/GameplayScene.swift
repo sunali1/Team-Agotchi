@@ -75,6 +75,10 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
                 print("You touched a poo")
                 self.pooArray.first(where:{$0 == touchedNode})?.fadeOut()
                 self.pooCounter -= 1
+                if pooCounter == 0 {
+                    self.viewController.thoughtBubbleText.isHidden = true
+                    self.viewController.thoughtBubble.isHidden = true
+                }
             }
         }
     }
@@ -108,6 +112,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         eggSprite.crack(innerFunction: { self.addChild(self.catSprite)
             self.catSprite.initializeCatandAnimations();
             self.viewController.showFoodUI()
+            self.viewController.gameManager.lion.born = true
         })
         egg.cracked = true
         print(egg.cracked)
