@@ -48,6 +48,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         for touch in touches {
             
             let location = touch.location(in: self);
+            let touchedNode = self.atPoint(location)
             
             if location.x > center{
                 catSprite.animateCat(moveLeft: false)
@@ -67,6 +68,13 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
                     hatchLion()
                     print(self.viewController.gameManager.lion.temp)
                 }
+            }
+            
+            if touchedNode.name == "MrPoopy"{
+                print("You touched a poo")
+//                print(touchedNode)
+//                print(self.children)
+                self.pooArray.first(where:{$0 == touchedNode})?.fadeOut()
             }
         }
     }
