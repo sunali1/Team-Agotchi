@@ -16,10 +16,11 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     var center = CGFloat();
     let eggSprite = VisualEgg();
     var lionSprite = VisualLion();
+    let catSprite = Cat()
     var pooArray: [VisualPoo] = []
     var viewController: GameViewController!
     lazy var egg = self.viewController.gameManager.egg
-    lazy var cat = self.viewController.gameManager.cat
+//    lazy var cat = self.viewController.gameManager.cat
     
 
     func initialize() {
@@ -41,6 +42,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         print(egg.cracked)
         center = CGFloat((self.scene?.size.width)!) / CGFloat((self.scene?.size.height)!)
     }
+    
     override func update(_ currentTime: TimeInterval){
         manageCat();
     }
@@ -52,10 +54,10 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
             
             if location.x > center{
                 moveLeft = false;
-                cat.animateCat(moveLeft: moveLeft)
+                catSprite.animateCat(moveLeft: moveLeft)
             } else {
                 moveLeft = true;
-                cat.animateCat(moveLeft: moveLeft)
+                catSprite.animateCat(moveLeft: moveLeft)
             }
             canMove = true;
             
@@ -79,13 +81,12 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         canMove = false;
-        cat.stopCatAnimation()
+        catSprite.stopCatAnimation()
     }
 
     
     
     func hatchLion(){
-        self.viewController.showFoodUI()
         self.viewController.gameManager.lion = Lion(size: 10, age: 6, temp: 15, hungry: true, bursting: false)
     }
 
@@ -93,8 +94,9 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         if egg.cracked == true {
             return print("Egg already cracked")
         }
-        eggSprite.crack(innerFunction: { self.addChild(self.cat)
-            self.cat.initializeCatandAnimations();
+        eggSprite.crack(innerFunction: { self.addChild(self.catSprite)
+            self.catSprite.initializeCatandAnimations();
+            self.viewController.showFoodUI()
         })
         egg.cracked = true
         print(egg.cracked)
@@ -103,7 +105,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     }
     func manageCat() {
         if canMove{
-        cat.moveCat(moveLeft: moveLeft)
+        catSprite.moveCat(moveLeft: moveLeft)
         }
     }
     
@@ -111,7 +113,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         let pooSprite = VisualPoo()
         pooArray.append(pooSprite)
         addChild(pooSprite)
-        pooSprite.initialize(name:"Robin Collins", position: cat.position)
+        pooSprite.initialize(name:"MrPoopy", position: CGPoint(x:catSprite.position.x, y: catSprite.position.y-200))
         print(pooArray)
         self.viewController.meals.text = "\(self.viewController.gameManager.lion.stomachContents.count)"
     }

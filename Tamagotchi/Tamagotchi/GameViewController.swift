@@ -65,7 +65,7 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func play(_ sender: Any) {
-        gameManager.cat.flipCat()
+        scene?.catSprite.flipCat()
         print("I should be flipping!")
     }
     
@@ -73,7 +73,6 @@ class GameViewController: UIViewController {
         if countStomachContents() >= 3 {
             self.poopVisual.isHidden = false
             return print("I'm full!")
-            self.poopVisual.isHidden = false
         }
         gameManager.lion.eat(meal: "kiwi")
 

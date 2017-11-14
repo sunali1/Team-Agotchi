@@ -45,7 +45,6 @@ class VisualEgg: SKSpriteNode {
     }
     
     func crackingArray(){
-        
         TextureAtlas = SKTextureAtlas(named: "Cracking")
         for i in 0...TextureAtlas.textureNames.count{
             var Name = "crack\(i).png"
@@ -60,7 +59,6 @@ class VisualEgg: SKSpriteNode {
     }
     
     func crack(innerFunction:@escaping()->Void){
-    
         crackingArray()
         let goLeft = SKAction.rotate(toAngle: CGFloat(-Double.pi/6), duration: 0.5)
         let goRight = SKAction.rotate(toAngle: CGFloat(Double.pi/6), duration: 0.5)

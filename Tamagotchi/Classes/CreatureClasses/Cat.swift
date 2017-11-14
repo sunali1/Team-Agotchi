@@ -29,14 +29,13 @@ class Cat: SKSpriteNode {
         animateCatAction = SKAction.animate(with: self.catAnimation, timePerFrame: 0.08, resize: true, restore: false)
         print("The array has \(catAnimation[0]) elements")
     }
+    
     func animateCat(moveLeft: Bool) {
-        
         if moveLeft {
             self.xScale = -fabs(self.xScale);
         } else {
             self.xScale = fabs(self.xScale);
         }
-        
         self.run(SKAction.repeatForever(animateCatAction), withKey: "AnimateCat")
         print("animateCat")
     }
