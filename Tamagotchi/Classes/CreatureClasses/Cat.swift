@@ -44,13 +44,6 @@ class Cat: SKSpriteNode {
         self.removeAction(forKey: "AnimateCat")
     }
   
-    func moveCat(moveLeft: Bool) {
-        if moveLeft {
-            self.position.x -= 7;
-        } else {
-            self.position.x += 7;
-        }
-    }
     func flipCat() {
         let flip = SKAction.rotate(toAngle:CGFloat(-Double.pi*2),duration:0.5)
         self.run(flip)

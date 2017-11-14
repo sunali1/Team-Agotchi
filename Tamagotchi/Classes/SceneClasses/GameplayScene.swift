@@ -42,10 +42,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         print(egg.cracked)
         center = CGFloat((self.scene?.size.width)!) / CGFloat((self.scene?.size.height)!)
     }
-    
-    override func update(_ currentTime: TimeInterval){
-        manageCat();
-    }
+
  
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
@@ -53,13 +50,13 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
             let location = touch.location(in: self);
             
             if location.x > center{
-                moveLeft = false;
-                catSprite.animateCat(moveLeft: moveLeft)
+                catSprite.animateCat(moveLeft: false)
+                catSprite.position.x += 7
             } else {
-                moveLeft = true;
-                catSprite.animateCat(moveLeft: moveLeft)
+                catSprite.animateCat(moveLeft: true)
+                catSprite.position.x -= 7
             }
-            canMove = true;
+//            canMove = true;
             
             if atPoint(location).name == "visualEggInstance"{
                 print("You touched an egg")
@@ -74,10 +71,16 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        for touch in touches {
-//        }
-//    }
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            let location = touch.location(in: self);
+            if location.x > center{
+                catSprite.position.x += 7
+            } else {
+                catSprite.position.x -= 7
+            }
+        }
+    }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         canMove = false;
@@ -102,11 +105,6 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         print(egg.cracked)
         self.viewController.hideEggUI()
         self.viewController.feedVisual.isHidden = false
-    }
-    func manageCat() {
-        if canMove{
-        catSprite.moveCat(moveLeft: moveLeft)
-        }
     }
     
     func pooQuery() {
