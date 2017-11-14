@@ -26,7 +26,7 @@ class Lion {
         self.hungry = true;
         self.bursting = false;
         self.awake = true;
-        self.happy = 20
+        self.happy = 1
     }
     
     
@@ -35,6 +35,7 @@ class Lion {
         return hungry
     }
     
+   
     
     func eat(meal: String) -> String {
         if stomachContents.count <= 2 {

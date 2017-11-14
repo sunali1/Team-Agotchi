@@ -26,6 +26,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var poopVisual: UIButton!
     @IBOutlet weak var feedVisual: UIButton!
     
+    @IBOutlet weak var happiness: UILabel!
+    
 
     var age = 0
     var ageActivated = true
@@ -65,9 +67,15 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func play(_ sender: Any) {
+        happiness.text = String("\(countHappiness())")
         scene?.catSprite.flipCat()
         print("I should be flipping!")
+        if gameManager.lion.happy <= 2 {
+            gameManager.lion.happy += 1
+            print (gameManager.lion.happy)
+        }
     }
+
     
     @IBAction func updatemeal(_ sender: Any) {
         if countStomachContents() >= 3 {
@@ -183,6 +191,10 @@ class GameViewController: UIViewController {
     
     func countStomachContents() -> Int {
        return gameManager.lion.stomachContents.count
+    }
+    
+    func countHappiness() -> Int {
+        return gameManager.lion.happy
     }
 
 }
