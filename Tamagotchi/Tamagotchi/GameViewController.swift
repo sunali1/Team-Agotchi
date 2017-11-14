@@ -111,11 +111,11 @@ class GameViewController: UIViewController {
             gameManager.egg.temp += 1
         }
         
-        if countStomachContents() == 0 {
+        if countStomachContents() == 0 && gameManager.lion.born == true {
             hungryDays += 1
         }
         
-        if gameManager.egg.temp >= 18 {
+        if gameManager.egg.temp >= 18 && gameManager.lion.born == false {
             scene?.crackEgg()
             scene?.hatchLion()
         }
@@ -179,7 +179,7 @@ class GameViewController: UIViewController {
         self.feedVisual.isHidden = true
         self.thoughtBubble.isHidden = true
         self.thoughtBubbleText.isHidden = true
-        hideFoodUI()
+        foodUIHide(bool: true)
         updateTempLabel()
 
         ageTracker = Timer.scheduledTimer(timeInterval: 5, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)
@@ -228,19 +228,12 @@ class GameViewController: UIViewController {
         self.thermometer.isHidden = true
     }
 
-    func showFoodUI() {
-        self.IceCreamOne.isHidden = false
-        self.IceCreamTwo.isHidden = false
-        self.IceCreamThree.isHidden = false
-        self.foodLabel.isHidden = false
-    }
     
-    func hideFoodUI() {
-        self.IceCreamOne.isHidden = true
-        self.IceCreamTwo.isHidden = true
-        self.IceCreamThree.isHidden = true
-        self.foodLabel.isHidden = true
-
+    func foodUIHide(bool: Bool){
+        self.IceCreamOne.isHidden = bool
+        self.IceCreamTwo.isHidden = bool
+        self.IceCreamThree.isHidden = bool
+        self.foodLabel.isHidden = bool
     }
 
     func resizeRetextureEggToHatEgg(){

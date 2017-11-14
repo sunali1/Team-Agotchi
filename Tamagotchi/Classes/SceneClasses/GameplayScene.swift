@@ -25,7 +25,6 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     
 
     func initialize() {
-        self.viewController.hideFoodUI() 
     }
 
     override func didMove(to view: SKView) {
@@ -111,7 +110,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         }
         eggSprite.crack(innerFunction: { self.addChild(self.catSprite)
             self.catSprite.initializeCatandAnimations();
-            self.viewController.showFoodUI()
+            self.viewController.foodUIHide(bool: false)
             self.viewController.gameManager.lion.born = true
         })
         egg.cracked = true
