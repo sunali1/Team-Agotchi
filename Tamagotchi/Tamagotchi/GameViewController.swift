@@ -32,8 +32,10 @@ class GameViewController: UIViewController {
     
 
     var age = 0
+    var hungryDays = 0
     var ageActivated = true
     var ageTracker = Timer()
+    var foodTracker = Timer()
     var scene = GameplayScene(fileNamed: "GameplayScene")
 
     @IBAction func touchHatButton(_ sender: Any) {
@@ -104,9 +106,24 @@ class GameViewController: UIViewController {
     @objc func updateAge() {
         age += 1
         ageLabel.text = String(age)
+        
         if gameManager.egg.wearingHat == true {
             gameManager.egg.temp += 1
         }
+        
+        if countStomachContents() == 0 {
+            hungryDays += 1
+        }
+        
+        if hungryDays > 4 {
+            scene?.catSprite.animateSickCat()
+        }
+        
+        if countStomachContents() >= 2 {
+            scene?.catSprite.stopSickCatAnimation()
+            hungryDays = 0
+        }
+        
         updateTempLabel()
         if let pooCounter = scene?.pooCounter {
             if pooCounter > 0 {
@@ -146,6 +163,8 @@ class GameViewController: UIViewController {
                 self.thoughtBubbleText.isHidden = true
         }
     }
+    
+
 
 
 
@@ -158,9 +177,8 @@ class GameViewController: UIViewController {
         hideFoodUI()
         updateTempLabel()
 
-        ageTracker = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)
-
-
+        ageTracker = Timer.scheduledTimer(timeInterval: 5, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)
+        
 
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameplayScene.sks'
@@ -245,3 +263,5 @@ class GameViewController: UIViewController {
     }
 
 }
+
+/* When the cat is out of the egg, it will check if it's stomach is empty and it's age is above a certain amount before it animates */

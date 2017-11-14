@@ -11,4 +11,5 @@ import Foundation
 class GameManager {
     let egg = Egg(size: 0, age: 0, temp: 10, cracked: false)
     var lion = Lion(size: 10, age: 6, temp: 15, hungry: true, bursting: false)
+    var cat = Cat()
 }
