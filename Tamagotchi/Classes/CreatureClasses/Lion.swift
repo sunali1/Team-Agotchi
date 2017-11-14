@@ -17,6 +17,7 @@ class Lion {
     var bursting: Bool
     var stomachContents: [String] = []
     var awake: Bool
+    var happy: Int
     
     init(size: Int, age: Int, temp: Int, hungry: Bool, bursting: Bool) {
         self.size = size;
@@ -25,6 +26,7 @@ class Lion {
         self.hungry = true;
         self.bursting = false;
         self.awake = true;
+        self.happy = 20
     }
     
     
@@ -62,9 +64,6 @@ class Lion {
             return false
         }
     }
-    
-
-
     
     func updateAge() {
         age += 1
