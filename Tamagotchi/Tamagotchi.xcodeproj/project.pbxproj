@@ -21,6 +21,9 @@
 		43382B611FB9F5F0000EE75F /* icecreamthree.png in Resources */ = {isa = PBXBuildFile; fileRef = 43382B5D1FB9F5ED000EE75F /* icecreamthree.png */; };
 		43382B621FB9F5F0000EE75F /* icecreamtwo.png in Resources */ = {isa = PBXBuildFile; fileRef = 43382B5E1FB9F5EE000EE75F /* icecreamtwo.png */; };
 		43382B631FB9F5F0000EE75F /* icecreamone.png in Resources */ = {isa = PBXBuildFile; fileRef = 43382B5F1FB9F5EF000EE75F /* icecreamone.png */; };
+		536D44231FBB597700104BEE /* Dead.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 536D44201FBB597600104BEE /* Dead.mp3 */; };
+		536D44241FBB597700104BEE /* Fly.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 536D44211FBB597700104BEE /* Fly.mp3 */; };
+		536D44251FBB597700104BEE /* Score.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 536D44221FBB597700104BEE /* Score.mp3 */; };
 		5390B14E1FB9B6B700280769 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5390B14D1FB9B6B700280769 /* Cat.swift */; };
 		5390B15A1FB9BCE100280769 /* Cat 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5390B1501FB9BCE000280769 /* Cat 1.png */; };
 		5390B15B1FB9BCE100280769 /* Cat 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 5390B1511FB9BCE000280769 /* Cat 8.png */; };
@@ -72,7 +75,6 @@
 		FAB948971FB88B930059D28D /* Dog in Resources */ = {isa = PBXBuildFile; fileRef = FAB948961FB88B930059D28D /* Dog */; };
 		FAB9489A1FB88BCC0059D28D /* Santa in Resources */ = {isa = PBXBuildFile; fileRef = FAB948991FB88BCB0059D28D /* Santa */; };
 		FAB9489C1FB88BDC0059D28D /* Girl in Resources */ = {isa = PBXBuildFile; fileRef = FAB9489B1FB88BDC0059D28D /* Girl */; };
-		FAB9489E1FB88BF60059D28D /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = FAB9489D1FB88BF60059D28D /* Sounds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,9 @@
 		43382B5D1FB9F5ED000EE75F /* icecreamthree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icecreamthree.png; sourceTree = "<group>"; };
 		43382B5E1FB9F5EE000EE75F /* icecreamtwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icecreamtwo.png; sourceTree = "<group>"; };
 		43382B5F1FB9F5EF000EE75F /* icecreamone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icecreamone.png; sourceTree = "<group>"; };
+		536D44201FBB597600104BEE /* Dead.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dead.mp3; sourceTree = "<group>"; };
+		536D44211FBB597700104BEE /* Fly.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fly.mp3; sourceTree = "<group>"; };
+		536D44221FBB597700104BEE /* Score.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Score.mp3; sourceTree = "<group>"; };
 		5390B14D1FB9B6B700280769 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
 		5390B1501FB9BCE000280769 /* Cat 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cat 1.png"; sourceTree = "<group>"; };
 		5390B1511FB9BCE000280769 /* Cat 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cat 8.png"; sourceTree = "<group>"; };
@@ -185,7 +190,6 @@
 		FAB948961FB88B930059D28D /* Dog */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Dog; sourceTree = "<group>"; };
 		FAB948991FB88BCB0059D28D /* Santa */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Santa; sourceTree = "<group>"; };
 		FAB9489B1FB88BDC0059D28D /* Girl */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Girl; sourceTree = "<group>"; };
-		FAB9489D1FB88BF60059D28D /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sounds; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +222,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		536D441F1FBB593E00104BEE /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				536D44201FBB597600104BEE /* Dead.mp3 */,
+				536D44211FBB597700104BEE /* Fly.mp3 */,
+				536D44221FBB597700104BEE /* Score.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		5390B14F1FB9BCAA00280769 /* Cat */ = {
@@ -351,6 +365,7 @@
 		FA09AAF31FB59264003C6C20 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				536D441F1FBB593E00104BEE /* Sounds */,
 				5390B14F1FB9BCAA00280769 /* Cat */,
 				EEDB22BF1FB8A8AE00B27F81 /* sleep.png */,
 				EEDB22C11FB8AA0400B27F81 /* awake.png */,
@@ -359,7 +374,6 @@
 				EEDB22D31FB8F42700B27F81 /* temperature.png */,
 				EEDB22D91FB9012000B27F81 /* toy.png */,
 				EEDB22DB1FB9C4EC00B27F81 /* hat.png */,
-				FAB9489D1FB88BF60059D28D /* Sounds */,
 				FAB9489B1FB88BDC0059D28D /* Girl */,
 				FAB948991FB88BCB0059D28D /* Santa */,
 				FAB948961FB88B930059D28D /* Dog */,
@@ -562,6 +576,7 @@
 				5390B15E1FB9BCE100280769 /* Cat 2.png in Resources */,
 				EEDB22C21FB8AA0500B27F81 /* awake.png in Resources */,
 				FA09AB001FB59287003C6C20 /* 1261295-200.png in Resources */,
+				536D44241FBB597700104BEE /* Fly.mp3 in Resources */,
 				FA09AAFC1FB59287003C6C20 /* crack2.png in Resources */,
 				EEDB22C01FB8A8AE00B27F81 /* sleep.png in Resources */,
 				5390B15D1FB9BCE100280769 /* Cat 3.png in Resources */,
@@ -570,9 +585,9 @@
 				FA09AAFE1FB59287003C6C20 /* crack1.png in Resources */,
 				EEDB22CE1FB8EBEB00B27F81 /* food.png in Resources */,
 				FA09AB081FB5941B003C6C20 /* GameplayScene.sks in Resources */,
+				536D44231FBB597700104BEE /* Dead.mp3 in Resources */,
 				431CE0471FBB1BBE00ACD6FC /* Hurt (5).png in Resources */,
 				5390B1611FB9BCE100280769 /* Cat 4.png in Resources */,
-				FAB9489E1FB88BF60059D28D /* Sounds in Resources */,
 				431CE03F1FBB1ADA00ACD6FC /* Hurt (1).png in Resources */,
 				53F5B78A1FB5F0A000556CD5 /* Forest BG.png in Resources */,
 				EEC1E26B1FB5C8DD005606E4 /* lion.png in Resources */,
@@ -586,8 +601,8 @@
 				FAB948971FB88B930059D28D /* Dog in Resources */,
 				EEDB22C81FB8D36900B27F81 /* awake2.png in Resources */,
 				FA09AAFD1FB59287003C6C20 /* 1276572-200.png in Resources */,
+				536D44251FBB597700104BEE /* Score.mp3 in Resources */,
 				5390B1631FB9BCE100280769 /* Cat 7.png in Resources */,
-				FA0174D81FB752CB00A84D50 /* Assets.xcassets in Resources */,
 				431CE04E1FBB1BD000ACD6FC /* Hurt (8).png in Resources */,
 				EEDB22DA1FB9012000B27F81 /* toy.png in Resources */,
 				FA09AB011FB59287003C6C20 /* 1175530-200.png in Resources */,

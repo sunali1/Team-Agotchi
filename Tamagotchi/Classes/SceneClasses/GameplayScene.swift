@@ -22,6 +22,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     var viewController: GameViewController!
     lazy var egg = self.viewController.gameManager.egg
 //    lazy var cat = self.viewController.gameManager.cat
+    let crackSound = SKAction.playSoundFileNamed("Fly.mp3", waitForCompletion: false)
     
 
     func initialize() {
@@ -105,8 +106,10 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     }
 
     func crackEgg(){
+        run(crackSound)
         if egg.cracked == true {
             return print("Egg already cracked")
+            
         }
         eggSprite.crack(innerFunction: { self.addChild(self.catSprite)
             self.catSprite.initializeCatandAnimations();
