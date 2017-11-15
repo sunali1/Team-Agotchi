@@ -42,7 +42,7 @@ class GameViewController: UIViewController {
     @IBAction func touchHatButton(_ sender: Any) {
         gameManager.egg.wearingHat = true
         updateTempLabel()
-        resizeRetextureEggToHatEgg()
+        scene?.eggSprite.hatEgg()
         self.touchHatVisual.isHidden = true
     }
     @IBAction func wake(_ sender: UIButton) {
@@ -61,7 +61,9 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func poo(_ sender: Any) {
-        gameManager.lion.pooNow()
+        gameManager.lion.pooNow(innerFunction: {
+            self.removeFoodFromArray()
+        })
         fillIceCreamArray()
         scene?.pooQuery()
         self.poopVisual.isHidden = true
@@ -70,7 +72,7 @@ class GameViewController: UIViewController {
 
     @IBAction func play(_ sender: Any) {
         
-        if gameManager.lion.alive == false {
+        if gameManager.lion.alive == false || gameManager.lion.born == false {
             return print("Dead kitty!")
         }
         
@@ -132,7 +134,6 @@ class GameViewController: UIViewController {
             gameManager.egg.temp += 1 // increements temperature if so
             if gameManager.egg.temp >= 18 { //hatches egg if that time
                 scene?.crackEgg() // cracks the egg animation
-                scene?.hatchLion() // makes cat sprite and lion object initialise
                 happiness.text = String("\(countHappiness())") //prints happiness to screen
             }
         }
@@ -181,12 +182,13 @@ class GameViewController: UIViewController {
             happiness.text = String("\(countHappiness())") //print the result
         }
         
-        if countStomachContents() == 3 { //checks stomach contents
-            gameManager.lion.pooNow() //empty stomach contents of lion class logic
+        if countStomachContents() > 0 { //checks stomach contents
+            gameManager.lion.pooNow(innerFunction: {
+                self.removeFoodFromArray()
+            }) //empty stomach contents of lion class logic
             fillIceCreamArray() //fills out the visual tracker of stomach contents
             scene?.pooQuery() //creates the visual Poo on the screen and increments array and counter of poo
             self.poopVisual.isHidden = true //hides the poo button
-           
         }
         
         print(scene?.pooCounter)
@@ -259,18 +261,26 @@ class GameViewController: UIViewController {
         self.IceCreamThree.isHidden = bool
         self.foodLabel.isHidden = bool
     }
-
-    func resizeRetextureEggToHatEgg(){
-        scene?.eggSprite.texture = SKTexture(imageNamed: "eggWithHat.png")
-        scene?.eggSprite.size = CGSize(width:200.0, height: 300.0)
-        scene?.eggSprite.physicsBody = SKPhysicsBody(texture: (scene?.eggSprite.texture)!, size: (scene?.eggSprite.size)!);
-    }
     
     func fillIceCreamArray(firstIceCream: String? = "icecreamfour.png", secondIceCream: String? = "icecreamfour.png", thirdIceCream: String? = "icecreamfour.png"){
         IceCreamOne.image = UIImage(named: firstIceCream!)
         IceCreamTwo.image = UIImage(named: secondIceCream!)
         IceCreamThree.image = UIImage(named: thirdIceCream!)
     }
+    
+    
+    func removeFoodFromArray(){
+        if countStomachContents() == 2{
+            fillIceCreamArray(firstIceCream: "icecreamone.png", secondIceCream: "icecreamtwo.png")
+        }
+        if countStomachContents() == 1 {
+            fillIceCreamArray(firstIceCream: "icecreamone.png")
+        }
+        else {
+            fillIceCreamArray()
+        }
+    }
+    
     
     func updateTempLabel(){
         tempLabel.text = "\(gameManager.egg.temp)°C"
@@ -285,5 +295,3 @@ class GameViewController: UIViewController {
     }
 
 }
-
-/* When the cat is out of the egg, it will check if it's stomach is empty and it's age is above a certain amount before it animates */

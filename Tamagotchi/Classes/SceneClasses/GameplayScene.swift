@@ -30,7 +30,6 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     }
 
     override func didMove(to view: SKView) {
-        
         physicsWorld.contactDelegate = self
         
         self.physicsWorld.gravity = CGVector(dx: 0, dy: -9.8)
@@ -64,11 +63,8 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
                 if atPoint(location).name == "visualEggInstance"{
                     print("You touched an egg")
                     print(egg.helpEgg(item: "Hat"))
-                    print(egg.temp)
                     if egg.temp > 18 {
                         crackEgg()
-                        hatchLion()
-                        print(self.viewController.gameManager.lion.temp)
                     }
                 }
                 
@@ -106,10 +102,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         catSprite.stopCatAnimation()
     }
     
-    func hatchLion(){
-        self.viewController.gameManager.lion = Lion(size: 10, age: 6, temp: 15, hungry: true, bursting: false)
-    }
-
+ 
     func crackEgg(){
         run(crackSound)
         if egg.cracked == true {
@@ -118,12 +111,12 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         eggSprite.crack(innerFunction: { self.addChild(self.catSprite)
             self.catSprite.initializeCatandAnimations();
             self.viewController.foodUIHide(bool: false)
-            self.viewController.gameManager.lion.born = true
+            self.viewController.hideEggUI()
+            self.viewController.feedVisual.isHidden = false
+            self.viewController.gameManager.lion = Lion(size: 10, age: 6, temp: 15, hungry: true, bursting: false, born: true)
+            self.eggSprite.removeFromParent()
         })
         egg.cracked = true
-        print(egg.cracked)
-        self.viewController.hideEggUI()
-        self.viewController.feedVisual.isHidden = false
     }
     
     func pooQuery() {
@@ -133,7 +126,6 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         pooCounter += 1
         pooSprite.initialize(name:"MrPoopy", position: CGPoint(x:catSprite.position.x, y: catSprite.position.y-200))
         run(crackSound)
-        print(pooArray)
     }
 
 }
