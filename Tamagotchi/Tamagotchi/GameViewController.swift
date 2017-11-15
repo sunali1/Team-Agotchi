@@ -30,7 +30,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var thoughtBubble: UIImageView!
     @IBOutlet weak var happiness: UILabel!
     
-
+    @IBOutlet weak var resetVisual: UIButton!
+    
     var age = 0
     var hungryDays = 0
     var playDays = 0
@@ -39,6 +40,32 @@ class GameViewController: UIViewController {
     var foodTracker = Timer()
     var scene = GameplayScene(fileNamed: "GameplayScene")
 
+    @IBAction func resetGame(_ sender: Any) {
+        super.viewDidLoad()
+        self.poopVisual.isHidden = true
+        self.feedVisual.isHidden = true
+        self.touchHatVisual.isHidden = false
+        self.thoughtBubble.isHidden = true
+        self.thoughtBubbleText.isHidden = true
+         self.resetVisual.isHidden = true;
+        self.thoughtBubbleText.textAlignment = .center;
+        foodUIHide(bool: true)
+        updateTempLabel()
+        hideAngel()
+        ageTracker = Timer.scheduledTimer(timeInterval: 5, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)
+        gameManager.newEgg()
+        scene = GameplayScene(fileNamed: "GameplayScene")
+        if let view = self.view as! SKView? {
+            gameManager.egg.wearingHat = false
+            scene?.scaleMode = .aspectFill
+            scene?.viewController = self
+            view.presentScene(scene)
+            view.ignoresSiblingOrder = true
+            view.showsFPS = true
+            view.showsNodeCount = true
+        }
+        
+    }
     @IBAction func touchHatButton(_ sender: Any) {
         gameManager.egg.wearingHat = true
         updateTempLabel()
@@ -159,6 +186,7 @@ class GameViewController: UIViewController {
                     ageTracker.invalidate() //stops time and all time related stuff
                     ageActivated = false //ends timerboolean
                     gameManager.lion.alive = false //sets up flag to prevent anything that can happen if alive
+                    self.resetVisual.isHidden = false;
                 }
             }
             
@@ -209,6 +237,7 @@ class GameViewController: UIViewController {
         self.thoughtBubble.isHidden = true
         self.thoughtBubbleText.isHidden = true
         self.thoughtBubbleText.textAlignment = .center;
+        self.resetVisual.isHidden = true;
         foodUIHide(bool: true)
         updateTempLabel()
         hideAngel()
@@ -222,8 +251,6 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
         }
-
-
     }
 
     override var shouldAutorotate: Bool {

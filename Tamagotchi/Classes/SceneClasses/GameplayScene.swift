@@ -127,5 +127,9 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         pooSprite.initialize(name:"MrPoopy", position: CGPoint(x:catSprite.position.x, y: catSprite.position.y-200))
         run(crackSound)
     }
+    
+//    func resetEverything(){
+//        gameManager.egg = Egg()
+//    }
 
 }
