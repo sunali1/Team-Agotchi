@@ -20,6 +20,7 @@ class Lion {
     var happy: Int
     var born: Bool
     var alive: Bool
+    var sick = false
     
     init(size: Int, age: Int, temp: Int, hungry: Bool, bursting: Bool) {
         self.size = size;

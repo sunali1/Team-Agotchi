@@ -61,24 +61,36 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func poo(_ sender: Any) {
-        gameManager.lion.pooNow() //empty stomach contents of lion class logic
-//        meals.text = "\(countStomachContents())" // print out the empty stomach contents
-        IceCreamOne.image = UIImage(named: "icecreamfour.png")
-        IceCreamTwo.image = UIImage(named: "icecreamfour.png")
-        IceCreamThree.image = UIImage(named: "icecreamfour.png")
-        scene?.pooQuery() //creates the visual Poo on the screen and increments array and counter of poo
-        self.poopVisual.isHidden = true //hides the poo button
+        gameManager.lion.pooNow()
+        fillIceCreamArray()
+        scene?.pooQuery()
+        self.poopVisual.isHidden = true
 
     }
 
     @IBAction func play(_ sender: Any) {
-        scene?.catSprite.flipCat()
+        
+        if gameManager.lion.alive == false {
+            return print("Dead kitty!")
+        }
+        
+        scene?.catSprite.flipCat(innerFunction:{
+            if self.hungryDays > 4 {
+                self.scene?.catSprite.animateSickCat()
+            } else {
+                self.scene?.catSprite.startIdleAnimation()
+            }
+        })
         print("I should be flipping!")
+        
+
+        
         if gameManager.lion.happy <= 2 {
             gameManager.lion.happy += 1
             print (gameManager.lion.happy)
             happiness.text = String("\(countHappiness())")
         }
+        
         playDays = 0
     }
 
@@ -91,70 +103,60 @@ class GameViewController: UIViewController {
         gameManager.lion.eat(meal: "kiwi")
 
         if countStomachContents() == 1 {
-            IceCreamOne.image = UIImage(named: "icecreamone.png")
+            fillIceCreamArray(firstIceCream: "icecreamone.png")
         } else if countStomachContents() == 2 {
-            IceCreamOne.image = UIImage(named: "icecreamone.png")
-            IceCreamTwo.image = UIImage(named: "icecreamtwo.png")
+            fillIceCreamArray(firstIceCream: "icecreamone.png", secondIceCream: "icecreamtwo.png")
         } else {
-            IceCreamOne.image = UIImage(named: "icecreamone.png")
-            IceCreamTwo.image = UIImage(named: "icecreamtwo.png")
-            IceCreamThree.image = UIImage(named: "icecreamthree.png")
+            fillIceCreamArray(firstIceCream: "icecreamone.png", secondIceCream: "icecreamtwo.png", thirdIceCream: "icecreamthree.png")
         }
 
-//        meals.text = String("\(countStomachContents())")
+        if hungryDays > 4 && countStomachContents() >= 2{
+            hungryDays = 0
+            scene?.catSprite.stopSickCatAnimation()
+        }
 
     }
 
     @objc func updateAge() {
         age += 1
         ageLabel.text = String(age)
+        updateTempLabel()
+        
+        if gameManager.egg.wearingHat == true && gameManager.lion.born == false {
+            gameManager.egg.temp += 1
+            if gameManager.egg.temp >= 18 {
+                scene?.crackEgg()
+                scene?.hatchLion()
+                happiness.text = String("\(countHappiness())")
+            }
+        }
         
         if gameManager.lion.born == true {
             playDays += 1
-        }
-        
-        if playDays >= 2 {
-            print(gameManager.lion.happy)
-            print(playDays)
-            gameManager.lion.happy -= 1
-            happiness.text = String("\(countHappiness())")
-        }
-
-        
-        if gameManager.egg.wearingHat == true {
-            gameManager.egg.temp += 1
-        }
-        
-        if countStomachContents() == 0 && gameManager.lion.born == true {
-            hungryDays += 1
-        }
-        
-        if gameManager.egg.temp >= 18 && gameManager.lion.born == false {
-            scene?.crackEgg()
-            scene?.hatchLion()
-             happiness.text = String("\(countHappiness())")
-        }
-        
-        if hungryDays > 4 && countStomachContents() < 2 {
-            scene?.catSprite.animateSickCat()
-        } else if hungryDays > 4 && countStomachContents() >= 2{
-            hungryDays = 0
-            scene?.catSprite.stopSickCatAnimation()
+            if playDays >= 2 {
+                gameManager.lion.happy -= 1
+                happiness.text = String("\(countHappiness())")
+            }
+            
+            if countStomachContents() < 2 {
+                if countStomachContents() == 0 {
+                    hungryDays += 1
+                }
+                
+                if hungryDays > 4 {
+                    scene?.catSprite.animateSickCat()
+                }
+                
+                if hungryDays > 10 {
+                    scene?.catSprite.animateDeadCat()
+                    ageTracker.invalidate()
+                    ageActivated = false
+                    gameManager.lion.alive = false
+                }
+            }
+            
         }
     
-//        if countStomachContents() >= 2 {
-//            scene?.catSprite.stopSickCatAnimation()
-//            hungryDays = 0
-//        }
-        
-        if hungryDays > 10 {
-            scene?.catSprite.animateDeadCat()
-            ageTracker.invalidate()
-            ageActivated = false
-            gameManager.lion.alive = false
-        }
-        
-        updateTempLabel()
         if let pooCounter = scene?.pooCounter {
             if pooCounter > 0 {
                 gameManager.lion.happy -= 1
@@ -164,16 +166,13 @@ class GameViewController: UIViewController {
         
         if countStomachContents() == 3 {
             gameManager.lion.pooNow() //empty stomach contents of lion class logic
-//            meals.text = "\(countStomachContents())" // print out the empty stomach contents
-            clearIceCreamArray()
+            fillIceCreamArray()
             scene?.pooQuery() //creates the visual Poo on the screen and increments array and counter of poo
             self.poopVisual.isHidden = true //hides the poo button
             
             let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when) {
-                self.thoughtBubble.isHidden = false
-                self.thoughtBubbleText.isHidden = false
-                self.thoughtBubbleText.text = "stick your finger in my poo!"
+                self.stomachContentsStatus(statement: "It's starting to smell! :^(", bool: false)
             }
            
         }
@@ -181,22 +180,21 @@ class GameViewController: UIViewController {
         if countStomachContents() <= 1 && gameManager.lion.born == true && scene?.pooCounter == 0 {
             let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when) {
-                self.thoughtBubbleText.text = "I'm fookin 'ungry m8"
-                self.thoughtBubble.isHidden = false
-                self.thoughtBubbleText.isHidden = false
+                self.stomachContentsStatus(statement: "pweez feed me :'(", bool: false)
             }
         }
         
         if countStomachContents() >= 2 && gameManager.lion.born == true && scene?.pooCounter == 0 {
-                self.thoughtBubbleText.text = "I'm NOT fookin 'ungry m8"
-                self.thoughtBubble.isHidden = true
-                self.thoughtBubbleText.isHidden = true
+            stomachContentsStatus(statement: "Thank you for feeding me! >^_^<", bool: true)
+            
         }
     }
     
-
-
-
+    func stomachContentsStatus(statement: String, bool: Bool){
+        self.thoughtBubbleText.text = statement
+        self.thoughtBubble.isHidden = bool
+        self.thoughtBubbleText.isHidden = bool
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -207,19 +205,12 @@ class GameViewController: UIViewController {
         self.thoughtBubbleText.textAlignment = .center;
         foodUIHide(bool: true)
         updateTempLabel()
-
         ageTracker = Timer.scheduledTimer(timeInterval: 5, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)
         
-
         if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameplayScene.sks'
-//            if let scene = GameplayScene(fileNamed: "GameplayScene") {
-                // Set the scale mode to scale to fit the window
             scene?.scaleMode = .aspectFill
             scene?.viewController = self
-                // Present the scene
-                view.presentScene(scene)
-
+            view.presentScene(scene)
             view.ignoresSiblingOrder = true
             view.showsFPS = true
             view.showsNodeCount = true
@@ -229,7 +220,7 @@ class GameViewController: UIViewController {
     }
 
     override var shouldAutorotate: Bool {
-        return true
+        return false
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -268,10 +259,10 @@ class GameViewController: UIViewController {
         scene?.eggSprite.physicsBody = SKPhysicsBody(texture: (scene?.eggSprite.texture)!, size: (scene?.eggSprite.size)!);
     }
     
-    func clearIceCreamArray(){
-        IceCreamOne.image = UIImage(named: "icecreamfour.png")
-        IceCreamTwo.image = UIImage(named: "icecreamfour.png")
-        IceCreamThree.image = UIImage(named: "icecreamfour.png")
+    func fillIceCreamArray(firstIceCream: String? = "icecreamfour.png", secondIceCream: String? = "icecreamfour.png", thirdIceCream: String? = "icecreamfour.png"){
+        IceCreamOne.image = UIImage(named: firstIceCream!)
+        IceCreamTwo.image = UIImage(named: secondIceCream!)
+        IceCreamThree.image = UIImage(named: thirdIceCream!)
     }
     
     func updateTempLabel(){

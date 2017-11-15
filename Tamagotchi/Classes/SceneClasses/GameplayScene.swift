@@ -21,7 +21,6 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     var pooCounter = 0;
     var viewController: GameViewController!
     lazy var egg = self.viewController.gameManager.egg
-//    lazy var cat = self.viewController.gameManager.cat
     let crackSound = SKAction.playSoundFileNamed("Fly.mp3", waitForCompletion: false)
     
 
@@ -39,8 +38,6 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         self.physicsBody = sceneBody
         addChild(eggSprite);
         eggSprite.initialize()
-        print("2+2=5 is \(egg.cracked)")
-        print(egg.cracked)
         center = CGFloat((self.scene?.size.width)!) / CGFloat((self.scene?.size.height)!)
     }
 
@@ -101,8 +98,6 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         canMove = false;
         catSprite.stopCatAnimation()
     }
-
-    
     
     func hatchLion(){
         self.viewController.gameManager.lion = Lion(size: 10, age: 6, temp: 15, hungry: true, bursting: false)
@@ -112,7 +107,6 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         run(crackSound)
         if egg.cracked == true {
             return print("Egg already cracked")
-            
         }
         eggSprite.crack(innerFunction: { self.addChild(self.catSprite)
             self.catSprite.initializeCatandAnimations();
@@ -133,7 +127,6 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         pooSprite.initialize(name:"MrPoopy", position: CGPoint(x:catSprite.position.x, y: catSprite.position.y-200))
         run(crackSound)
         print(pooArray)
-//        self.viewController.meals.text = "\(self.viewController.gameManager.lion.stomachContents.count)"
     }
 
 }
