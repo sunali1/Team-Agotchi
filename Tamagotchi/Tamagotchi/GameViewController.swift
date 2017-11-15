@@ -109,7 +109,6 @@ class GameViewController: UIViewController {
         age += 1
         ageLabel.text = String(age)
         
-        
         if gameManager.lion.born == true {
             playDays += 1
         }
@@ -120,7 +119,7 @@ class GameViewController: UIViewController {
             gameManager.lion.happy -= 1
             happiness.text = String("\(countHappiness())")
         }
-        
+
         
         if gameManager.egg.wearingHat == true {
             gameManager.egg.temp += 1
@@ -136,14 +135,17 @@ class GameViewController: UIViewController {
              happiness.text = String("\(countHappiness())")
         }
         
-        if hungryDays > 4 {
+        if hungryDays > 4 && countStomachContents() < 2 {
             scene?.catSprite.animateSickCat()
-        }
-        
-        if countStomachContents() >= 2 {
-            scene?.catSprite.stopSickCatAnimation()
+        } else if hungryDays > 4 && countStomachContents() >= 2{
             hungryDays = 0
+            scene?.catSprite.stopSickCatAnimation()
         }
+    
+//        if countStomachContents() >= 2 {
+//            scene?.catSprite.stopSickCatAnimation()
+//            hungryDays = 0
+//        }
         
         if hungryDays > 10 {
             scene?.catSprite.animateDeadCat()
