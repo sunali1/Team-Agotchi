@@ -59,7 +59,6 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
                     catSprite.animateCat(moveLeft: true)
                     catSprite.position.x -= 7
                 }
-    //            canMove = true;
                 
                 if atPoint(location).name == "visualEggInstance"{
                     print("You touched an egg")
