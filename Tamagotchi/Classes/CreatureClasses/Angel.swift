@@ -12,7 +12,6 @@ import SpriteKit
 class Angel: SKSpriteNode {
     
     func initialize() {
-        
         self.name = "angel"
         self.size = CGSize(width:200.0, height: 150.0)
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -20,6 +19,6 @@ class Angel: SKSpriteNode {
         self.zPosition = 2;
         self.texture = SKTexture(imageNamed: "santa")
         print("found an angel")
-
+        self.isHidden = true
     }
 }
