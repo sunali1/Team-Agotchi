@@ -17,8 +17,8 @@ In your command line type the following in order to clone this repository:
 
 How to Run
 -----
-Open Tamagotchi.xcodeproj, connect and select your iphone, then press the play button (or run in any of the simulators).
+Open Tamagotchi.xcodeproj, connect and select your iphone, then press the play button.
 
 Collaborators
 ----
-This iOS application was developed by Benjamin Sunderland, James Hughes, Sunali Seth, Rory Hodgson and Robin Collins.
+Benjamin Sunderland, James Hughes, Sunali Seth, Rory Hodgson and Robin Collins.
