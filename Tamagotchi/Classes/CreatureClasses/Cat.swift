@@ -9,7 +9,7 @@
 import SpriteKit
 
 class Cat: SKSpriteNode {
-    var idleFlag = false;
+    var idleFlag = true;
     var walkAtlas = SKTextureAtlas();
     var sickAtlas = SKTextureAtlas();
     var deadAtlas = SKTextureAtlas();
@@ -58,7 +58,7 @@ class Cat: SKSpriteNode {
             idleAnimation.append(SKTexture(imageNamed: name));
         }
         
-        animateSickAction = SKAction.animate(with: self.sickAnimation, timePerFrame: 0.16, resize: true, restore: false)
+        animateSickAction = SKAction.animate(with: self.sickAnimation, timePerFrame: 0.10, resize: true, restore: false)
         print("The array has \(sickAnimation.count) elements")
         
         animateCatAction = SKAction.animate(with: self.catAnimation, timePerFrame: 0.08, resize: true, restore: false)
@@ -67,7 +67,7 @@ class Cat: SKSpriteNode {
         animateDeadAction = SKAction.animate(with: self.deadAnimation, timePerFrame: 0.08, resize: true, restore: false)
         print("The array has \(deadAnimation.count) elements")
         
-        animateIdleAction = SKAction.animate(with: self.idleAnimation, timePerFrame: 0.08, resize: true, restore: false)
+        animateIdleAction = SKAction.animate(with: self.idleAnimation, timePerFrame: 0.16, resize: true, restore: false)
         print("The Idle array has \(idleAnimation.count) elements")
     }
 
@@ -102,6 +102,7 @@ class Cat: SKSpriteNode {
     func stopSickCatAnimation() {
         self.removeAction(forKey: "AnimateSickCat")
         self.texture = SKTexture(imageNamed: "Cat 1")
+        idleFlag = true
         self.startIdleAnimation()
     }
     
@@ -110,14 +111,15 @@ class Cat: SKSpriteNode {
         self.texture = SKTexture(imageNamed: "Dead 10")
     }
   
-    func flipCat() {
+    func flipCat(innerFunction:@escaping()->Void) {
         let flip = SKAction.rotate(byAngle:CGFloat(-Double.pi*2),duration:0.5)
-        self.run(flip)
-        self.startIdleAnimation()
+        self.run(flip){ innerFunction() }
     }
     
     func startIdleAnimation(){
+        if idleFlag == true {
         print("And go and go")
         self.run(SKAction.repeatForever(animateIdleAction), withKey: "IdleAction")
+        }
     }
 }
