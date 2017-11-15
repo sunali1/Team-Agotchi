@@ -44,6 +44,11 @@ class GameViewController: UIViewController {
     @IBAction func resetGame(_ sender: Any) {
         super.viewDidLoad()
         self.poopVisual.isHidden = true
+        age = 0
+        hungryDays = 0
+        happyDays = 0
+        
+        ageLabel.text = String(age)
         self.feedVisual.isHidden = true
         self.touchHatVisual.isHidden = false
         self.thoughtBubble.isHidden = true
@@ -52,7 +57,7 @@ class GameViewController: UIViewController {
         self.thoughtBubbleText.textAlignment = .center;
         foodUIHide(bool: true)
         updateTempLabel()
-        hideAngel()
+        ageTracker = Timer()
         ageTracker = Timer.scheduledTimer(timeInterval: 5, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)
         gameManager = GameManager()
         scene = GameplayScene(fileNamed: "GameplayScene")
@@ -60,6 +65,7 @@ class GameViewController: UIViewController {
             gameManager.egg.wearingHat = false
             scene?.scaleMode = .aspectFill
             scene?.viewController = self
+            happiness.text = String("\(countHappiness())")
             view.presentScene(scene)
             view.ignoresSiblingOrder = true
             view.showsFPS = true
@@ -219,16 +225,16 @@ class GameViewController: UIViewController {
         }
         
         print(scene?.pooCounter)
-        
-            if countHappiness() >= 10 {
-                happyDays += 1 //increments number of days since played with
-            }
-            if happyDays > 5 {
-               scene?.angel.isHidden = false
-            }
-            if countHappiness() < 10 {
-                scene?.angel.isHidden = true
-            }
+    
+        if countHappiness() >= 10 {
+            happyDays += 1 //increments number of days since played with
+        }
+        if happyDays > 5 {
+           scene?.angel.isHidden = false
+        }
+        if countHappiness() < 10 {
+            scene?.angel.isHidden = true
+        }
         
 
     }
