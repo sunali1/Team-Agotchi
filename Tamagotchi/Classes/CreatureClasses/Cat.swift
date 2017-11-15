@@ -21,6 +21,7 @@ class Cat: SKSpriteNode {
     var animateCatAction = SKAction();
     var animateSickAction = SKAction();
     var animateDeadAction = SKAction();
+    let deadSound = SKAction.playSoundFileNamed("Dead.mp3", waitForCompletion: false)
     var animateIdleAction = SKAction();
     
     
@@ -90,6 +91,7 @@ class Cat: SKSpriteNode {
     func animateDeadCat() {
         self.removeAllActions()
         self.run(animateDeadAction, withKey: "AnimateDeadCat")
+        run(deadSound)
         print("animateDeadCat")
     }
     
