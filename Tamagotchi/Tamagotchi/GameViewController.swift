@@ -175,11 +175,10 @@ class GameViewController: UIViewController {
             }
         }
     
-        if let pooCounter = scene?.pooCounter { //checks if poo counter exists yet on screen
-            if pooCounter > 0 { //if it does then start counting poo
-                gameManager.lion.happy -= 1 //subtract a happiness point for it
-                happiness.text = String("\(countHappiness())") //print the result
-            }
+       
+        if scene!.pooCounter > 0 { //if it does then start counting poo
+            gameManager.lion.happy -= 1 //subtract a happiness point for it
+            happiness.text = String("\(countHappiness())") //print the result
         }
         
         if countStomachContents() == 3 { //checks stomach contents
