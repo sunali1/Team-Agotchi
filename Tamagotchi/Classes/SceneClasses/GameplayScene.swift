@@ -113,6 +113,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
             self.viewController.foodUIHide(bool: false)
             self.viewController.hideEggUI()
             self.viewController.feedVisual.isHidden = false
+            self.viewController.touchHatVisual.isHidden = true
             self.viewController.gameManager.lion = Lion(size: 10, age: 6, temp: 15, hungry: true, bursting: false, born: true)
             self.eggSprite.removeFromParent()
         })

@@ -11,6 +11,8 @@ import SpriteKit
 
 class VisualPoo: SKSpriteNode {
     
+    var alreadyFlower = false
+    
 
     func initialize(name: String, position: CGPoint ){
         self.name = name
@@ -32,10 +34,14 @@ class VisualPoo: SKSpriteNode {
     }
     
     func fadeOut(innerFunction:@escaping()->Void){
+        if alreadyFlower == true{
+            return print("Already a flower")
+        }
         let fadeOut = SKAction.fadeOut(withDuration: 3)
         let lower = SKAction.scale(by: CGFloat(0.1), duration: 3)
         let higher = SKAction.scale(by: CGFloat(10), duration: 3)
         let fadeIn = SKAction.fadeIn(withDuration: 3)
+        alreadyFlower = true
         self.run(fadeOut)
         self.run(lower){
             self.texture = SKTexture(imageNamed: "purpleFlower")

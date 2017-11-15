@@ -12,7 +12,7 @@ import GameplayKit
 
 class GameViewController: UIViewController {
 
-    let gameManager = GameManager()
+    var gameManager = GameManager()
 
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
@@ -54,7 +54,7 @@ class GameViewController: UIViewController {
         updateTempLabel()
         hideAngel()
         ageTracker = Timer.scheduledTimer(timeInterval: 5, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)
-        gameManager.newEgg()
+        gameManager = GameManager()
         scene = GameplayScene(fileNamed: "GameplayScene")
         if let view = self.view as! SKView? {
             gameManager.egg.wearingHat = false
@@ -213,10 +213,9 @@ class GameViewController: UIViewController {
         if countStomachContents() > 0 { //checks stomach contents
             gameManager.lion.pooNow(innerFunction: {
                 self.removeFoodFromArray()
-            }) //empty stomach contents of lion class logic
-            fillIceCreamArray() //fills out the visual tracker of stomach contents
-            scene?.pooQuery() //creates the visual Poo on the screen and increments array and counter of poo
-            self.poopVisual.isHidden = true //hides the poo button
+                self.scene?.pooQuery()
+                self.poopVisual.isHidden = true
+            })
         }
         
         print(scene?.pooCounter)
@@ -309,12 +308,11 @@ class GameViewController: UIViewController {
     
     func removeFoodFromArray(){
         if countStomachContents() == 2{
-            fillIceCreamArray(firstIceCream: "icecreamone.png", secondIceCream: "icecreamtwo.png")
+           return fillIceCreamArray(firstIceCream: "icecreamone.png", secondIceCream: "icecreamtwo.png")
         }
         if countStomachContents() == 1 {
-            fillIceCreamArray(firstIceCream: "icecreamone.png")
-        }
-        else {
+            return fillIceCreamArray(firstIceCream: "icecreamone.png")
+        } else {
             fillIceCreamArray()
         }
     }
