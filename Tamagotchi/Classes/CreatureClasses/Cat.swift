@@ -83,7 +83,6 @@ class Cat: SKSpriteNode {
     }
     
     func animateSickCat(){
-        self.removeAllActions()
         self.run(SKAction.repeatForever(animateSickAction), withKey: "AnimateSickCat")
         print("animateSickCat")
     }
