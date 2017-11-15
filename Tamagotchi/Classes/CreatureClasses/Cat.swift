@@ -9,16 +9,20 @@
 import SpriteKit
 
 class Cat: SKSpriteNode {
+    var idleFlag = false;
     var walkAtlas = SKTextureAtlas();
     var sickAtlas = SKTextureAtlas();
     var deadAtlas = SKTextureAtlas();
+    var idleAtlas = SKTextureAtlas();
     var catAnimation = [SKTexture]();
     var sickAnimation = [SKTexture]();
     var deadAnimation = [SKTexture]();
+    var idleAnimation = [SKTexture]();
     var animateCatAction = SKAction();
     var animateSickAction = SKAction();
     var animateDeadAction = SKAction();
     let deadSound = SKAction.playSoundFileNamed("Dead.mp3", waitForCompletion: false)
+    var animateIdleAction = SKAction();
     
     
     func initializeCatandAnimations(){
@@ -32,6 +36,7 @@ class Cat: SKSpriteNode {
         sickAtlas = SKTextureAtlas(named: "Sick.atlas")
         walkAtlas = SKTextureAtlas(named: "Walk.atlas")
         deadAtlas = SKTextureAtlas(named: "Dood.atlas")
+        idleAtlas = SKTextureAtlas(named: "Idle.atlas")
         
         for i in 1...walkAtlas.textureNames.count {
             let name = "Cat \(i)";
@@ -48,7 +53,12 @@ class Cat: SKSpriteNode {
             deadAnimation.append(SKTexture(imageNamed: name));
         }
         
-        animateSickAction = SKAction.animate(with: self.sickAnimation, timePerFrame: 0.08, resize: true, restore: false)
+        for i in 1...idleAtlas.textureNames.count {
+            let name = "Idle \(i)";
+            idleAnimation.append(SKTexture(imageNamed: name));
+        }
+        
+        animateSickAction = SKAction.animate(with: self.sickAnimation, timePerFrame: 0.16, resize: true, restore: false)
         print("The array has \(sickAnimation.count) elements")
         
         animateCatAction = SKAction.animate(with: self.catAnimation, timePerFrame: 0.08, resize: true, restore: false)
@@ -56,12 +66,12 @@ class Cat: SKSpriteNode {
         
         animateDeadAction = SKAction.animate(with: self.deadAnimation, timePerFrame: 0.08, resize: true, restore: false)
         print("The array has \(deadAnimation.count) elements")
-
+        
+        animateIdleAction = SKAction.animate(with: self.idleAnimation, timePerFrame: 0.08, resize: true, restore: false)
+        print("The Idle array has \(idleAnimation.count) elements")
     }
 
-    func animateCat(moveLeft: Bool) {    
-     
-    
+    func animateCat(moveLeft: Bool){
         if moveLeft {
             self.xScale = -fabs(self.xScale);
         } else {
@@ -72,18 +82,16 @@ class Cat: SKSpriteNode {
         print("animateCat")
     }
     
-    func animateSickCat() {
+    func animateSickCat(){
+        self.removeAllActions()
         self.run(SKAction.repeatForever(animateSickAction), withKey: "AnimateSickCat")
-//        self.texture = sickAtlas.textureNamed("Hurt 3")
         print("animateSickCat")
     }
     
     func animateDeadCat() {
-        stopCatAnimation()
-        stopSickCatAnimation()
+        self.removeAllActions()
         self.run(animateDeadAction, withKey: "AnimateDeadCat")
         run(deadSound)
-//self.texture = sickAtlas.textureNamed("Hurt 3")
         print("animateDeadCat")
     }
     
@@ -94,6 +102,7 @@ class Cat: SKSpriteNode {
     func stopSickCatAnimation() {
         self.removeAction(forKey: "AnimateSickCat")
         self.texture = SKTexture(imageNamed: "Cat 1")
+        self.startIdleAnimation()
     }
     
     func stopDeadCatAnimation() {
@@ -104,5 +113,11 @@ class Cat: SKSpriteNode {
     func flipCat() {
         let flip = SKAction.rotate(byAngle:CGFloat(-Double.pi*2),duration:0.5)
         self.run(flip)
+        self.startIdleAnimation()
+    }
+    
+    func startIdleAnimation(){
+        print("And go and go")
+        self.run(SKAction.repeatForever(animateIdleAction), withKey: "IdleAction")
     }
 }
