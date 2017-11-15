@@ -75,6 +75,7 @@
 		FAB948971FB88B930059D28D /* Dog in Resources */ = {isa = PBXBuildFile; fileRef = FAB948961FB88B930059D28D /* Dog */; };
 		FAB9489A1FB88BCC0059D28D /* Santa in Resources */ = {isa = PBXBuildFile; fileRef = FAB948991FB88BCB0059D28D /* Santa */; };
 		FAB9489C1FB88BDC0059D28D /* Girl in Resources */ = {isa = PBXBuildFile; fileRef = FAB9489B1FB88BDC0059D28D /* Girl */; };
+		FAF8ED061FBC6B7800649F13 /* eventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8ED051FBC6B7800649F13 /* eventHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +191,7 @@
 		FAB948961FB88B930059D28D /* Dog */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Dog; sourceTree = "<group>"; };
 		FAB948991FB88BCB0059D28D /* Santa */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Santa; sourceTree = "<group>"; };
 		FAB9489B1FB88BDC0059D28D /* Girl */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Girl; sourceTree = "<group>"; };
+		FAF8ED051FBC6B7800649F13 /* eventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,6 +348,7 @@
 		FA09AAEF1FB591CA003C6C20 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FAF8ED041FBC6B6200649F13 /* Helper */,
 				FA0174D41FB74D7400A84D50 /* Items */,
 				FA09AB151FB59A00003C6C20 /* Manager */,
 				FA09AB061FB593D1003C6C20 /* CreatureClasses */,
@@ -448,6 +451,14 @@
 			children = (
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		FAF8ED041FBC6B6200649F13 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FAF8ED051FBC6B7800649F13 /* eventHandler.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -642,6 +653,7 @@
 				EEC1E2681FB5C524005606E4 /* VisualLion.swift in Sources */,
 				5390B14E1FB9B6B700280769 /* Cat.swift in Sources */,
 				FA8908441FB3461200C31387 /* basicStatsModelView.swift in Sources */,
+				FAF8ED061FBC6B7800649F13 /* eventHandler.swift in Sources */,
 				FA09AAF21FB5920B003C6C20 /* VisualEgg.swift in Sources */,
 				FA09AB141FB599F7003C6C20 /* GameManager.swift in Sources */,
 				EEDB22DE1FB9F33F00B27F81 /* Poo.swift in Sources */,

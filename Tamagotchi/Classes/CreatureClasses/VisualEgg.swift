@@ -74,8 +74,12 @@ class VisualEgg: SKSpriteNode {
                     }
                 }
             }
-        
-        
+    }
+    
+    func hatEgg(){
+        self.texture = SKTexture(imageNamed: "eggWithHat.png")
+        self.size = CGSize(width:200.0, height: 300.0)
+        self.physicsBody = SKPhysicsBody(texture: (self.texture)!, size: (self.size));
     }
     
     
