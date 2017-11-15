@@ -34,6 +34,7 @@ class GameViewController: UIViewController {
     var age = 0
     var hungryDays = 0
     var playDays = 0
+    var happyDays = 0
     var ageActivated = true
     var ageTracker = Timer()
     var foodTracker = Timer()
@@ -88,7 +89,7 @@ class GameViewController: UIViewController {
         
 
         
-        if gameManager.lion.happy <= 2 {
+        if gameManager.lion.happy <= 30 {
             gameManager.lion.happy += 1
             print (gameManager.lion.happy)
             happiness.text = String("\(countHappiness())")
@@ -162,7 +163,6 @@ class GameViewController: UIViewController {
                 }
             }
             
-      
         if countStomachContents() == 0 {
                 self.stomachContentsStatus(statement: "pweez feed me :'(", bool: false) //prints out what it needs
         } else if gameManager.lion.happy < 0 {
@@ -193,8 +193,19 @@ class GameViewController: UIViewController {
         
         print(scene?.pooCounter)
         
+            if countHappiness() >= 10 {
+                happyDays += 1 //increments number of days since played with
+            }
+            if happyDays > 5 {
+               scene?.angel.isHidden = false
+            }
+            if countHappiness() < 10 {
+                scene?.angel.isHidden = true
+            }
+        
 
     }
+    
     
     func stomachContentsStatus(statement: String, bool: Bool){
         self.thoughtBubbleText.text = statement
@@ -251,10 +262,10 @@ class GameViewController: UIViewController {
         self.tempLabel.isHidden = true
         self.thermometer.isHidden = true
     }
+    
     func hideAngel() {
         scene?.angel.isHidden = true
     }
-    
     func foodUIHide(bool: Bool){
         self.IceCreamOne.isHidden = bool
         self.IceCreamTwo.isHidden = bool
@@ -293,5 +304,5 @@ class GameViewController: UIViewController {
     func countHappiness() -> Int {
         return gameManager.lion.happy
     }
-
+    
 }
