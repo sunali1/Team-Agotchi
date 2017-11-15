@@ -22,9 +22,11 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     var viewController: GameViewController!
     lazy var egg = self.viewController.gameManager.egg
     let crackSound = SKAction.playSoundFileNamed("Fly.mp3", waitForCompletion: false)
+    var angel =  Angel()
     
 
     func initialize() {
+        
     }
 
     override func didMove(to view: SKView) {
@@ -39,6 +41,8 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         addChild(eggSprite);
         eggSprite.initialize()
         center = CGFloat((self.scene?.size.width)!) / CGFloat((self.scene?.size.height)!)
+        addChild(angel)
+        angel.initialize()
     }
 
  
