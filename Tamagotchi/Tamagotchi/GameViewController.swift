@@ -82,6 +82,7 @@ class GameViewController: UIViewController {
             }
         })
         print("I should be flipping!")
+        self.stomachContentsStatus(statement: "WWHHHEEEEEEEE!!!", bool: false)
         
 
         
@@ -138,7 +139,7 @@ class GameViewController: UIViewController {
         
         if gameManager.lion.born == true { //checks if lion is born
             playDays += 1 //increments number of days since played with
-            if playDays >= 2 { //checks if there is now more than two
+            if playDays > 4 { //checks if there is now more than two
                 gameManager.lion.happy -= 1 //subtracts a happiness point for it
                 happiness.text = String("\(countHappiness())") //prints happiness
             }
@@ -160,12 +161,17 @@ class GameViewController: UIViewController {
                 }
             }
             
-            if scene?.pooCounter == 0 {
-                if countStomachContents() == 0{
-                    self.stomachContentsStatus(statement: "pweez feed me :'(", bool: false) //prints out what it needs
-                }
-            } else {
-                self.stomachContentsStatus(statement: "It's starting to smell! :^(", bool: false)
+      
+        if countStomachContents() == 0 {
+                self.stomachContentsStatus(statement: "pweez feed me :'(", bool: false) //prints out what it needs
+        } else if gameManager.lion.happy < 0 {
+            self.stomachContentsStatus(statement: "I'm so sad :'(", bool: false)
+        } else if playDays > 4 {
+            self.stomachContentsStatus(statement: "I'm boooooored", bool: false)
+        } else if scene!.pooCounter > 0 {
+            self.stomachContentsStatus(statement: "It's starting to smell! :^(", bool: false)
+        } else {
+            self.stomachContentsStatus(statement: "", bool: true)
             }
         }
     
@@ -183,6 +189,8 @@ class GameViewController: UIViewController {
             self.poopVisual.isHidden = true //hides the poo button
            
         }
+        
+        print(scene?.pooCounter)
         
 
     }
