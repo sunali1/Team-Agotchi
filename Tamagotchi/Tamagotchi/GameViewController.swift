@@ -209,6 +209,7 @@ class GameViewController: UIViewController {
         self.thoughtBubbleText.textAlignment = .center;
         foodUIHide(bool: true)
         updateTempLabel()
+        hideAngel()
         ageTracker = Timer.scheduledTimer(timeInterval: 5, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)
         
         if let view = self.view as! SKView? {
@@ -248,7 +249,9 @@ class GameViewController: UIViewController {
         self.tempLabel.isHidden = true
         self.thermometer.isHidden = true
     }
-
+    func hideAngel() {
+        scene?.angel.isHidden = true
+    }
     
     func foodUIHide(bool: Bool){
         self.IceCreamOne.isHidden = bool
