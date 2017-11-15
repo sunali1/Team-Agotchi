@@ -31,7 +31,7 @@ class VisualPoo: SKSpriteNode {
         self.physicsBody?.contactTestBitMask = ColliderType.Egg;
     }
     
-    func fadeOut(){
+    func fadeOut(innerFunction:@escaping()->Void){
         let fadeOut = SKAction.fadeOut(withDuration: 3)
         let lower = SKAction.scale(by: CGFloat(0.1), duration: 3)
         let higher = SKAction.scale(by: CGFloat(10), duration: 3)
@@ -39,6 +39,7 @@ class VisualPoo: SKSpriteNode {
         self.run(fadeOut)
         self.run(lower){
             self.texture = SKTexture(imageNamed: "purpleFlower")
+            innerFunction()
             self.run(fadeIn)
             self.run(higher)
         }

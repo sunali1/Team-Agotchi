@@ -100,7 +100,12 @@ class GameViewController: UIViewController {
             self.poopVisual.isHidden = false
             return print("I'm full!")
         }
+        if gameManager.lion.alive == false{
+            return print("I'm dead kitty")
+        }
         gameManager.lion.eat(meal: "kiwi")
+        
+        stomachContentsStatus(statement: "Thank you for feeding me! >^_^<", bool: false)
 
         if countStomachContents() == 1 {
             fillIceCreamArray(firstIceCream: "icecreamone.png")
@@ -110,7 +115,7 @@ class GameViewController: UIViewController {
             fillIceCreamArray(firstIceCream: "icecreamone.png", secondIceCream: "icecreamtwo.png", thirdIceCream: "icecreamthree.png")
         }
 
-        if hungryDays > 4 && countStomachContents() >= 2{
+        if hungryDays > 4 && countStomachContents() >= 1{
             hungryDays = 0
             scene?.catSprite.stopSickCatAnimation()
         }
@@ -118,76 +123,68 @@ class GameViewController: UIViewController {
     }
 
     @objc func updateAge() {
-        age += 1
-        ageLabel.text = String(age)
-        updateTempLabel()
+        age += 1 //increments age every day
+        ageLabel.text = String(age) //changes age text
+        updateTempLabel() //updates temperature if changed
         
-        if gameManager.egg.wearingHat == true && gameManager.lion.born == false {
-            gameManager.egg.temp += 1
-            if gameManager.egg.temp >= 18 {
-                scene?.crackEgg()
-                scene?.hatchLion()
-                happiness.text = String("\(countHappiness())")
+        if gameManager.egg.wearingHat == true && gameManager.lion.born == false { //checks if we're in egg-land, and wearing a hat
+            gameManager.egg.temp += 1 // increements temperature if so
+            if gameManager.egg.temp >= 18 { //hatches egg if that time
+                scene?.crackEgg() // cracks the egg animation
+                scene?.hatchLion() // makes cat sprite and lion object initialise
+                happiness.text = String("\(countHappiness())") //prints happiness to screen
             }
         }
         
-        if gameManager.lion.born == true {
-            playDays += 1
-            if playDays >= 2 {
-                gameManager.lion.happy -= 1
-                happiness.text = String("\(countHappiness())")
+        if gameManager.lion.born == true { //checks if lion is born
+            playDays += 1 //increments number of days since played with
+            if playDays >= 2 { //checks if there is now more than two
+                gameManager.lion.happy -= 1 //subtracts a happiness point for it
+                happiness.text = String("\(countHappiness())") //prints happiness
             }
             
-            if countStomachContents() < 2 {
-                if countStomachContents() == 0 {
-                    hungryDays += 1
+            if countStomachContents() < 2 { //checks stomach contents
+                if countStomachContents() == 0 { // checks if nothing in there
+                    hungryDays += 1 // incremements hungry days
                 }
                 
-                if hungryDays > 4 {
-                    scene?.catSprite.animateSickCat()
+                if hungryDays > 4 { // checks if 4 such days have passed
+                    scene?.catSprite.animateSickCat() //animates a sick cat
                 }
                 
-                if hungryDays > 10 {
-                    scene?.catSprite.animateDeadCat()
-                    ageTracker.invalidate()
-                    ageActivated = false
-                    gameManager.lion.alive = false
+                if hungryDays > 10 { //checks if more than 10 such days
+                    scene?.catSprite.animateDeadCat() //kills cat animation
+                    ageTracker.invalidate() //stops time and all time related stuff
+                    ageActivated = false //ends timerboolean
+                    gameManager.lion.alive = false //sets up flag to prevent anything that can happen if alive
                 }
             }
             
-        }
-    
-        if let pooCounter = scene?.pooCounter {
-            if pooCounter > 0 {
-                gameManager.lion.happy -= 1
-                happiness.text = String("\(countHappiness())")
-            }
-        }
-        
-        if countStomachContents() == 3 {
-            gameManager.lion.pooNow() //empty stomach contents of lion class logic
-            fillIceCreamArray()
-            scene?.pooQuery() //creates the visual Poo on the screen and increments array and counter of poo
-            self.poopVisual.isHidden = true //hides the poo button
-            
-            let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
-            DispatchQueue.main.asyncAfter(deadline: when) {
+            if scene?.pooCounter == 0 {
+                if countStomachContents() == 0{
+                    self.stomachContentsStatus(statement: "pweez feed me :'(", bool: false) //prints out what it needs
+                }
+            } else {
                 self.stomachContentsStatus(statement: "It's starting to smell! :^(", bool: false)
             }
+        }
+    
+        if let pooCounter = scene?.pooCounter { //checks if poo counter exists yet on screen
+            if pooCounter > 0 { //if it does then start counting poo
+                gameManager.lion.happy -= 1 //subtract a happiness point for it
+                happiness.text = String("\(countHappiness())") //print the result
+            }
+        }
+        
+        if countStomachContents() == 3 { //checks stomach contents
+            gameManager.lion.pooNow() //empty stomach contents of lion class logic
+            fillIceCreamArray() //fills out the visual tracker of stomach contents
+            scene?.pooQuery() //creates the visual Poo on the screen and increments array and counter of poo
+            self.poopVisual.isHidden = true //hides the poo button
            
         }
         
-        if countStomachContents() <= 1 && gameManager.lion.born == true && scene?.pooCounter == 0 {
-            let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
-            DispatchQueue.main.asyncAfter(deadline: when) {
-                self.stomachContentsStatus(statement: "pweez feed me :'(", bool: false)
-            }
-        }
-        
-        if countStomachContents() >= 2 && gameManager.lion.born == true && scene?.pooCounter == 0 {
-            stomachContentsStatus(statement: "Thank you for feeding me! >^_^<", bool: true)
-            
-        }
+
     }
     
     func stomachContentsStatus(statement: String, bool: Bool){
