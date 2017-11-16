@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430A3DC81FBC7272002DC178 /* night.png in Resources */ = {isa = PBXBuildFile; fileRef = 430A3DC71FBC7272002DC178 /* night.png */; };
 		431CE03E1FBB1ADA00ACD6FC /* Hurt (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 431CE03C1FBB1ADA00ACD6FC /* Hurt (2).png */; };
 		431CE03F1FBB1ADA00ACD6FC /* Hurt (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 431CE03D1FBB1ADA00ACD6FC /* Hurt (1).png */; };
 		431CE0451FBB1BBE00ACD6FC /* Hurt (4).png in Resources */ = {isa = PBXBuildFile; fileRef = 431CE0401FBB1BBD00ACD6FC /* Hurt (4).png */; };
@@ -21,6 +22,7 @@
 		43382B611FB9F5F0000EE75F /* icecreamthree.png in Resources */ = {isa = PBXBuildFile; fileRef = 43382B5D1FB9F5ED000EE75F /* icecreamthree.png */; };
 		43382B621FB9F5F0000EE75F /* icecreamtwo.png in Resources */ = {isa = PBXBuildFile; fileRef = 43382B5E1FB9F5EE000EE75F /* icecreamtwo.png */; };
 		43382B631FB9F5F0000EE75F /* icecreamone.png in Resources */ = {isa = PBXBuildFile; fileRef = 43382B5F1FB9F5EF000EE75F /* icecreamone.png */; };
+		43AA6EF91FBC934E002FC3E3 /* background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA6EF81FBC934E002FC3E3 /* background.swift */; };
 		536D44231FBB597700104BEE /* Dead.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 536D44201FBB597600104BEE /* Dead.mp3 */; };
 		536D44241FBB597700104BEE /* Fly.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 536D44211FBB597700104BEE /* Fly.mp3 */; };
 		536D44251FBB597700104BEE /* Score.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 536D44221FBB597700104BEE /* Score.mp3 */; };
@@ -116,6 +118,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		430A3DC71FBC7272002DC178 /* night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = night.png; sourceTree = "<group>"; };
 		431CE03C1FBB1ADA00ACD6FC /* Hurt (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hurt (2).png"; sourceTree = "<group>"; };
 		431CE03D1FBB1ADA00ACD6FC /* Hurt (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hurt (1).png"; sourceTree = "<group>"; };
 		431CE0401FBB1BBD00ACD6FC /* Hurt (4).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hurt (4).png"; sourceTree = "<group>"; };
@@ -130,6 +133,7 @@
 		43382B5D1FB9F5ED000EE75F /* icecreamthree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icecreamthree.png; sourceTree = "<group>"; };
 		43382B5E1FB9F5EE000EE75F /* icecreamtwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icecreamtwo.png; sourceTree = "<group>"; };
 		43382B5F1FB9F5EF000EE75F /* icecreamone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icecreamone.png; sourceTree = "<group>"; };
+		43AA6EF81FBC934E002FC3E3 /* background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = background.swift; sourceTree = "<group>"; };
 		536D44201FBB597600104BEE /* Dead.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dead.mp3; sourceTree = "<group>"; };
 		536D44211FBB597700104BEE /* Fly.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fly.mp3; sourceTree = "<group>"; };
 		536D44221FBB597700104BEE /* Score.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Score.mp3; sourceTree = "<group>"; };
@@ -217,6 +221,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43AA6EF71FBC933C002FC3E3 /* BackgroundClass */ = {
+			isa = PBXGroup;
+			children = (
+				43AA6EF81FBC934E002FC3E3 /* background.swift */,
+			);
+			path = BackgroundClass;
+			sourceTree = "<group>";
+		};
 		43DBF2BF1FB3BE2400E1A96D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +358,7 @@
 		FA09AAEF1FB591CA003C6C20 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				43AA6EF71FBC933C002FC3E3 /* BackgroundClass */,
 				FA0174D41FB74D7400A84D50 /* Items */,
 				FA09AB151FB59A00003C6C20 /* Manager */,
 				FA09AB061FB593D1003C6C20 /* CreatureClasses */,
@@ -421,6 +434,7 @@
 		FA09AB111FB59612003C6C20 /* Background */ = {
 			isa = PBXGroup;
 			children = (
+				430A3DC71FBC7272002DC178 /* night.png */,
 				53F5B7891FB5F0A000556CD5 /* Forest BG.png */,
 			);
 			path = Background;
@@ -578,6 +592,7 @@
 				FA09AB001FB59287003C6C20 /* 1261295-200.png in Resources */,
 				536D44241FBB597700104BEE /* Fly.mp3 in Resources */,
 				FA09AAFC1FB59287003C6C20 /* crack2.png in Resources */,
+				430A3DC81FBC7272002DC178 /* night.png in Resources */,
 				EEDB22C01FB8A8AE00B27F81 /* sleep.png in Resources */,
 				5390B15D1FB9BCE100280769 /* Cat 3.png in Resources */,
 				EEDB22D41FB8F42700B27F81 /* temperature.png in Resources */,
@@ -647,6 +662,7 @@
 				EEDB22DE1FB9F33F00B27F81 /* Poo.swift in Sources */,
 				EE2B407E1FB1DBFA005C5775 /* AppDelegate.swift in Sources */,
 				FA09AB041FB593A1003C6C20 /* GameplayScene.swift in Sources */,
+				43AA6EF91FBC934E002FC3E3 /* background.swift in Sources */,
 				EE2B40B41FB1DDC2005C5775 /* Egg.swift in Sources */,
 				EEC1E2661FB5C4EA005606E4 /* Lion.swift in Sources */,
 			);

@@ -30,7 +30,7 @@ class VisualEgg: SKSpriteNode {
          self.setScale(1)
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.position = CGPoint(x: 0, y: -280)
-        self.zPosition = 1;
+        self.zPosition = 7;
         self.texture = SKTexture(imageNamed: "1276572-200.png")
         
         self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size);

@@ -16,12 +16,15 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     var center = CGFloat();
     let eggSprite = VisualEgg();
     var lionSprite = VisualLion();
+    var daybackground = Background()
+    var nightbackground = Background()
     let catSprite = Cat()
     var pooArray: [VisualPoo] = []
     var pooCounter = 0;
     var viewController: GameViewController!
     lazy var egg = self.viewController.gameManager.egg
     let crackSound = SKAction.playSoundFileNamed("Fly.mp3", waitForCompletion: false)
+    
     
 
     func initialize() {
@@ -30,6 +33,10 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         
         physicsWorld.contactDelegate = self
+        addChild(daybackground)
+        daybackground.initialize(width: self.size.width, height: self.size.height)
+        addChild(nightbackground)
+        nightbackground.initialize(width: self.size.width, height: self.size.height, img: "night.png")
         
         self.physicsWorld.gravity = CGVector(dx: 0, dy: -9.8)
         let sceneBody = SKPhysicsBody(edgeLoopFrom: self.frame)
@@ -41,6 +48,23 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         center = CGFloat((self.scene?.size.width)!) / CGFloat((self.scene?.size.height)!)
     }
 
+    
+    func makeNightBackground(){
+        let fadeOut = SKAction.fadeOut(withDuration: 3)
+        let fadeIn = SKAction.fadeIn(withDuration: 3)
+        daybackground.run(fadeOut)
+        nightbackground.run(fadeIn)
+    }
+    
+    func makeDayBackground() {
+        let fadeOut = SKAction.fadeOut(withDuration: 3)
+        let fadeIn = SKAction.fadeIn(withDuration: 3)
+        nightbackground.run(fadeOut)
+        daybackground.run(fadeIn)
+    }
+    
+    
+    
  
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if viewController.gameManager.lion.alive == true{
