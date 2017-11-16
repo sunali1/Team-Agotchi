@@ -22,7 +22,7 @@ class Lion {
     var alive: Bool
     var sick = false
     
-    init(size: Int, age: Int, temp: Int, hungry: Bool, bursting: Bool) {
+    init(size: Int, age: Int, temp: Int, hungry: Bool, bursting: Bool, born: Bool) {
         self.size = size;
         self.age = age;
         self.temp = temp;
@@ -30,7 +30,7 @@ class Lion {
         self.bursting = false;
         self.awake = true;
         self.happy = 1
-        self.born = false
+        self.born = born;
         self.alive = true
     }
     
@@ -61,14 +61,9 @@ class Lion {
         }
     }
     
-    func pooNow() -> Bool {
-        if stomachContents.count == 3 {
-            stomachContents.removeAll()
-            print(stomachContents.count)
-            return true
-        } else {
-            return false
-        }
+    func pooNow(innerFunction:@escaping()->Void) {
+        stomachContents.removeLast()
+        innerFunction()
     }
     
     func updateAge() {

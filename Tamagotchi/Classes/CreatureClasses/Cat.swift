@@ -83,7 +83,6 @@ class Cat: SKSpriteNode {
     }
     
     func animateSickCat(){
-        self.removeAllActions()
         self.run(SKAction.repeatForever(animateSickAction), withKey: "AnimateSickCat")
         print("animateSickCat")
     }
@@ -112,7 +111,7 @@ class Cat: SKSpriteNode {
     }
   
     func flipCat(innerFunction:@escaping()->Void) {
-        let flip = SKAction.rotate(byAngle:CGFloat(-Double.pi*2),duration:0.5)
+        let flip = SKAction.rotate(byAngle:CGFloat(Double.pi*2),duration:0.5)
         self.run(flip){ innerFunction() }
     }
     

@@ -215,6 +215,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVc-gf-hL0">
+                                <rect key="frame" x="152" y="95" width="130" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.29999999999999999" height="1"/>
+                                <state key="normal" title="Reset" image="tryAgain"/>
+                                <connections>
+                                    <action selector="resetGame:" destination="BV1-FR-VrT" eventType="touchUpInside" id="qzO-AM-35W"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
@@ -233,6 +242,7 @@
                         <outlet property="hoursLabel" destination="Pm8-7D-uwH" id="Jwl-tX-t5s"/>
                         <outlet property="hoursTitle" destination="uOX-vB-adW" id="i0S-1k-LbC"/>
                         <outlet property="poopVisual" destination="8ow-6M-42Z" id="AQd-Fb-nDJ"/>
+                        <outlet property="resetVisual" destination="QVc-gf-hL0" id="pDh-TL-1e3"/>
                         <outlet property="tempLabel" destination="kKb-DP-DC4" id="EuP-IF-3wA"/>
                         <outlet property="thermometer" destination="nRN-Cc-bDd" id="I8h-Tz-t6w"/>
                         <outlet property="thoughtBubble" destination="pC8-uL-Eh8" id="tL3-2d-AkK"/>
@@ -255,5 +265,6 @@
         <image name="temperature.png" width="224" height="609"/>
         <image name="thoughtBubble" width="200" height="200"/>
         <image name="toy.png" width="572" height="465"/>
+        <image name="tryAgain" width="980" height="812"/>
     </resources>
 </document>

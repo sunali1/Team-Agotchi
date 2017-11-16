@@ -26,6 +26,8 @@
 		536D44231FBB597700104BEE /* Dead.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 536D44201FBB597600104BEE /* Dead.mp3 */; };
 		536D44241FBB597700104BEE /* Fly.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 536D44211FBB597700104BEE /* Fly.mp3 */; };
 		536D44251FBB597700104BEE /* Score.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 536D44221FBB597700104BEE /* Score.mp3 */; };
+		536D44271FBC5DFB00104BEE /* Angel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536D44261FBC5DFB00104BEE /* Angel.swift */; };
+		536D44291FBC600E00104BEE /* santa.png in Resources */ = {isa = PBXBuildFile; fileRef = 536D44281FBC600E00104BEE /* santa.png */; };
 		5390B14E1FB9B6B700280769 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5390B14D1FB9B6B700280769 /* Cat.swift */; };
 		5390B15A1FB9BCE100280769 /* Cat 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5390B1501FB9BCE000280769 /* Cat 1.png */; };
 		5390B15B1FB9BCE100280769 /* Cat 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 5390B1511FB9BCE000280769 /* Cat 8.png */; };
@@ -77,6 +79,7 @@
 		FAB948971FB88B930059D28D /* Dog in Resources */ = {isa = PBXBuildFile; fileRef = FAB948961FB88B930059D28D /* Dog */; };
 		FAB9489A1FB88BCC0059D28D /* Santa in Resources */ = {isa = PBXBuildFile; fileRef = FAB948991FB88BCB0059D28D /* Santa */; };
 		FAB9489C1FB88BDC0059D28D /* Girl in Resources */ = {isa = PBXBuildFile; fileRef = FAB9489B1FB88BDC0059D28D /* Girl */; };
+		FAF8ED061FBC6B7800649F13 /* eventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF8ED051FBC6B7800649F13 /* eventHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +140,8 @@
 		536D44201FBB597600104BEE /* Dead.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dead.mp3; sourceTree = "<group>"; };
 		536D44211FBB597700104BEE /* Fly.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fly.mp3; sourceTree = "<group>"; };
 		536D44221FBB597700104BEE /* Score.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Score.mp3; sourceTree = "<group>"; };
+		536D44261FBC5DFB00104BEE /* Angel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Angel.swift; sourceTree = "<group>"; };
+		536D44281FBC600E00104BEE /* santa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = santa.png; sourceTree = "<group>"; };
 		5390B14D1FB9B6B700280769 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
 		5390B1501FB9BCE000280769 /* Cat 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cat 1.png"; sourceTree = "<group>"; };
 		5390B1511FB9BCE000280769 /* Cat 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cat 8.png"; sourceTree = "<group>"; };
@@ -194,6 +199,7 @@
 		FAB948961FB88B930059D28D /* Dog */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Dog; sourceTree = "<group>"; };
 		FAB948991FB88BCB0059D28D /* Santa */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Santa; sourceTree = "<group>"; };
 		FAB9489B1FB88BDC0059D28D /* Girl */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Girl; sourceTree = "<group>"; };
+		FAF8ED051FBC6B7800649F13 /* eventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -359,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				43AA6EF71FBC933C002FC3E3 /* BackgroundClass */,
+				FAF8ED041FBC6B6200649F13 /* Helper */,
 				FA0174D41FB74D7400A84D50 /* Items */,
 				FA09AB151FB59A00003C6C20 /* Manager */,
 				FA09AB061FB593D1003C6C20 /* CreatureClasses */,
@@ -387,6 +394,7 @@
 				EEDB22D31FB8F42700B27F81 /* temperature.png */,
 				EEDB22D91FB9012000B27F81 /* toy.png */,
 				EEDB22DB1FB9C4EC00B27F81 /* hat.png */,
+				536D44281FBC600E00104BEE /* santa.png */,
 				FAB9489B1FB88BDC0059D28D /* Girl */,
 				FAB948991FB88BCB0059D28D /* Santa */,
 				FAB948961FB88B930059D28D /* Dog */,
@@ -427,6 +435,7 @@
 				EEC1E2651FB5C4EA005606E4 /* Lion.swift */,
 				EEC1E2671FB5C524005606E4 /* VisualLion.swift */,
 				5390B14D1FB9B6B700280769 /* Cat.swift */,
+				536D44261FBC5DFB00104BEE /* Angel.swift */,
 			);
 			path = CreatureClasses;
 			sourceTree = "<group>";
@@ -462,6 +471,14 @@
 			children = (
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		FAF8ED041FBC6B6200649F13 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FAF8ED051FBC6B7800649F13 /* eventHandler.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -591,6 +608,7 @@
 				EEDB22C21FB8AA0500B27F81 /* awake.png in Resources */,
 				FA09AB001FB59287003C6C20 /* 1261295-200.png in Resources */,
 				536D44241FBB597700104BEE /* Fly.mp3 in Resources */,
+				536D44291FBC600E00104BEE /* santa.png in Resources */,
 				FA09AAFC1FB59287003C6C20 /* crack2.png in Resources */,
 				430A3DC81FBC7272002DC178 /* night.png in Resources */,
 				EEDB22C01FB8A8AE00B27F81 /* sleep.png in Resources */,
@@ -656,7 +674,9 @@
 				FA0174D61FB74D8A00A84D50 /* Hat.swift in Sources */,
 				EEC1E2681FB5C524005606E4 /* VisualLion.swift in Sources */,
 				5390B14E1FB9B6B700280769 /* Cat.swift in Sources */,
+				536D44271FBC5DFB00104BEE /* Angel.swift in Sources */,
 				FA8908441FB3461200C31387 /* basicStatsModelView.swift in Sources */,
+				FAF8ED061FBC6B7800649F13 /* eventHandler.swift in Sources */,
 				FA09AAF21FB5920B003C6C20 /* VisualEgg.swift in Sources */,
 				FA09AB141FB599F7003C6C20 /* GameManager.swift in Sources */,
 				EEDB22DE1FB9F33F00B27F81 /* Poo.swift in Sources */,
