@@ -19,7 +19,8 @@ How to Run
 -----
 Open Tamagotchi.xcodeproj, connect and select your iphone, then press the play button.
 
-![alt text](https://user-images.githubusercontent.com/30705722/32895601-7f674c90-cad8-11e7-9082-86a41f4c82ac.png =250x250)
+<img src="./Tamagotchi/Assets/egg.png" width="400" height="400"/>
+<img src="./Tamagotchi/Assets/cat.png" width="400" height="400"/>
 
 
 Collaborators
