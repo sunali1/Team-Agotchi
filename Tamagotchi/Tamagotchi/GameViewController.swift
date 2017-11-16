@@ -32,7 +32,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var thoughtBubble: UIImageView!
     @IBOutlet weak var happiness: UILabel!
     
-    let constantTimeInterval = 12
+    let constantTimeInterval = 12.0
 
     @IBOutlet weak var resetVisual: UIButton!
 
@@ -65,7 +65,7 @@ class GameViewController: UIViewController {
         foodUIHide(bool: true)
         updateTempLabel()
         ageTracker = Timer()
-        ageTracker = Timer.scheduledTimer(timeInterval: 5, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)
+        ageTracker = Timer.scheduledTimer(timeInterval: constantTimeInterval, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)
         gameManager = GameManager()
         scene = GameplayScene(fileNamed: "GameplayScene")
         if let view = self.view as! SKView? {
@@ -179,15 +179,7 @@ class GameViewController: UIViewController {
         
         age += 1 //increments age every day
         ageLabel.text = String(age) //changes age text
-        updateTempLabel() //updates temperature if changed
         
-        if gameManager.egg.wearingHat == true && gameManager.lion.born == false { //checks if we're in egg-land, and wearing a hat
-            gameManager.egg.temp += 1 // increements temperature if so
-            if gameManager.egg.temp >= 18 { //hatches egg if that time
-                scene?.crackEgg() // cracks the egg animation
-                happiness.text = String("\(countHappiness())") //prints happiness to screen
-            }
-        }
         
         if gameManager.lion.born == true { //checks if lion is born
             playDays += 1 //increments number of days since played with
@@ -257,6 +249,7 @@ class GameViewController: UIViewController {
     }
   
     @objc func updateHour() {
+        updateTempLabel() //updates temperature if changed
         hour += 1 //increments age every hour
         print("Hour incremented")
         hoursLabel.text = String(hour)  //changes age text
@@ -267,6 +260,15 @@ class GameViewController: UIViewController {
             print("This Works 3")
             scene?.makeDayBackground()
             hour = 0
+        }
+        
+        if gameManager.egg.wearingHat == true && gameManager.lion.born == false { //checks if we're in egg-land, and wearing a hat
+            gameManager.egg.temp += 1 // increements temperature if so
+            if gameManager.egg.temp >= 18 { //hatches egg if that time
+                gameManager.egg.wearingHat = false
+                scene?.crackEgg() // cracks the egg animation
+                happiness.text = String("\(countHappiness())") //prints happiness to screen
+            }
         }
     }
 
@@ -290,8 +292,8 @@ class GameViewController: UIViewController {
         foodUIHide(bool: true)
         updateTempLabel()
       
-        ageTracker = Timer.scheduledTimer(timeInterval: TimeInterval(constantTimeInterval), target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)  
-        hourTracker = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: (#selector(updateHour)), userInfo: nil, repeats: true)
+        ageTracker = Timer.scheduledTimer(timeInterval: constantTimeInterval, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)
+        hourTracker = Timer.scheduledTimer(timeInterval: constantTimeInterval/24, target: self, selector: (#selector(updateHour)), userInfo: nil, repeats: true)
         hideAngel()
         
         if let view = self.view as! SKView? {

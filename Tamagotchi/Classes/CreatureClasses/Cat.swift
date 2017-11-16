@@ -69,6 +69,19 @@ class Cat: SKSpriteNode {
         
         animateIdleAction = SKAction.animate(with: self.idleAnimation, timePerFrame: 0.16, resize: true, restore: false)
         print("The Idle array has \(idleAnimation.count) elements")
+        
+    }
+    
+    func moveCatLeft(location: CGPoint?){
+        let moveCat = SKAction.moveTo(x: (location?.x)!, duration: 2)
+        self.animateCat(moveLeft: true)
+        self.run(moveCat, withKey: "movement")
+    }
+    
+    func moveCatRight(location: CGPoint?){
+        let moveCat = SKAction.moveTo(x: (location?.x)!, duration: 2)
+        self.animateCat(moveLeft: false)
+        self.run(moveCat, withKey: "movement")
     }
 
     func animateCat(moveLeft: Bool){
@@ -96,6 +109,7 @@ class Cat: SKSpriteNode {
     
     func stopCatAnimation() {
         self.removeAction(forKey: "AnimateCat")
+        self.removeAction(forKey: "movement")
     }
     
     func stopSickCatAnimation() {
