@@ -75,25 +75,21 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
                 let location = touch.location(in: self);
                 let touchedNode = self.atPoint(location)
                 
-                if location.x > center{
-                   
-                    catSprite.animateCat(moveLeft: false)
-                    catSprite.position.x += 7
-                } else {
-                    catSprite.animateCat(moveLeft: true)
-                    catSprite.position.x -= 7
+                if viewController.gameManager.lion.born == true{
+                    if location.x > catSprite.position.x {
+                        catSprite.moveCatRight(location: location)
+                    } else {
+                        catSprite.moveCatLeft(location: location)
+                    }
                 }
                 
                 if atPoint(location).name == "visualEggInstance"{
-                    print("You touched an egg")
-                    print(egg.helpEgg(item: "Hat"))
                     if egg.temp > 18 {
                         crackEgg()
                     }
                 }
                 
                 if touchedNode.name == "MrPoopy"{
-                    print("You touched a poo")
                     self.pooCounter -= 1
                     self.pooArray.first(where:{$0 == touchedNode})?.fadeOut(innerFunction: {
                         if self.pooCounter == 0 {
@@ -101,8 +97,6 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
                             self.viewController.thoughtBubble.isHidden = true
                         }
                     })
-                    
-               
                 }
             }
         }
