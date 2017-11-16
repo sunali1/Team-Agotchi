@@ -27,10 +27,10 @@ class GameViewController: UIViewController {
     @IBOutlet weak var touchHatVisual: UIButton!
     @IBOutlet weak var poopVisual: UIButton!
     @IBOutlet weak var feedVisual: UIButton!
-    
-    @IBOutlet weak var thoughtBubbleText: UITextView!
+    @IBOutlet weak var thoughtBubbleText: UILabel!
     @IBOutlet weak var thoughtBubble: UIImageView!
     @IBOutlet weak var happiness: UILabel!
+    @IBOutlet weak var happinessTitle: UILabel!
     
     let constantTimeInterval = 12.0
 
@@ -59,13 +59,20 @@ class GameViewController: UIViewController {
         self.feedVisual.isHidden = true
         self.touchHatVisual.isHidden = false
         self.thoughtBubble.isHidden = true
+        self.thoughtBubbleText.baselineAdjustment = .alignCenters
         self.thoughtBubbleText.isHidden = true
+        self.thermometer.isHidden = false
+        self.happinessTitle.isHidden = true
+        self.happiness.isHidden = true
          self.resetVisual.isHidden = true;
+        self.tempLabel.isHidden = false;
         self.thoughtBubbleText.textAlignment = .center;
         foodUIHide(bool: true)
         updateTempLabel()
         ageTracker = Timer()
         ageTracker = Timer.scheduledTimer(timeInterval: constantTimeInterval, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)
+        ageTracker = Timer()
+        hourTracker = Timer.scheduledTimer(timeInterval: constantTimeInterval/24, target: self, selector: (#selector(updateHour)), userInfo: nil, repeats: true)
         gameManager = GameManager()
         scene = GameplayScene(fileNamed: "GameplayScene")
         if let view = self.view as! SKView? {
@@ -92,8 +99,9 @@ class GameViewController: UIViewController {
         if ageActivated == true{
             return print("Age already active")
         }
-        ageTracker = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)    //runs updateAge function once every 1 seconds. So one minute in time equals 1 day in age
+        ageTracker = Timer.scheduledTimer(timeInterval: constantTimeInterval/12, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)    //runs updateAge function once every 1 seconds. So one minute in time equals 1 day in age
         ageActivated = true
+        hourTracker = Timer.scheduledTimer(timeInterval: constantTimeInterval/24/12, target: self, selector: (#selector(updateHour)), userInfo: nil, repeats: true)
     }
 
 
@@ -134,7 +142,7 @@ class GameViewController: UIViewController {
             }
         })
         print("I should be flipping!")
-        self.stomachContentsStatus(statement: "WWHHHEEEEEEEE!!!", bool: false)
+        self.stomachContentsStatus(statement: "WHHEEEE!!!", bool: false)
         
 
         
@@ -200,6 +208,7 @@ class GameViewController: UIViewController {
                 if hungryDays > 10 { //checks if more than 10 such days
                     scene?.catSprite.animateDeadCat() //kills cat animation
                     ageTracker.invalidate() //stops time and all time related stuff
+                    hourTracker.invalidate()
                     ageActivated = false //ends timerboolean
                     gameManager.lion.alive = false //sets up flag to prevent anything that can happen if alive
                     self.resetVisual.isHidden = false;
@@ -253,13 +262,14 @@ class GameViewController: UIViewController {
         hour += 1 //increments age every hour
         print("Hour incremented")
         hoursLabel.text = String(hour)  //changes age text
-        if hour == 12 {
+        if hour == 24 {
+            hour = 0
+        } else if hour == 20 {
             scene?.makeNightBackground()
             print("This Works Too")
-        } else if hour == 24 {
+        } else if hour == 6 {
             print("This Works 3")
             scene?.makeDayBackground()
-            hour = 0
         }
         
         if gameManager.egg.wearingHat == true && gameManager.lion.born == false { //checks if we're in egg-land, and wearing a hat
@@ -268,6 +278,8 @@ class GameViewController: UIViewController {
                 gameManager.egg.wearingHat = false
                 scene?.crackEgg() // cracks the egg animation
                 happiness.text = String("\(countHappiness())") //prints happiness to screen
+                self.happinessTitle.isHidden = false
+                self.happiness.isHidden = false
             }
         }
     }
@@ -288,6 +300,7 @@ class GameViewController: UIViewController {
         self.thoughtBubble.isHidden = true
         self.thoughtBubbleText.isHidden = true
         self.thoughtBubbleText.textAlignment = .center;
+        self.thoughtBubbleText.numberOfLines = 0
         self.resetVisual.isHidden = true;
         foodUIHide(bool: true)
         updateTempLabel()

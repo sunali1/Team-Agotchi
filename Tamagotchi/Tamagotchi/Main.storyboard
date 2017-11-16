@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Kefa.ttf">
+            <string>Kefa-Regular</string>
+        </array>
         <array key="MarkerFeltThin.ttf">
             <string>MarkerFelt-Thin</string>
         </array>
@@ -184,13 +187,14 @@
                                 <rect key="frame" x="178" y="173" width="260" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Click my poo!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="byG-kh-JmL">
-                                <rect key="frame" x="236" y="212" width="144" height="86"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm8-7D-uwH" userLabel="Happiness">
+                                <rect key="frame" x="138" y="51" width="114" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.95294117649999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="50"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOX-vB-adW">
                                 <rect key="frame" x="138" y="19" width="114" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -208,12 +212,11 @@
                                     <action selector="resetGame:" destination="BV1-FR-VrT" eventType="touchUpInside" id="qzO-AM-35W"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm8-7D-uwH" userLabel="Happiness">
-                                <rect key="frame" x="138" y="51" width="114" height="69"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LOREM IPSUM IPSUM LOREM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMG-L2-16a">
+                                <rect key="frame" x="234" y="205" width="148" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.97254901959999995" green="0.95294117649999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="50"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="19"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -231,6 +234,7 @@
                         <outlet property="feedVisual" destination="Xc8-PG-7Ye" id="alA-xX-Sma"/>
                         <outlet property="foodLabel" destination="WuB-3M-y7r" id="auA-gL-R1Z"/>
                         <outlet property="happiness" destination="TCG-eR-96y" id="ilq-9t-fEG"/>
+                        <outlet property="happinessTitle" destination="Gy3-b0-AsA" id="jp2-ul-xWr"/>
                         <outlet property="hoursLabel" destination="Pm8-7D-uwH" id="Jwl-tX-t5s"/>
                         <outlet property="hoursTitle" destination="uOX-vB-adW" id="i0S-1k-LbC"/>
                         <outlet property="poopVisual" destination="8ow-6M-42Z" id="AQd-Fb-nDJ"/>
@@ -238,7 +242,7 @@
                         <outlet property="tempLabel" destination="kKb-DP-DC4" id="EuP-IF-3wA"/>
                         <outlet property="thermometer" destination="nRN-Cc-bDd" id="I8h-Tz-t6w"/>
                         <outlet property="thoughtBubble" destination="pC8-uL-Eh8" id="tL3-2d-AkK"/>
-                        <outlet property="thoughtBubbleText" destination="byG-kh-JmL" id="nRy-xn-SOA"/>
+                        <outlet property="thoughtBubbleText" destination="tMG-L2-16a" id="igD-iI-vHr"/>
                         <outlet property="touchHatVisual" destination="jA2-cY-tTS" id="N4M-oK-TfN"/>
                     </connections>
                 </viewController>
