@@ -14,7 +14,9 @@ class GameViewController: UIViewController {
 
     var gameManager = GameManager()
 
+    @IBOutlet weak var hoursTitle: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var thermometer: UIImageView!
 
@@ -30,16 +32,21 @@ class GameViewController: UIViewController {
     @IBOutlet weak var thoughtBubble: UIImageView!
     @IBOutlet weak var happiness: UILabel!
     
+    let constantTimeInterval = 12
+
     @IBOutlet weak var resetVisual: UIButton!
-    
+
     var age = 0
+    var hour = 0
     var hungryDays = 0
     var playDays = 0
     var happyDays = 0
     var ageActivated = true
     var ageTracker = Timer()
-    var foodTracker = Timer()
+    var hourTracker = Timer()
+    var x = Timer()
     var scene = GameplayScene(fileNamed: "GameplayScene")
+
 
     @IBAction func resetGame(_ sender: Any) {
         super.viewDidLoad()
@@ -73,6 +80,7 @@ class GameViewController: UIViewController {
         }
         
     }
+
     @IBAction func touchHatButton(_ sender: Any) {
         gameManager.egg.wearingHat = true
         updateTempLabel()
@@ -103,7 +111,15 @@ class GameViewController: UIViewController {
         self.poopVisual.isHidden = true
 
     }
-
+    
+    
+    @IBAction func dayButton(_ sender: Any) {
+        scene?.makeNightBackground()
+    }
+    
+    
+    
+    
     @IBAction func play(_ sender: Any) {
         
         if gameManager.lion.alive == false || gameManager.lion.born == false {
@@ -159,7 +175,8 @@ class GameViewController: UIViewController {
 
     }
 
-    @objc func updateAge() {
+    @objc func updateAge() { /* THIS NEEDS TO BE REFACTORED */
+        
         age += 1 //increments age every day
         ageLabel.text = String(age) //changes age text
         updateTempLabel() //updates temperature if changed
@@ -238,8 +255,22 @@ class GameViewController: UIViewController {
         
 
     }
-    
-    
+  
+    @objc func updateHour() {
+        hour += 1 //increments age every hour
+        print("Hour incremented")
+        hoursLabel.text = String(hour)  //changes age text
+        if hour == 12 {
+            scene?.makeNightBackground()
+            print("This Works Too")
+        } else if hour == 24 {
+            print("This Works 3")
+            scene?.makeDayBackground()
+            hour = 0
+        }
+    }
+
+
     func stomachContentsStatus(statement: String, bool: Bool){
         self.thoughtBubbleText.text = statement
         self.thoughtBubble.isHidden = bool
@@ -248,6 +279,8 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.hoursLabel.isHidden = true
+//        self.hoursTitle.isHidden = true
         self.poopVisual.isHidden = true
         self.feedVisual.isHidden = true
         self.thoughtBubble.isHidden = true
@@ -256,8 +289,10 @@ class GameViewController: UIViewController {
         self.resetVisual.isHidden = true;
         foodUIHide(bool: true)
         updateTempLabel()
+      
+        ageTracker = Timer.scheduledTimer(timeInterval: TimeInterval(constantTimeInterval), target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)  
+        hourTracker = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: (#selector(updateHour)), userInfo: nil, repeats: true)
         hideAngel()
-        ageTracker = Timer.scheduledTimer(timeInterval: 5, target: self, selector: (#selector(updateAge)), userInfo: nil, repeats: true)
         
         if let view = self.view as! SKView? {
             scene?.scaleMode = .aspectFill

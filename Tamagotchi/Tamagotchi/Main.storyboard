@@ -191,6 +191,30 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfv-94-KWy">
+                                <rect key="frame" x="350" y="339" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Night"/>
+                                <connections>
+                                    <action selector="dayButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="dER-kD-gFP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pm8-7D-uwH" userLabel="Happiness">
+                                <rect key="frame" x="16" y="392" width="114" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.95294117649999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="50"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.85000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOX-vB-adW">
+                                <rect key="frame" x="16" y="362" width="114" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98999900559999998" green="1" blue="0.43563311970000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVc-gf-hL0">
                                 <rect key="frame" x="152" y="95" width="130" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -215,6 +239,8 @@
                         <outlet property="feedVisual" destination="Xc8-PG-7Ye" id="alA-xX-Sma"/>
                         <outlet property="foodLabel" destination="WuB-3M-y7r" id="auA-gL-R1Z"/>
                         <outlet property="happiness" destination="TCG-eR-96y" id="ilq-9t-fEG"/>
+                        <outlet property="hoursLabel" destination="Pm8-7D-uwH" id="Jwl-tX-t5s"/>
+                        <outlet property="hoursTitle" destination="uOX-vB-adW" id="i0S-1k-LbC"/>
                         <outlet property="poopVisual" destination="8ow-6M-42Z" id="AQd-Fb-nDJ"/>
                         <outlet property="resetVisual" destination="QVc-gf-hL0" id="pDh-TL-1e3"/>
                         <outlet property="tempLabel" destination="kKb-DP-DC4" id="EuP-IF-3wA"/>
