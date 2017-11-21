@@ -17,7 +17,7 @@ In your command line type the following in order to clone this repository:
 
 How to Run
 -----
-Download Xcode https://developer.apple.com/download/
+Download Xcode https://developer.apple.com/download/ .
 In Finder open Tamagotchi.xcodeproj, connect and select your iphone, then press the play button.
 
 <img align="center" width="400" height="600" src="./Tamagotchi/Assets/egg.png">
