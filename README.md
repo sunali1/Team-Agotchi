@@ -12,7 +12,7 @@ How to Install
 -----
 In your command line type the following in order to clone this repository:
 ````
-  $ git clone https://github.com/benjaminsunderland/Tamagotchi
+  $ git clone https://github.com/sunali1/Team-Agotchi.git
 ````
 
 How to Run
